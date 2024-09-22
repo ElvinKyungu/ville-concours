@@ -9,6 +9,7 @@ import IconX from "@/components/icons/IconX.vue"
 import IconArrowGrowUp from "@/components/icons/IconArrowGrowUp.vue"
 import  IconSearch from "../icons/IconSearch.vue"
 import PopupFull from '@/components/popups/PopupFull.vue'
+import Input from "../Form/Input.vue"
 
 const showPopup = ref(false)
 
@@ -194,7 +195,7 @@ onUnmounted(() => {
     </div>
   </header>
   <PopupFull :isOpen="showPopup" @close="togglePopup">
-    jjgg
+    <Input/>
   </PopupFull>
 </template>
 <style scoped>
