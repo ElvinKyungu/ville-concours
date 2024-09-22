@@ -109,7 +109,7 @@ const leave = (event: MouseEvent) => {
       "
     >
       <button
-        class="sidebar__menu-trigger w-20 h-20 fixed text-gray-800 group bg-black/10 backdrop-blur-md flex flex-col gap-4 ul rounded-full top-1/2 -translate-y-1/2 left-10 lg:left-20 items-center justify-center animate-pulse"
+        class="sidebar__menu-trigger w-20 h-20 fixed hidden border text-gray-800 group bg-black/10 backdrop-blur-md md:flex flex-col gap-4 ul rounded-full top-1/2 -translate-y-1/2 left-10 lg:left-20 items-center justify-center animate-pulse"
         @click="open_menu"
       >
         <span
@@ -119,33 +119,26 @@ const leave = (event: MouseEvent) => {
           class="w-10 h-10 relative z-10"
         />
       </button>
-      <ul class="fixed right-0 flex justify-end py-5 px-5 space-x-5 z-50">
+      <ul class="fixed bg-black/50 text-white backdrop-blur-md items-center w-full flex justify-between py-6 px-5 space-x-5 z-50">
         <li class="cursor-pointer">
-          <IconsGithub
-            
+          <router-link to="/" class="text-3xl">Tokyo city</router-link>
+        </li>
+        <li class="cursor-pointer hidden md:flex">
+          <ul class="flex gap-5">
+            <li>Que faire à Tokyo</li>
+            <li>Espace touristique</li>
+          </ul>
+        </li>
+        <li class="cursor-pointer md:hidden flex">
+          <IconBars
+            class="w-10 h-10 relative z-10"
           />
         </li>
-        <li class="cursor-pointer">
-          <IconLinkedin
-            
-          />
-        </li>
-        <li class="cursor-pointer">
-          <IconX  />
-        </li>
-        <!-- <li class="flex cursor-pointer" >
-          <IconMoon
-          />
-          <IconSun
-            v-else
-            :class="{ 'text-black': !isDark, 'text-white': isDark }"
-          />
-        </li> -->
       </ul>
     </nav>
     <div class="containers">
       <div
-        class="container container--menu bg-black/10 h-full backdrop-blur-md flex justify-between px-20 py-10"
+        class="container container--menu bg-black/50 text-white h-full backdrop-blur-md flex justify-between px-20 py-10"
       >
         <div class="menu__layout">
           <ul class="menu__left text-xl space-y-5">
