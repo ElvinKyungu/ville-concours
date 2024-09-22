@@ -45,14 +45,17 @@ const updateIndicators = () => {
 }
 
 const animateText = () => {
-  const title = document.querySelector('.title')
-  const description = document.querySelector('.description')
-  const button = document.querySelector('.action-button')
+  const title = props.images[currentIndex.value].title
+  const description = props.images[currentIndex.value].description
 
-  if (title && description && button) {
-    gsap.fromTo(title, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.out' })
-    gsap.fromTo(description, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.out', delay: 0.2 })
-    gsap.fromTo(button, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.out', delay: 0.4 })
+  const titleElement = document.querySelector('.title')
+  const descriptionElement = document.querySelector('.description')
+  const buttonElement = document.querySelector('.action-button')
+
+  if (titleElement && descriptionElement && buttonElement) {
+    gsap.fromTo(titleElement, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.out' })
+    gsap.fromTo(descriptionElement, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.out', delay: 0.2 })
+    gsap.fromTo(buttonElement, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.out', delay: 0.4 })
   }
 }
 
@@ -62,30 +65,30 @@ onMounted(() => {
   }
   resetProgressBar()
   updateIndicators()
-  animateText()
+  animateText() 
   setTimeout(animateSlides, duration)
 })
 </script>
 
 <template>
   <div class="relative w-full h-[95vh] flex overflow-hidden">
-    <div class="absolute w-full h-full bg-black/50 z-40"></div>
     <div ref="slideContainer" class="flex h-full relative">
       <div v-for="(image, index) in images" :key="index" class="flex flex-col items-center justify-center" style="flex: 0 0 100%">
         <img :src="image.src" alt="Image" class="object-cover" />
-        <div class="w-full mx-auto z-50" >
-          <h2 class="title text-white text-2xl mt-4">
-            {{ image.title }}
-          </h2>
-          <p class="description text-white text-center mt-2">
-            {{ image.description }}
-          </p>
-          <button class="action-button mt-4 px-4 py-2 bg-red-500 text-white rounded">
-            En savoir plus
-          </button>
-        </div>
       </div>
     </div>
+    <div class="absolute space-y-9 w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 text-center">
+      <h2 class="title text-white text-2xl md:text-4xl lg:text-7xl font-semibold mt-4">
+        {{ images[currentIndex].title }}
+      </h2>
+      <p class="description text-white text-xl md:text-xl lg:text-2xl text-center">
+        {{ images[currentIndex].description }}
+      </p>
+      <button class="action-button px-4 py-3 border border-white hover:border-red-500 hover:bg-red-500 transition text-white rounded">
+        En savoir plus
+      </button>
+    </div>
+    <div class="absolute w-full h-full bg-black/50 z-10"></div>
     <div ref="progressBar" class="absolute z-50 bottom-0 left-0 h-2 bg-red-500" />
     <div class="absolute bottom-4 left-0 right-0 flex justify-center z-50">
       <div v-for="(image, index) in images" :key="index" class="indicator w-4 h-4 rounded-full border border-white mx-1 transition-all duration-300" :style="{ backgroundColor: index === currentIndex ? 'white' : 'transparent' }" />
