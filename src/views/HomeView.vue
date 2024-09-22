@@ -10,7 +10,7 @@ const currentIndex = ref(0)
 const slideContainer = ref<HTMLElement | null>(null)
 const progressBar = ref<HTMLElement | null>(null)
 
-const duration = 2000 // Durée d'affichage de chaque image en ms
+const duration = 2000 // Durée totale pour chaque image
 
 const animateSlides = () => {
   gsap.to(slideContainer.value, {
@@ -20,7 +20,8 @@ const animateSlides = () => {
     onComplete: () => {
       currentIndex.value = (currentIndex.value + 1) % images.value.length
       resetProgressBar()
-      setTimeout(animateSlides, 2000) 
+      updateIndicators()
+      setTimeout(animateSlides, duration) 
     }
   })
 }
@@ -30,10 +31,20 @@ const resetProgressBar = () => {
     gsap.set(progressBar.value, { width: '0%' })
     gsap.to(progressBar.value, {
       width: '100%',
-      duration: duration / 1000,
+      duration: duration / 1000, 
       ease: 'linear'
     })
   }
+}
+
+const updateIndicators = () => {
+  const indicators = document.querySelectorAll('.indicator')
+  indicators.forEach((indicator, index) => {
+    gsap.to(indicator, {
+      backgroundColor: index === currentIndex.value ? 'white' : 'transparent',
+      duration: 0.1
+    })
+  })
 }
 
 onMounted(() => {
@@ -41,7 +52,8 @@ onMounted(() => {
     slideContainer.value.style.width = `${images.value.length * 100}%`
   }
   resetProgressBar()
-  setTimeout(animateSlides, 2000) 
+  updateIndicators()
+  setTimeout(animateSlides, duration) 
 })
 </script>
 
@@ -49,7 +61,6 @@ onMounted(() => {
   <Header />
   <main class="relative w-full h-[90vh] flex overflow-hidden">
     <div ref="slideContainer" class="flex h-full">
-      
       <img
         v-for="(image, index) in images"
         :key="index"
@@ -59,7 +70,15 @@ onMounted(() => {
         style="flex: 0 0 100%"
       />
     </div>
-    <div ref="progressBar" class="absolute bottom-0 left-0 h-1 bg-green-500" />
+    <div ref="progressBar" class="absolute bottom-0 left-0 h-2 bg-red-500" />
+    <div class="absolute bottom-4 left-0 right-0 flex justify-center">
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        class="indicator w-4 h-4 rounded-full border border-white mx-1 transition-all duration-300"
+        :style="{ backgroundColor: index === currentIndex ? 'white' : 'transparent' }"
+      />
+    </div>
   </main>
 </template>
 
@@ -67,12 +86,7 @@ onMounted(() => {
 .flex {
   display: flex;
 }
-.progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 5px; /* Hauteur de l'indicateur */
-  background-color: green; /* Couleur de l'indicateur */
-  transition: width 0.5s; /* Transition pour un remplissage fluide */
+.indicator {
+  transition: background-color 0.5s;
 }
 </style>
