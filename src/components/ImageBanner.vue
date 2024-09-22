@@ -74,7 +74,7 @@ onMounted(() => {
   <div class="relative w-full h-[95vh] flex overflow-hidden">
     <div ref="slideContainer" class="flex h-full relative">
       <div v-for="(image, index) in images" :key="index" class="flex flex-col items-center justify-center" style="flex: 0 0 100%">
-        <img :src="image.src" alt="Image" class="object-cover" />
+        <img :src="image.src" alt="Image" class="object-cover absolute h-full w-full" />
       </div>
     </div>
     <div class="absolute space-y-9 w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 text-center">

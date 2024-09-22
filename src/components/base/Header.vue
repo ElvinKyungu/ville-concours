@@ -126,7 +126,7 @@ onUnmounted(() => {
     >
       <button
         v-if="showButton"
-        class="sidebar__menu-trigger w-20 h-20 fixed border text-gray-800 group bg-black/10 backdrop-blur-md md:flex flex-col gap-4 ul rounded-full top-1/2 -translate-y-1/2 left-10 lg:left-20 items-center justify-center animate-pulse"
+        class="sidebar__menu-trigger hidden w-20 h-20 fixed border text-gray-800 group bg-black/10 backdrop-blur-md md:flex flex-col gap-4 ul rounded-full top-1/2 -translate-y-1/2 left-10 lg:left-20 items-center justify-center animate-pulse"
         @click="open_menu"
       >
         <span
