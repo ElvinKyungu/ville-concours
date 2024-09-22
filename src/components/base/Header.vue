@@ -2,19 +2,12 @@
 import { ref, nextTick } from "vue"
 // import { useDark } from "@vueuse/core"
 import gsap from "gsap"
-import IconBars from "../icons/IconBars.vue"
-import IconClose from "../icons/IconClose.vue"
-import IconLinkedin from "../icons/IconLinkedin.vue"
-// import IconsGithub from "../icons/IconsGithub.vue"
-// import IconMoon from "../icons/IconMoon.vue"
-// import IconSun from "../icons/IconSun.vue"
-// import IconX from "../icons/IconX.vue"
-import IconArrowGrowUp from "../icons/IconArrowGrowUp.vue"
-// const isDark = useDark()
+import IconBars from "@/components/icons/IconBars.vue"
+import IconClose from "@/components/icons/IconClose.vue"
+import IconInstagram from "@/components/icons/IconInstagram.vue"
+import IconX from "@/components/icons/IconX.vue"
+import IconArrowGrowUp from "@/components/icons/IconArrowGrowUp.vue"
 
-// const toggleDark = () => {
-//   isDark.value = !isDark.value;
-// };
 function open_menu() {
   const tl = gsap.timeline();
   tl.to(".container--menu", {
@@ -82,12 +75,12 @@ function close_menu() {
   return tl
 }
 const menuItems = [
-  { name: 'Home', route: '/' },
-  { name: 'About', route: '/about' },
-  { name: 'Projects', route: '/projects' },
-  { name: 'Testimonials', route: '/testimonials' },
-  { name: 'Experiences', route: '/experiences' },
-  { name: 'Conferences', route: '/conferences' }
+  { name: 'Accueil', route: '/' },
+  { name: 'A propos', route: '/about' },
+  { name: 'FAQ', route: '/projects' },
+  { name: 'Témoignages', route: '/testimonials' },
+  { name: 'Endroits touristique', route: '/experiences' },
+  { name: 'Contact', route: '/contact' }
 ]
 
 const enter = (event: MouseEvent) => {
@@ -127,6 +120,12 @@ const leave = (event: MouseEvent) => {
           <ul class="flex gap-5">
             <li>Que faire à Tokyo</li>
             <li>Espace touristique</li>
+            <li>
+              <IconInstagram class="text-white"/>
+            </li>
+            <li>
+              <IconX class="text-white"/>
+            </li>
           </ul>
         </li>
         <li class="cursor-pointer md:hidden flex">
@@ -154,7 +153,6 @@ const leave = (event: MouseEvent) => {
           <button class="sidebar__menu-trigger menu__right" @click="close_menu">
             <IconClose
               class="w-10 h-10"
-             
             />
           </button>
         </div>

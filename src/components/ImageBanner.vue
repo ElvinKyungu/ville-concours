@@ -3,7 +3,11 @@ import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 
 const props = defineProps<{
-  images: string[]
+  images: { 
+    src: string, 
+    title: string, 
+    description: string 
+  }[]
 }>()
 
 const currentIndex = ref(0)
@@ -20,6 +24,7 @@ const animateSlides = () => {
       currentIndex.value = (currentIndex.value + 1) % props.images.length
       resetProgressBar()
       updateIndicators()
+      animateText()
       setTimeout(animateSlides, duration)
     }
   })
@@ -28,21 +33,27 @@ const animateSlides = () => {
 const resetProgressBar = () => {
   if (progressBar.value) {
     gsap.set(progressBar.value, { width: '0%' })
-    gsap.to(progressBar.value, {
-      width: '100%',
-      duration: 1,
-      ease: 'linear'
-    })
+    gsap.to(progressBar.value, { width: '100%', duration: 1, ease: 'linear' })
   }
 }
 
 const updateIndicators = () => {
   const indicators = document.querySelectorAll('.indicator')
   indicators.forEach((indicator, index) => {
-    gsap.to(indicator, {
-      backgroundColor: index === currentIndex.value ? 'white' : 'transparent',
-    })
+    gsap.to(indicator, { backgroundColor: index === currentIndex.value ? 'white' : 'transparent' })
   })
+}
+
+const animateText = () => {
+  const title = document.querySelector('.title')
+  const description = document.querySelector('.description')
+  const button = document.querySelector('.action-button')
+
+  if (title && description && button) {
+    gsap.fromTo(title, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.out' })
+    gsap.fromTo(description, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.out', delay: 0.2 })
+    gsap.fromTo(button, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.out', delay: 0.4 })
+  }
 }
 
 onMounted(() => {
@@ -51,29 +62,33 @@ onMounted(() => {
   }
   resetProgressBar()
   updateIndicators()
-  setTimeout(animateSlides, duration) 
+  animateText()
+  setTimeout(animateSlides, duration)
 })
 </script>
+
 <template>
-  <div class="relative w-full h-[90vh] flex overflow-hidden">
-    <div ref="slideContainer" class="flex h-full">
-      <img
-        v-for="(image, index) in images"
-        :key="index"
-        :src="image"
-        alt="Image"
-        class="object-cover"
-        style="flex: 0 0 100%"
-      />
+  <div class="relative w-full h-[95vh] flex overflow-hidden">
+    <div class="absolute w-full h-full bg-black/50 z-40"></div>
+    <div ref="slideContainer" class="flex h-full relative">
+      <div v-for="(image, index) in images" :key="index" class="flex flex-col items-center justify-center" style="flex: 0 0 100%">
+        <img :src="image.src" alt="Image" class="object-cover" />
+        <div class="w-full mx-auto z-50" >
+          <h2 class="title text-white text-2xl mt-4">
+            {{ image.title }}
+          </h2>
+          <p class="description text-white text-center mt-2">
+            {{ image.description }}
+          </p>
+          <button class="action-button mt-4 px-4 py-2 bg-red-500 text-white rounded">
+            En savoir plus
+          </button>
+        </div>
+      </div>
     </div>
-    <div ref="progressBar" class="absolute bottom-0 left-0 h-2 bg-red-500" />
-    <div class="absolute bottom-4 left-0 right-0 flex justify-center">
-      <div
-        v-for="(image, index) in images"
-        :key="index"
-        class="indicator w-4 h-4 rounded-full border border-white mx-1 transition-all duration-300"
-        :style="{ backgroundColor: index === currentIndex ? 'white' : 'transparent' }"
-      />
+    <div ref="progressBar" class="absolute z-50 bottom-0 left-0 h-2 bg-red-500" />
+    <div class="absolute bottom-4 left-0 right-0 flex justify-center z-50">
+      <div v-for="(image, index) in images" :key="index" class="indicator w-4 h-4 rounded-full border border-white mx-1 transition-all duration-300" :style="{ backgroundColor: index === currentIndex ? 'white' : 'transparent' }" />
     </div>
   </div>
 </template>
