@@ -3,12 +3,13 @@ import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { gsap } from 'gsap'
 import IconSearch from '../icons/IconSearch.vue'
 
+const basePlaceholder = 'Cherchez-vous '
 const keywords = ref([
-  'un lieu', 
-  'une sortie', 
-  'une demanche', 
-  'une actualité', 
-  'un événement'
+  'un lieu ?', 
+  'une sortie ?', 
+  'une demanche ?', 
+  'une actualité ?', 
+  'un événement ?'
 ])
 const currentKeywordIndex = ref(0)
 const inputValue = ref('')
@@ -35,7 +36,7 @@ const animatePlaceholder = () => {
 
 const updatePlaceholder = () => {
   if (input.value) {
-    input.value.placeholder = `De quelle recherche souhaitez-vous effectuer ? ${keywords.value[currentKeywordIndex.value]}`
+    input.value.placeholder = `${basePlaceholder} ${keywords.value[currentKeywordIndex.value]}`
   }
 }
 
@@ -75,14 +76,14 @@ watch(inputValue, (newValue) => {
 </script>
 
 <template>
-  <div class="mx-auto flex max-w-6xl py-5 px-5 rounded-full bg-white/20">
+  <div class="mx-auto flex max-w-6xl py-5 px-5 rounded-full border border-gray-500">
     <input 
       type="text" 
-      class="keyword-input placeholder:text-white outline-none text-white text-2xl w-full bg-transparent" 
+      class="keyword-input placeholder:text-gray-500 outline-none text-white text-2xl w-full bg-transparent" 
       @input="handleInput" 
       ref="keywordInput" 
     />
-    <IconSearch class="w-10 h-10 text-white cursor-pointer" />
+    <IconSearch class="w-10 h-10 text-gray-500 cursor-pointer" />
   </div>
 </template>
 

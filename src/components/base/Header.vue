@@ -149,7 +149,7 @@ onUnmounted(() => {
           <router-link to="/" class="text-3xl">Tokyo city</router-link>
         </li>
         <li class="cursor-pointer hidden md:flex">
-          <ul class="flex gap-5">
+          <ul class="flex gap-5 text-lg">
             <li>Que faire à Tokyo</li>
             <li>Espace touristique</li>
             <li @click="togglePopup">
