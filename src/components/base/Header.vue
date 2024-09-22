@@ -140,11 +140,11 @@ onUnmounted(() => {
         @click="open_menu"
       >
         <span
-          class="absolute w-full h-full rounded-full bg-white/20 opacity-70 transition-opacity duration-1000 ease-in-out animate-pulse"
+          class="absolute w-full h-full rounded-full bg-red-500/50 opacity-70 transition-opacity duration-1000 ease-in-out animate-pulse"
         ></span>
         <IconBars class="w-10 h-10 relative z-10 text-white" />
       </button>
-      <ul class="fixed bg-black/50 text-white backdrop-blur-md items-center w-full flex justify-between py-6 px-5 space-x-5 z-50">
+      <ul class="fixed bg-red-500/70 text-white backdrop-blur-sm items-center w-full flex justify-between py-6 px-5 space-x-5 z-50">
         <li class="cursor-pointer">
           <router-link to="/" class="text-3xl">Tokyo city</router-link>
         </li>
@@ -172,14 +172,14 @@ onUnmounted(() => {
     </nav>
     <div class="containers">
       <div
-        class="container container--menu bg-black/50 text-white h-full backdrop-blur-md flex justify-between px-20 py-10"
+        class="container container--menu bg-red-500/50 text-white h-full backdrop-blur-sm flex justify-between px-20 py-10"
       >
         <div class="menu__layout">
           <ul class="menu__left text-xl space-y-5">
             <li v-for="item in menuItems" :key="item.name" @mouseenter="enter" @mouseleave="leave" class="menu-item">
-              <router-link :to="item.route" class="flex gap-4 items-center">
+              <router-link :to="item.route" class="flex gap-4 text-black items-center">
                 {{ item.name }}
-                <span ref="icons" class="icon"><IconArrowGrowUp /></span>
+                <span ref="icons" class="icon"><IconArrowGrowUp class="text-black" /></span>
               </router-link>
             </li>
           </ul>

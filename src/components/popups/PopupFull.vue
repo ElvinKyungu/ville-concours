@@ -21,7 +21,7 @@ const { beforeEnter, enter, leave } = usePopupAnimation()
 <template>
   <transition name="fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
     <div v-if="isOpen" class="popup-backdrop cursor-pointer backdrop-blur-md" @click="closePopup">
-      <div ref="popupContent" class="popup-content rounded-xl p-7 cursor-default" @click.stop>
+      <div ref="popupContent" class="popup-content bg-red-500/50 rounded-xl p-7 cursor-default" @click.stop>
         <button @click="closePopup" class="close-btn">
           <IconClose class="w-9 h-9 text-white" />
         </button>
@@ -48,7 +48,6 @@ const { beforeEnter, enter, leave } = usePopupAnimation()
 .popup-content {
   width: 80%;
   height: 95%;
-  background: black;
   position: relative;
   border-radius: 8px;
   overflow: auto;

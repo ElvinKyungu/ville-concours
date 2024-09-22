@@ -43,7 +43,6 @@ const handleInput = (event: Event) => {
   const target = event.target as HTMLInputElement
   inputValue.value = target.value
 
-  // Arrêter l'animation si l'utilisateur commence à saisir du texte
   if (inputValue.value) {
     isAnimating.value = false
     if (animationInterval) clearInterval(animationInterval)
@@ -55,15 +54,13 @@ const handleInput = (event: Event) => {
 
 const startAnimation = () => {
   updatePlaceholder()
-  animationInterval = setInterval(animatePlaceholder, 2000)
+  animationInterval = setInterval(animatePlaceholder, 3000)
 }
 
 onMounted(() => {
-  // Initial placeholder display
   input.value = document.querySelector('.keyword-input') as HTMLInputElement
   startAnimation()
 
-  // Nettoyage de l'intervalle lors de la destruction du composant
   onBeforeUnmount(() => {
     if (animationInterval) clearInterval(animationInterval)
   })
@@ -71,7 +68,6 @@ onMounted(() => {
 
 watch(inputValue, (newValue) => {
   if (!newValue && !isAnimating.value) {
-    // Redémarrer l'animation lorsque l'utilisateur efface tout
     isAnimating.value = true
     startAnimation()
   }
@@ -79,10 +75,10 @@ watch(inputValue, (newValue) => {
 </script>
 
 <template>
-  <div class="mx-auto flex max-w-6xl py-5 px-5 bg-white/20">
+  <div class="mx-auto flex max-w-6xl py-5 px-5 rounded-full bg-white/20">
     <input 
       type="text" 
-      class="keyword-input outline-none text-white text-2xl w-full bg-transparent" 
+      class="keyword-input placeholder:text-white outline-none text-white text-2xl w-full bg-transparent" 
       @input="handleInput" 
       ref="keywordInput" 
     />
