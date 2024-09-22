@@ -8,6 +8,14 @@ import IconInstagram from "@/components/icons/IconInstagram.vue"
 import IconX from "@/components/icons/IconX.vue"
 import IconArrowGrowUp from "@/components/icons/IconArrowGrowUp.vue"
 import  IconSearch from "../icons/IconSearch.vue"
+import PopupFull from '@/components/popups/PopupFull.vue'
+
+const showPopup = ref(false)
+
+const togglePopup = () => {
+  showPopup.value = !showPopup.value
+}
+
 
 function open_menu() {
   const tl = gsap.timeline();
@@ -143,7 +151,7 @@ onUnmounted(() => {
           <ul class="flex gap-5">
             <li>Que faire à Tokyo</li>
             <li>Espace touristique</li>
-            <li>
+            <li @click="togglePopup">
               <IconSearch class="text-white"/>
             </li>
             <li>
@@ -185,6 +193,9 @@ onUnmounted(() => {
       </div>
     </div>
   </header>
+  <PopupFull :isOpen="showPopup" @close="togglePopup">
+    jjgg
+  </PopupFull>
 </template>
 <style scoped>
 .container--menu,

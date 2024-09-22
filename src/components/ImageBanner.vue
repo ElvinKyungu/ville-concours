@@ -71,7 +71,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative w-full h-[95vh] flex overflow-hidden">
+  <div class="relative w-full h-[100vh] flex overflow-hidden">
     <div ref="slideContainer" class="flex h-full relative">
       <div v-for="(image, index) in images" :key="index" class="flex flex-col items-center justify-center" style="flex: 0 0 100%">
         <img :src="image.src" alt="Image" class="object-cover absolute h-full w-full" />

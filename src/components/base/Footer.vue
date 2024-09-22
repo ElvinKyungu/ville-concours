@@ -25,7 +25,7 @@
     </div>
     <hr class="my-6 border-gray-300 sm:mx-auto lg:my-8" />
     <span class="block text-sm text-gray-700 sm:text-center">
-      © 2023 
+      © 2024
       <router-link  to="/" class="hover:underline">
         Tokyo city
       </router-link>
