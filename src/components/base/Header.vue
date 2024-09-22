@@ -7,6 +7,7 @@ import IconClose from "@/components/icons/IconClose.vue"
 import IconInstagram from "@/components/icons/IconInstagram.vue"
 import IconX from "@/components/icons/IconX.vue"
 import IconArrowGrowUp from "@/components/icons/IconArrowGrowUp.vue"
+import  IconSearch from "../icons/IconSearch.vue"
 
 function open_menu() {
   const tl = gsap.timeline();
@@ -132,7 +133,7 @@ onUnmounted(() => {
         <span
           class="absolute w-full h-full rounded-full bg-white/20 opacity-70 transition-opacity duration-1000 ease-in-out animate-pulse"
         ></span>
-        <IconBars class="w-10 h-10 relative z-10" />
+        <IconBars class="w-10 h-10 relative z-10 text-white" />
       </button>
       <ul class="fixed bg-black/50 text-white backdrop-blur-md items-center w-full flex justify-between py-6 px-5 space-x-5 z-50">
         <li class="cursor-pointer">
@@ -142,6 +143,9 @@ onUnmounted(() => {
           <ul class="flex gap-5">
             <li>Que faire à Tokyo</li>
             <li>Espace touristique</li>
+            <li>
+              <IconSearch class="text-white"/>
+            </li>
             <li>
               <IconInstagram class="text-white"/>
             </li>
