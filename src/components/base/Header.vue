@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, nextTick } from "vue"
+import { ref, onUnmounted, onMounted } from "vue"
 // import { useDark } from "@vueuse/core"
 import gsap from "gsap"
 import IconBars from "@/components/icons/IconBars.vue"
@@ -92,7 +92,30 @@ const leave = (event: MouseEvent) => {
   const icon = (event.currentTarget as HTMLElement).querySelector('.icon')
   gsap.to(icon, { opacity: 0, x: -20, duration: 0.2, ease: 'power2.in' })
 }
+const showButton = ref(false)
 
+const checkScroll = () => {
+  const scrollPosition = window.scrollY || window.pageYOffset
+  const windowHeight = window.innerHeight
+  const documentHeight = document.documentElement.scrollHeight
+
+  if (scrollPosition > documentHeight * 0.4 - windowHeight) {
+    if (!showButton.value) {
+      showButton.value = true
+      gsap.fromTo('.sidebar__menu-trigger', { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5 })
+    }
+  } else {
+    showButton.value = false
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', checkScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', checkScroll)
+})
 </script>
 
 <template>
@@ -102,15 +125,14 @@ const leave = (event: MouseEvent) => {
       "
     >
       <button
-        class="sidebar__menu-trigger w-20 h-20 fixed hidden border text-gray-800 group bg-black/10 backdrop-blur-md md:flex flex-col gap-4 ul rounded-full top-1/2 -translate-y-1/2 left-10 lg:left-20 items-center justify-center animate-pulse"
+        v-if="showButton"
+        class="sidebar__menu-trigger w-20 h-20 fixed border text-gray-800 group bg-black/10 backdrop-blur-md md:flex flex-col gap-4 ul rounded-full top-1/2 -translate-y-1/2 left-10 lg:left-20 items-center justify-center animate-pulse"
         @click="open_menu"
       >
         <span
           class="absolute w-full h-full rounded-full bg-white/20 opacity-70 transition-opacity duration-1000 ease-in-out animate-pulse"
         ></span>
-        <IconBars
-          class="w-10 h-10 relative z-10"
-        />
+        <IconBars class="w-10 h-10 relative z-10" />
       </button>
       <ul class="fixed bg-black/50 text-white backdrop-blur-md items-center w-full flex justify-between py-6 px-5 space-x-5 z-50">
         <li class="cursor-pointer">

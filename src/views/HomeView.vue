@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Header from '@/components/base/Header.vue'
+import Footer from '@/components/base/Footer.vue'
 import ImageBanner from '@/components/ImageBanner.vue'
 import image1 from '@/assets/tokyo-1.avif'
 import image2 from '@/assets/tokyo-2.avif'
@@ -21,4 +22,5 @@ const imagesList = [
 <template>
   <Header />
   <ImageBanner :images="imagesList" />
+  <Footer/>
 </template>
