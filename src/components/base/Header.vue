@@ -10,14 +10,46 @@ import IconArrowGrowUp from "@/components/icons/IconArrowGrowUp.vue"
 import  IconSearch from "../icons/IconSearch.vue"
 import PopupFull from '@/components/popups/PopupFull.vue'
 import Input from "../Form/Input.vue"
+import HoverPlaces from "../HoverPlaces.vue"
+import HoverWhyTokyo from "../HoverWhyTokyo.vue"
 
 const showPopup = ref(false)
+const showHoverWhyTokyo = ref(false)
+const showHoverPlaces = ref(false)
+let hoverComponentRef = ref<HTMLElement | null>(null)
 
 const togglePopup = () => {
   showPopup.value = !showPopup.value
 }
 
+const handleHoverEnter = (component: string) => {
+  if (component === 'whyTokyo') {
+    showHoverWhyTokyo.value = true
+    showHoverPlaces.value = false
+  } else if (component === 'places') {
+    showHoverPlaces.value = true
+    showHoverWhyTokyo.value = false
+  }
+  animateHoverComponent()
+}
 
+const handleHoverLeave = () => {
+  // Add a small delay to ensure the hover event on the component is captured
+  setTimeout(() => {
+    if (!hoverComponentRef.value?.matches(':hover')) {
+      showHoverWhyTokyo.value = false
+      showHoverPlaces.value = false
+    }
+  }, 100)
+}
+
+const animateHoverComponent = () => {
+  gsap.fromTo(
+    ".hover-component",
+    { y: -50, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
+  )
+}
 function open_menu() {
   const tl = gsap.timeline();
   tl.to(".container--menu", {
@@ -144,14 +176,24 @@ onUnmounted(() => {
         ></span>
         <IconBars class="w-10 h-10 relative z-10 text-white" />
       </button>
-      <ul class="fixed bg-red-500/70 text-white backdrop-blur-sm items-center w-full flex justify-between py-6 px-5 space-x-5 z-50">
+      <ul class="fixed  bg-red-500/70 text-white backdrop-blur-sm items-center w-full flex justify-between py-6 px-5 space-x-5 z-50">
         <li class="cursor-pointer">
           <router-link to="/" class="text-3xl">Tokyo city</router-link>
         </li>
         <li class="cursor-pointer hidden md:flex">
           <ul class="flex gap-5 text-lg">
-            <li>Que faire à Tokyo</li>
-            <li>Espace touristique</li>
+            <li
+              @mouseenter="handleHoverEnter('whyTokyo')" 
+              @mouseleave="handleHoverLeave"
+            >
+              Que faire à Tokyo
+            </li>
+            <li
+              @mouseenter="handleHoverEnter('places')" 
+              @mouseleave="handleHoverLeave"
+            >
+              Espace touristique
+            </li>
             <li @click="togglePopup">
               <IconSearch class="text-white"/>
             </li>
@@ -170,6 +212,24 @@ onUnmounted(() => {
         </li>
       </ul>
     </nav>
+    <div 
+      v-if="showHoverWhyTokyo" 
+      class="hover-component backdrop-blur-sm bg-red-500/50" 
+      ref="hoverComponentRef" 
+      @mouseenter="showHoverWhyTokyo = true" 
+      @mouseleave="handleHoverLeave"
+    >
+      <HoverWhyTokyo />
+    </div>
+    <div 
+      v-if="showHoverPlaces" 
+      class="hover-component backdrop-blur-sm bg-red-500/50" 
+      ref="hoverComponentRef" 
+      @mouseenter="showHoverPlaces = true" 
+      @mouseleave="handleHoverLeave"
+    >
+      <HoverPlaces />
+    </div>
     <div class="containers">
       <div
         class="container container--menu bg-red-500/50 text-white h-full backdrop-blur-sm flex justify-between px-20 py-10"
@@ -228,4 +288,12 @@ onUnmounted(() => {
   transform: translateX(-20px);
   transition: opacity 0.1s ease, transform 0.1s ease;
 }
+.hover-component {
+  position: fixed;
+  top: 70px; /* Adjust this based on your header height */
+  left: 0;
+  width: 100%;
+  height: 40rem;
+  z-index: 99999;
+} 
 </style>

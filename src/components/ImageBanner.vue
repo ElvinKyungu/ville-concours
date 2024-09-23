@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
-
+import HoverPlaces from '@/components/HoverPlaces.vue'
+import HoverWhyTokyo from '@/components/HoverWhyTokyo.vue'
 const props = defineProps<{
   images: { 
     src: string, 
@@ -77,7 +78,7 @@ onMounted(() => {
         <img :src="image.src" alt="Image" class="object-cover absolute h-full w-full" />
       </div>
     </div>
-    <div class="absolute space-y-9 w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 text-center">
+    <div class="absolute space-y-9 w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 text-center">
       <h2 class="title text-white text-2xl md:text-4xl lg:text-7xl font-semibold mt-4">
         {{ images[currentIndex].title }}
       </h2>
