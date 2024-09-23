@@ -22,5 +22,17 @@ const imagesList = [
 <template>
   <Header />
   <ImageBanner :images="imagesList" />
+  <section class="grid bg-red-700 p-5 md:p-7 grid-cols-12 min-h-96 mt-10 w-full">
+    <div class="col-span-12 md:col-span-7 md:px-10 mb-5">
+      <h1 class="text-3xl md:text-4xl lg:text-6xl text-white font-medium">Découvrir la belle ville du monde</h1>
+      <p class="text-lg md:text-xl text-white mt-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nesciunt, sed aut aliquam rem natus amet quis aspernatur deserunt possimus tempora! Vel laborum quia quam eius asperiores magnam nam repellendus?
+      </p>
+      <button class="bg-white py-3 px-5 rounded-md mt-5">En savoir plus</button>
+    </div>
+    <div class="col-span-12 md:col-span-5 flex w-full h-full relative">
+      <img src="@/assets/tokyo-2.avif" alt="" class="rounded-lg h-full w-full">
+    </div>
+  </section>
   <Footer/>
 </template>
