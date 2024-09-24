@@ -7,6 +7,7 @@ import image2 from '@/assets/tokyo-2.avif'
 import TextScroll from '@/components/TextScroll.vue'
 import WalletCardHome from '@/components/WalletCardHome.vue'
 import SectionHighlight from '@/components/SectionHighlight.vue.vue'
+import HomeCardSlider from '@/components/HomeCardSlider.vue'
 
 const imagesList = [
   { 
@@ -107,6 +108,7 @@ const imagesList = [
       <p class="text-lg md:text-xl">Explore some of the ways we're bringing the future of home <br> improvement to life, today. </p>
     </div>
   </section>
+  <HomeCardSlider/>
   <TextScroll/>
   <Footer/>
 </template>
