@@ -230,17 +230,17 @@ onUnmounted(() => {
             <li
               @mouseenter="handleHoverEnter('places')" 
               @mouseleave="handleHoverLeave"
-               class="border-b-4 py-3 border-transparent hover:border-b-white transition "
+              class="border-b-4 py-3 border-transparent hover:border-b-white transition "
             >
               Espace touristique
             </li>
-            <li @click="togglePopup">
+            <li @click="togglePopup"  class="border-b-4 py-3 border-transparent">
               <IconSearch class="text-white"/>
             </li>
-            <li>
+            <li class="border-b-4 py-3 border-transparent">
               <IconInstagram class="text-white"/>
             </li>
-            <li>
+            <li class="border-b-4 py-3 border-transparent">
               <IconX class="text-white"/>
             </li>
           </ul>

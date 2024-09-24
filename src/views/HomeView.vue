@@ -4,7 +4,7 @@ import Footer from '@/components/base/Footer.vue'
 import ImageBanner from '@/components/ImageBanner.vue'
 import image1 from '@/assets/tokyo-1.avif'
 import image2 from '@/assets/tokyo-2.avif'
-
+import CardHome from '@/components/CardHome.vue'
 const imagesList = [
   { 
     src: image1, 
@@ -34,5 +34,6 @@ const imagesList = [
       <img src="@/assets/tokyo-2.avif" alt="" class="rounded-lg h-full w-full">
     </div>
   </section>
+  <CardHome/>
   <Footer/>
 </template>
