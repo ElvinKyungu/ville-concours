@@ -99,6 +99,14 @@ const imagesList = [
   </section>
   <SectionHighlight/>
   <WalletCardHome/>
+  <section class="grid grid-cols-12 px-5 md:px-20 py-10 md:py-20 lg:py-28">
+    <div class="col-span-12 md:col-span-6">
+      <h2 class="text-5xl">Same news of Tokyo</h2>
+    </div>
+    <div class="col-span-12 md:col-span-6">
+      <p class="text-lg md:text-xl">Explore some of the ways we're bringing the future of home <br> improvement to life, today. </p>
+    </div>
+  </section>
   <TextScroll/>
   <Footer/>
 </template>
