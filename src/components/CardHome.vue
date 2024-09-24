@@ -4,8 +4,8 @@ import IconStars from './icons/IconStars.vue'
 import IconHeart from './icons/IconHeart.vue'
 </script>
 <template>
-  <section id="boat_services" class="my-5">
-    <div class="container mx-auto">
+  <section class="my-5 px-5 md:px-20">
+    <div class="mx-auto">
       <h1 class="text-6xl mt-20 mb-10 text-center">Vivez vos belles vacances à Tokyo</h1>
       <div class="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 xs:grid-cols-2 gap-4">
         <div class="col-span-1">

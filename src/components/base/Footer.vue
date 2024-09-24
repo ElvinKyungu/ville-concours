@@ -1,10 +1,10 @@
 <template>
-<footer class="flex w-full mt-20">
-  <div class="w-full  mx-auto p-4 md:py-8 md:px-10">
+<footer class="flex w-full mt-20 px-5 md:px-20">
+  <div class="w-full  mx-auto p-4 ">
     <div class="sm:flex sm:items-center sm:justify-between">
       <router-link 
         to="/" 
-        class="flex items-center  sm:mb-0 space-x-3 rtl:space-x-reverse md:text-5xl"
+        class="flex items-center rtl:space-x-reverse text-3xl md:text-5xl"
       >
         Tokyo city
       </router-link>

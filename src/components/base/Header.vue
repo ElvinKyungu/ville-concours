@@ -214,7 +214,7 @@ onUnmounted(() => {
         ></span>
         <IconBars class="w-10 h-10 relative z-10 text-white" />
       </button>
-      <ul class="fixed  bg-red-500/70 text-white backdrop-blur-sm items-center w-full flex justify-between py-3 px-5 space-x-5 z-50">
+      <ul class="fixed px-5 md:px-20  bg-red-500/70 text-white backdrop-blur-sm items-center w-full flex justify-between py-3 space-x-5 z-50">
         <li class="cursor-pointer">
           <router-link to="/" class="text-3xl">Tokyo city</router-link>
         </li>
@@ -264,7 +264,7 @@ onUnmounted(() => {
         <HoverPlaces v-if="hoverContent === 'places'" class="hover-places" />
       </div>
     </div>
-    <div class="containers">
+    <div>
       <div
         class="container container--menu bg-red-500/50 text-white h-full backdrop-blur-sm flex justify-between px-20 py-10"
       >
