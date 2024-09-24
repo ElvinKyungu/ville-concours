@@ -1,6 +1,47 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import { gsap } from 'gsap';
+
+// Définir des refs distincts pour chaque ul
+const listContainer1 = ref<HTMLElement | null>(null);
+const listContainer2 = ref<HTMLElement | null>(null);
+const listContainer3 = ref<HTMLElement | null>(null);
+
+onMounted(() => {
+  if (listContainer1.value) {
+    gsap.from(listContainer1.value?.children, {
+      opacity: 0,
+      y: 50,
+      duration: 0.5,
+      stagger: 0.2,
+      ease: "power2.out"
+    })
+  }
+  
+  if (listContainer2.value) {
+    gsap.from(listContainer2.value?.children, {
+      opacity: 0,
+      y: 50,
+      duration: 0.5,
+      stagger: 0.2,
+      ease: "power2.out" 
+    })
+  }
+  if (listContainer3.value) {
+    gsap.from(listContainer3.value?.children, {
+      opacity: 0,
+      y: 50,
+      duration: 0.5,
+      stagger: 0.2,
+      ease: "power2.out" 
+    })
+  }
+})
+</script>
+
 <template>
   <div class="py-10 max-w-7xl mx-auto flex justify-between">
-    <ul class="space-y-5 flex flex-col w-full">
+    <ul ref="listContainer1" class="space-y-5 flex flex-col w-full">
       <li class="flex gap-3 cursor-pointer">
         <div class="app-result text-white">
           <img
@@ -26,7 +67,7 @@
         </div>
       </li>
     </ul>
-    <ul class="space-y-5 flex flex-col w-full">
+    <ul ref="listContainer2" class="space-y-5 flex flex-col w-full">
       <li class="flex gap-3 cursor-pointer">
         <div class="app-result text-white">
           <img
@@ -52,7 +93,7 @@
         </div>
       </li>
     </ul>
-    <ul class="space-y-5 flex flex-col w-full">
+    <ul ref="listContainer3" class="space-y-5 flex flex-col w-full">
       <li class="flex gap-3 cursor-pointer">
         <div class="app-result text-white">
           <img

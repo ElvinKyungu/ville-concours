@@ -14,41 +14,80 @@ import HoverPlaces from "../HoverPlaces.vue"
 import HoverWhyTokyo from "../HoverWhyTokyo.vue"
 
 const showPopup = ref(false)
-const showHoverWhyTokyo = ref(false)
-const showHoverPlaces = ref(false)
-let hoverComponentRef = ref<HTMLElement | null>(null)
-
+const showHover = ref(false)
+const hoverContent = ref<'whyTokyo' | 'places' | null>(null)
+const hoverComponentRef =  ref<HTMLElement | null>(null);
 const togglePopup = () => {
   showPopup.value = !showPopup.value
 }
 
-const handleHoverEnter = (component: string) => {
-  if (component === 'whyTokyo') {
-    showHoverWhyTokyo.value = true
-    showHoverPlaces.value = false
-  } else if (component === 'places') {
-    showHoverPlaces.value = true
-    showHoverWhyTokyo.value = false
+let hoverTimeout: number | null = null; 
+const handleHoverEnter = (component: 'whyTokyo' | 'places') => {
+  clearHoverTimeout();
+  if (hoverContent.value !== component) {
+    hoverContent.value = component; 
+    showHover.value = true;
+    animateContainerIn()
+    animateContentIn(component)
+  } else {
+    showHover.value = true
   }
-  animateHoverComponent()
-}
+};
 
 const handleHoverLeave = () => {
-    setTimeout(() => {
+  hoverTimeout = window.setTimeout(() => {
     if (!hoverComponentRef.value?.matches(':hover')) {
-      showHoverWhyTokyo.value = false
-      showHoverPlaces.value = false
+      animateContentOut(() => {
+        showHover.value = false;
+        hoverContent.value = null; 
+      });
     }
-  }, 100)
-}
+  }, 300); 
+};
 
-const animateHoverComponent = () => {
+const clearHoverTimeout = () => {
+  if (hoverTimeout !== null) {
+    clearTimeout(hoverTimeout);
+    hoverTimeout = null;
+  }
+};
+
+const animateContainerIn = () => {
   gsap.fromTo(
-    ".hover-component",
-    { y: -50, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
-  )
-}
+    '.hover-component', 
+    { y: 0, opacity: 0 }, 
+    { y: 0, opacity: 1, duration: 0.2, ease: 'power2.out' } 
+  );
+};
+
+
+const animateContentIn = (component: 'whyTokyo' | 'places') => {
+  const direction = component === 'whyTokyo' ? 100 : -100;
+
+  gsap.fromTo(
+    '.hover-content', 
+    { x: 0, opacity: 0 },
+    { x: 0, opacity: 1, duration: 0.2, ease: 'power2.out' } 
+  );
+};
+
+
+const animateContentOut = (onComplete: () => void) => {
+  const direction = hoverContent.value === 'whyTokyo' ? 0 : 0; 
+
+  gsap.to('.hover-content', {
+    opacity: 0,
+    x: direction, 
+    duration: 0.2, 
+    ease: 'power2.in',
+    onComplete,
+  });
+};
+
+onUnmounted(() => {
+  clearHoverTimeout();
+});
+
 function open_menu() {
   const tl = gsap.timeline();
   tl.to(".container--menu", {
@@ -213,23 +252,17 @@ onUnmounted(() => {
         </li>
       </ul>
     </nav>
-    <div 
-      v-if="showHoverWhyTokyo" 
-      class="hover-component backdrop-blur-sm bg-red-500/50" 
-      ref="hoverComponentRef" 
-      @mouseenter="showHoverWhyTokyo = true" 
+    <div
+      v-if="showHover"
+      ref="hoverComponentRef"
+      class="hover-component backdrop-blur-sm bg-red-500/50"
+      @mouseenter="clearHoverTimeout()"
       @mouseleave="handleHoverLeave"
     >
-      <HoverWhyTokyo />
-    </div>
-    <div 
-      v-if="showHoverPlaces" 
-      class="hover-component backdrop-blur-sm bg-red-500/50" 
-      ref="hoverComponentRef" 
-      @mouseenter="showHoverPlaces = true" 
-      @mouseleave="handleHoverLeave"
-    >
-      <HoverPlaces />
+      <div class="hover-content">
+        <HoverWhyTokyo v-if="hoverContent === 'whyTokyo'" class="hover-whyTokyo"/>
+        <HoverPlaces v-if="hoverContent === 'places'" class="hover-places" />
+      </div>
     </div>
     <div class="containers">
       <div
@@ -297,4 +330,7 @@ onUnmounted(() => {
   height: 20rem;
   z-index: 99999;
 } 
+.hover-content {
+  
+}
 </style>

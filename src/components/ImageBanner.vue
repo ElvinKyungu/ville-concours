@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
-import HoverPlaces from '@/components/HoverPlaces.vue'
-import HoverWhyTokyo from '@/components/HoverWhyTokyo.vue'
 const props = defineProps<{
   images: { 
     src: string, 
