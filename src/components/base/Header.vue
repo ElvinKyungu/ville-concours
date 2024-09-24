@@ -34,8 +34,7 @@ const handleHoverEnter = (component: string) => {
 }
 
 const handleHoverLeave = () => {
-  // Add a small delay to ensure the hover event on the component is captured
-  setTimeout(() => {
+    setTimeout(() => {
     if (!hoverComponentRef.value?.matches(':hover')) {
       showHoverWhyTokyo.value = false
       showHoverPlaces.value = false
@@ -176,7 +175,7 @@ onUnmounted(() => {
         ></span>
         <IconBars class="w-10 h-10 relative z-10 text-white" />
       </button>
-      <ul class="fixed  bg-red-500/70 text-white backdrop-blur-sm items-center w-full flex justify-between py-6 px-5 space-x-5 z-50">
+      <ul class="fixed  bg-red-500/70 text-white backdrop-blur-sm items-center w-full flex justify-between py-3 px-5 space-x-5 z-50">
         <li class="cursor-pointer">
           <router-link to="/" class="text-3xl">Tokyo city</router-link>
         </li>
@@ -185,12 +184,14 @@ onUnmounted(() => {
             <li
               @mouseenter="handleHoverEnter('whyTokyo')" 
               @mouseleave="handleHoverLeave"
+              class="border-b-4 py-3 border-transparent hover:border-b-white transition "
             >
               Que faire à Tokyo
             </li>
             <li
               @mouseenter="handleHoverEnter('places')" 
               @mouseleave="handleHoverLeave"
+               class="border-b-4 py-3 border-transparent hover:border-b-white transition "
             >
               Espace touristique
             </li>
@@ -290,10 +291,10 @@ onUnmounted(() => {
 }
 .hover-component {
   position: fixed;
-  top: 70px; /* Adjust this based on your header height */
+  top: 80px;
   left: 0;
   width: 100%;
-  height: 40rem;
+  height: 20rem;
   z-index: 99999;
 } 
 </style>
