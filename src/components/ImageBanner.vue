@@ -88,8 +88,8 @@ onMounted(() => {
       </button>
     </div>
     <div class="absolute w-full h-full bg-black/50 z-10"></div>
-    <div ref="progressBar" class="absolute z-50 bottom-0 left-0 h-2 bg-red-500" />
-    <div class="absolute bottom-4 left-0 right-0 flex justify-center z-50">
+    <div ref="progressBar" class="absolute z-40 bottom-0 left-0 h-2 bg-white" />
+    <div class="absolute bottom-4 left-0 right-0 flex justify-center z-40">
       <div v-for="(image, index) in images" :key="index" class="indicator w-4 h-4 rounded-full border border-white mx-1 transition-all duration-300" :style="{ backgroundColor: index === currentIndex ? 'white' : 'transparent' }" />
     </div>
   </div>

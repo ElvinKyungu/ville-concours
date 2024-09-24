@@ -210,11 +210,11 @@ onUnmounted(() => {
         @click="open_menu"
       >
         <span
-          class="absolute w-full h-full rounded-full bg-red-500/50 opacity-70 transition-opacity duration-1000 ease-in-out animate-pulse"
+          class="absolute w-full h-full rounded-full bg-black opacity-70 transition-opacity duration-1000 ease-in-out animate-pulse"
         ></span>
         <IconBars class="w-10 h-10 relative z-10 text-white" />
       </button>
-      <ul class="fixed px-5 md:px-20  bg-red-500/70 text-white backdrop-blur-sm items-center w-full flex justify-between py-3 space-x-5 z-50">
+      <ul class="fixed px-5 md:px-20  bg-black/40 text-white backdrop-blur-sm items-center w-full flex justify-between py-3 space-x-5 z-50">
         <li class="cursor-pointer">
           <router-link to="/" class="text-3xl">Tokyo city</router-link>
         </li>
@@ -255,7 +255,7 @@ onUnmounted(() => {
     <div
       v-if="showHover"
       ref="hoverComponentRef"
-      class="hover-component backdrop-blur-sm bg-red-500/50"
+      class="hover-component backdrop-blur-sm bg-black/40"
       @mouseenter="clearHoverTimeout()"
       @mouseleave="handleHoverLeave"
     >
@@ -266,14 +266,14 @@ onUnmounted(() => {
     </div>
     <div>
       <div
-        class="container container--menu bg-red-500/50 text-white h-full backdrop-blur-sm flex justify-between px-20 py-10"
+        class="container container--menu bg-black/40 text-white h-full backdrop-blur-sm flex justify-between px-20 py-10"
       >
         <div class="menu__layout">
           <ul class="menu__left text-xl space-y-5">
             <li v-for="item in menuItems" :key="item.name" @mouseenter="enter" @mouseleave="leave" class="menu-item">
-              <router-link :to="item.route" class="flex gap-4 text-black items-center">
+              <router-link :to="item.route" class="flex gap-4 text-white items-center">
                 {{ item.name }}
-                <span ref="icons" class="icon"><IconArrowGrowUp class="text-black" /></span>
+                <span ref="icons" class="icon"><IconArrowGrowUp class="text-white" /></span>
               </router-link>
             </li>
           </ul>
@@ -330,7 +330,5 @@ onUnmounted(() => {
   height: 20rem;
   z-index: 99999;
 } 
-.hover-content {
-  
-}
+
 </style>
