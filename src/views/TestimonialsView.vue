@@ -52,7 +52,7 @@ const animateText = () => {
     duration: 1,
     ease: "power2.out",
     stagger: 0.2,
-  });
+  })
 }
 
 const animateCards = () => {
@@ -62,7 +62,7 @@ const animateCards = () => {
     duration: 0.5,
     ease: "power2.out",
     stagger: 0.2,
-  });
+  })
 }
 
 onMounted(() => {
@@ -75,12 +75,14 @@ onMounted(() => {
   <main class="min-h-screen">
     <div>
       <Header />
-      <h1 class="pt-40 text-6xl text-center animated-text">Ce que les voyageurs pensent de Tokyo</h1>
-      <p class="mt-10 max-w-7xl mx-auto text-center text-xl animated-text">
+      <h1 class="pt-40 text-center text-heading-1 text-black px-5 md:px-20 animated-text">
+        Ce que les voyageurs pensent de Tokyo
+      </h1>
+      <p class="mt-10 px-5 md:px-20 text-center mx-auto  text-xl animated-text">
         Tokyo, métropole où tradition et modernité s’entrelacent, fascine par ses néons éclatants et ses temples paisibles. Chaque coin de rue offre une expérience unique, que ce soit au croisement animé de Shibuya, en admirant la vue depuis Tokyo Skytree, ou en savourant les délices du marché de Tsukiji. Découvrez les impressions de ceux qui ont exploré cette ville vibrante.
       </p>
-      <div class="pt-5 md:pt-10 lg:pt-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 md:px-10 lg:px-36">
+      <div class="pt-5 md:pt-10 lg:pt-10 px-5 md:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <TestimonialCard
             v-for="(testimonial, index) in testimonials"
             :key="index"
