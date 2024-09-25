@@ -3,9 +3,9 @@ import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import IconRight from './icons/IconRight.vue'
 import IconLeft from './icons/IconLeft.vue'
-import img1 from "@/assets/tokyo-1.avif"
-import img2 from "@/assets/tokyo-2.avif"
-import img3 from "@/assets/user.png"
+import img1 from "@/assets/slider-1.jpg"
+import img2 from "@/assets/slider-2.jpg"
+import img3 from "@/assets/slider-3.jpg"
 
 const images = [img1, img2, img3]
 
@@ -19,27 +19,47 @@ onMounted(() => {
 })
 
 const slideRight = () => {
-  fadeOutAll(() => {
+  fadeOutSequence('right', () => {
     currentIndex.value = (currentIndex.value + 1) % images.length
     updateImages()
-    fadeInAll()
+    fadeInSequence('right')
   })
 }
 
 const slideLeft = () => {
-  fadeOutAll(() => {
+  fadeOutSequence('left', () => {
     currentIndex.value = (currentIndex.value - 1 + images.length) % images.length
     updateImages()
-    fadeInAll()
+    fadeInSequence('left')
   })
 }
 
-const fadeOutAll = (callback: () => void) => {
-  gsap.to(".left-image, .center-image, .right-image", { opacity: 0, duration: 0.2, onComplete: callback })
+const fadeOutSequence = (direction: string, callback: () => void) => {
+  const tl = gsap.timeline({ onComplete: callback })
+
+  if (direction === 'right') {
+    tl.to(".left-image", { opacity: 0, duration: 0.2 })
+      .to(".center-image", { opacity: 0, duration: 0.2 })
+      .to(".right-image", { opacity: 0, duration: 0.2 })
+  } else {
+    tl.to(".right-image", { opacity: 0, duration: 0.2 })
+      .to(".center-image", { opacity: 0, duration: 0.2 })
+      .to(".left-image", { opacity: 0, duration: 0.2 })
+  }
 }
 
-const fadeInAll = () => {
-  gsap.to(".left-image, .center-image, .right-image", { opacity: 1, duration: 0.2 })
+const fadeInSequence = (direction: string) => {
+  const tl = gsap.timeline()
+
+  if (direction === 'right') {
+    tl.to(".left-image", { opacity: 1, duration: 0.2 })
+      .to(".center-image", { opacity: 1, duration: 0.2 })
+      .to(".right-image", { opacity: 1, duration: 0.2 })
+  } else {
+    tl.to(".right-image", { opacity: 1, duration: 0.2 })
+      .to(".center-image", { opacity: 1, duration: 0.2 })
+      .to(".left-image", { opacity: 1, duration: 0.2 })
+  }
 }
 
 const updateImages = () => {
@@ -54,38 +74,40 @@ const resetImageOpacity = () => {
 </script>
 
 <template>
-  <section class="grid grid-cols-12 gap-4 relative mb-5">
-    <div class="col-span-3 overflow-hidden">
-      <p class="text-center text-xs font-bold">01/02</p>
+  <section class="grid grid-cols-12 gap-4 relative mb-5 items-center">
+
+    <div class="col-span-3 md:col-span-2 text-center">
+      <p class="text-xs font-bold">01/02</p>
     </div>
-    <div class="col-span-6 overflow-hidden ">
-      <div class="flex justify-center gap-4 mt-4">
-        <p class="px-5 bg-black rounded-full py-1 cursor-pointer" @click="slideLeft">
-          <IconLeft class="text-white"/>
-        </p>
-        <p class="px-5 bg-black rounded-full py-1 cursor-pointer" @click="slideRight">
-          <IconRight class="text-white"/>
-        </p>
-      </div>
+
+    <div class="col-span-6 md:col-span-8 flex justify-center gap-4 mt-4">
+      <p class="px-3 md:px-5 bg-black rounded-full py-1 cursor-pointer" @click="slideLeft">
+        <IconLeft class="text-white"/>
+      </p>
+      <p class="px-3 md:px-5 bg-black rounded-full py-1 cursor-pointer" @click="slideRight">
+        <IconRight class="text-white"/>
+      </p>
     </div>
-    <div class="col-span-3 overflow-hidden">
-      <p class="text-center text-xs font-bold">03/03</p>
+
+    <div class="col-span-3 md:col-span-2 text-center">
+      <p class="text-xs font-bold">03/03</p>
     </div>
   </section>
+
   <section class="grid grid-cols-12 gap-4 relative">
-    <div class="col-span-3 overflow-hidden h-72">
+    <div class="col-span-3 md:col-span-3 overflow-hidden h-48 sm:h-64 md:h-72">
       <div class="relative flex justify-center items-center h-full w-full">
         <img class="left-image w-full h-full object-cover absolute" :src="leftImage" alt="Left Image">
       </div>
     </div>
 
-    <div class="col-span-6 overflow-hidden h-96">
+    <div class="col-span-6 md:col-span-6 overflow-hidden h-60 sm:h-80 md:h-96">
       <div class="relative flex justify-center items-center h-full w-full">
         <img class="center-image w-full h-full object-cover absolute" :src="centerImage" alt="Center Image">
       </div>
     </div>
 
-    <div class="col-span-3 overflow-hidden h-72">
+    <div class="col-span-3 md:col-span-3 overflow-hidden h-48 sm:h-64 md:h-72">
       <div class="relative flex justify-center items-center h-full w-full">
         <img class="right-image w-full h-full object-cover absolute" :src="rightImage" alt="Right Image">
       </div>
