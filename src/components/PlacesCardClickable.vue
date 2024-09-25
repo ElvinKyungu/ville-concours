@@ -99,14 +99,14 @@ const handleCardClick = (event: Event, cardIndex: number) => {
     <div
       class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>
-    <div class=" col-span-6 relative z-30">
+    <div class="col-span-12 md:col-span-6 relative z-30">
       <div class="flex flex-col justify-between w-full h-full">
         <h1 class="text-5xl">We bring bring the the future future home. home. </h1>
-        <div class="flex justify-between items-center">
-          <p class="w-full">
+        <div class="grid grid-cols-12 md:flex justify-between gap-2 md:gap-5 items-center">
+          <p class="w-full col-span-8">
             Lorem ipsum dolor sit amet consectetur adipisicing 
           </p>
-          <div class="h-[1px] bg-black w-full"></div>
+          <div class="h-[1px] col-span-4 bg-black w-full"></div>
         </div>
       </div>
     </div>
