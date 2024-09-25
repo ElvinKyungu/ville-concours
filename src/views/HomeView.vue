@@ -30,15 +30,15 @@ const imagesList = [
   <ImageBanner :images="imagesList" />
   <section class="px-5 md:px-20 py-10 md:py-20 lg:py-28">
     <div class="grid grid-cols-12">
-      <div class="col-span-4">
+      <div class="col-span-4 mt-2">
         <p class="h-[1px] bg-black"></p>
         <p class="text-sm">Nous sommes</p>
       </div>
-      <h1 class="col-span-8 text-3xl md:text-5xl lg:text-6xl">
+      <h1 class="col-span-8 text-3xl md:text-5xl lg:text-5xl">
         La belle ville touristique au monde 
       </h1>
     </div>
-    <h1 class="text-3xl md:text-5xl lg:text-6xl">Innovation Labs accelerates the future of home improvement retail－through the lens of emerging technology. </h1>
+    <h1 class="text-3xl md:text-5xl lg:text-5xl">Innovation Labs accelerates the future of home improvement retail－through the lens of emerging technology. </h1>
   </section>
   <section class="flex flex-col w-full px-5 md:px-20 py-10 md:py-20 lg:py-28 ">
     <p>Something</p>
@@ -128,7 +128,7 @@ const imagesList = [
     </section>
     <HomeCardSlider/>
   </main>
-     <PlacesCardClickable/>
+    <PlacesCardClickable/>
     <!--<ScrollTriggerSection/> -->
   <TextScroll/>
   <Footer/>
