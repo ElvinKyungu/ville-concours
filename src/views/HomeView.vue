@@ -3,7 +3,8 @@ import Header from '@/components/base/Header.vue'
 import Footer from '@/components/base/Footer.vue'
 import ImageBanner from '@/components/ImageBanner.vue'
 import image1 from '@/assets/tokyo-1.avif'
-import image2 from '@/assets/tokyo-2.avif'
+import image3 from '@/assets/slider-2.jpg'
+import image4 from '@/assets/slider-3.jpg'
 import TextScroll from '@/components/TextScroll.vue'
 import WalletCardHome from '@/components/WalletCardHome.vue'
 import SectionHighlight from '@/components/SectionHighlight.vue.vue'
@@ -19,7 +20,13 @@ const imagesList = [
     description: 'Découvrez le temple Senso-ji, le plus ancien de Tokyo, qui attire des millions de visiteurs chaque année.' 
   },
   { 
-    src: image2, 
+    src: image3, 
+    title: 'Shibuya Crossing', 
+    description: 'Vivez l\'expérience du célèbre carrefour de Shibuya, symbole de la ville, où des milliers de personnes traversent à chaque feu.' 
+  },
+
+  { 
+    src: image4, 
     title: 'Shibuya Crossing', 
     description: 'Vivez l\'expérience du célèbre carrefour de Shibuya, symbole de la ville, où des milliers de personnes traversent à chaque feu.' 
   },
@@ -31,7 +38,7 @@ const imagesList = [
   <ImageBanner :images="imagesList" />
   <section class="px-5 md:px-20 py-10 md:py-20 lg:py-28">
     <div class="grid grid-cols-12">
-      <div class="col-span-12 md:col-span-4 mt-2">
+      <div class="col-span-12 md:col-span-4 my-5 md:my-10 mt-2">
         <p class="h-[1px] bg-black"></p>
         <p class="text-sm">Nous sommes</p>
       </div>

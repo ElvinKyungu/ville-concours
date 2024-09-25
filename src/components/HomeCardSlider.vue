@@ -77,7 +77,7 @@ const resetImageOpacity = () => {
   <section class="grid grid-cols-12 gap-4 relative mb-5 items-center">
 
     <div class="col-span-3 md:col-span-2 text-center">
-      <p class="text-xs font-bold">01/02</p>
+      
     </div>
 
     <div class="col-span-6 md:col-span-8 flex justify-center gap-4 mt-4">
@@ -90,7 +90,6 @@ const resetImageOpacity = () => {
     </div>
 
     <div class="col-span-3 md:col-span-2 text-center">
-      <p class="text-xs font-bold">03/03</p>
     </div>
   </section>
 

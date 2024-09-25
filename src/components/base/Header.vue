@@ -11,7 +11,7 @@ import  IconSearch from "../icons/IconSearch.vue"
 import PopupFull from '@/components/popups/PopupFull.vue'
 import Input from "../Form/Input.vue"
 import HoverPlaces from "../HoverPlaces.vue"
-import HoverWhyTokyo from "../HoverWhyTokyo.vue"
+import HumbergerMenu from "./HumbergerMenu.vue"
 
 const showPopup = ref(false)
 const showHover = ref(false)
@@ -156,7 +156,6 @@ function close_menu() {
 const menuItems = [
   { name: 'Accueil', route: '/' },
   { name: 'A propos', route: '/about' },
-  { name: 'FAQ', route: '/projects' },
   { name: 'Témoignages', route: '/testimonials' },
   { name: 'Endroits touristique', route: '/experiences' },
   { name: 'Contact', route: '/contact' }
@@ -186,6 +185,11 @@ const checkScroll = () => {
   } else {
     showButton.value = false
   }
+}
+
+const isMobile = ref(false)
+const showHumbergerMobile = ()=>{
+  isMobile.value = !isMobile.value
 }
 
 onMounted(() => {
@@ -237,7 +241,7 @@ onUnmounted(() => {
             </li>
           </ul>
         </li>
-        <li class="cursor-pointer md:hidden flex">
+        <li @click="showHumbergerMobile" class="cursor-pointer md:hidden flex">
           <IconBars
             class="w-10 h-10 relative z-10"
           />
@@ -278,6 +282,9 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
+    <nav v-if="isMobile" class="z-50">
+      <HumbergerMenu/>
+    </nav>
   </header>
   <PopupFull :isOpen="showPopup" @close="togglePopup">
     <Input/>
