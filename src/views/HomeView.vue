@@ -10,6 +10,7 @@ import SectionHighlight from '@/components/SectionHighlight.vue.vue'
 import HomeCardSlider from '@/components/HomeCardSlider.vue'
 import PlacesCardClickable from '@/components/PlacesCardClickable.vue'
 import ScrollTriggerSection from '@/components/ScrollTriggerSection.vue'
+import FAQ from '@/components/FAQ.vue'
 
 const imagesList = [
   { 
@@ -131,6 +132,7 @@ const imagesList = [
   <PlacesCardClickable/>
   <ScrollTriggerSection/>
   <TextScroll/>
+  <FAQ/>
   <Footer/>
 </template>
 <style>

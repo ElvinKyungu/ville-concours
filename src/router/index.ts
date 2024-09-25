@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "@/views/HomeView.vue"
 import About from "@/views/About.vue"
 import Testimonials from "@/views/TestimonialsView.vue"
-import FQA from "@/views/FQAView.vue"
 import Places from "@/views/PlacesTouristique.vue"
 import Contact from "@/views/Contact.vue"
 import NotFound from '@/views/NotFound.vue'
@@ -24,11 +23,6 @@ const router = createRouter({
       path: "/testimonials",
       name: "testimonials",
       component: Testimonials,
-    },
-    {
-      path: "/FQA",
-      name: "FQA",
-      component: FQA,
     },
     {
       path: "/Places-touristiques",
