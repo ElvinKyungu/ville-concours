@@ -8,7 +8,7 @@ import TextScroll from '@/components/TextScroll.vue'
 import WalletCardHome from '@/components/WalletCardHome.vue'
 import SectionHighlight from '@/components/SectionHighlight.vue.vue'
 import HomeCardSlider from '@/components/HomeCardSlider.vue'
-
+import PlacesCardClickable from '@/components/PlacesCardClickable.vue'
 const imagesList = [
   { 
     src: image1, 
@@ -100,15 +100,21 @@ const imagesList = [
   </section>
   <SectionHighlight/>
   <WalletCardHome/>
-  <section class="grid grid-cols-12 px-5 md:px-20 py-10 md:py-20 lg:py-28">
-    <div class="col-span-12 md:col-span-6">
-      <h2 class="text-5xl">Same news of Tokyo</h2>
-    </div>
-    <div class="col-span-12 md:col-span-6">
-      <p class="text-lg md:text-xl">Explore some of the ways we're bringing the future of home <br> improvement to life, today. </p>
-    </div>
-  </section>
-  <HomeCardSlider/>
+  <main class="relative py-10">
+    <div
+      class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
+    ></div>
+    <section class="grid  relative z-40 grid-cols-12 px-5 md:px-20 py-10 md:py-20 lg:py-28">
+      <div class="col-span-12 md:col-span-6">
+        <h2 class="text-5xl">Same news of Tokyo</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6">
+        <p class="text-lg md:text-xl">Explore some of the ways we're bringing the future of home <br> improvement to life, today. </p>
+      </div>
+    </section>
+    <HomeCardSlider/>
+  </main>
+  <PlacesCardClickable/>
   <TextScroll/>
   <Footer/>
 </template>

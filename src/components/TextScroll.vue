@@ -45,7 +45,7 @@ onMounted(() => {
 <template>
   <section class="text-scroll-container">
     <div class="text-scroll-content">
-      <div class="text-scroll-items bg-black text-white" role="marquee">
+      <div class="text-scroll-items bg-gray-100 text-black" role="marquee">
         <div v-for="(row, index) in tagRows" :key="index" class="text-scroll-row" ref="rows">
           <div v-for="(item, idx) in row" :key="idx" :class="item.styleClass" class="text-scroll-item">
             <span>{{ item.text }}</span>
@@ -92,7 +92,7 @@ onMounted(() => {
 .text-scroll-item.-stroke {
   color: transparent;
   text-shadow: none;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.5);
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.5);
 }
 
 .text-scroll-item span {
