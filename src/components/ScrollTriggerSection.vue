@@ -1,26 +1,26 @@
 <script setup lang="ts">
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { onMounted, onUnmounted, ref, nextTick, watch } from 'vue';
-import imageTrigger1 from '@/assets/trigger-1.avif'
-import imageTrigger2 from '@/assets/trigger-2.avif'
-import imageTrigger3 from '@/assets/trigger-3.avif'
-import imageTrigger4 from '@/assets/trigger-4.avif'
-import imageTrigger5 from '@/assets/trigger-5.avif'
-import imageTrigger6 from '@/assets/trigger-6.avif'
+import { onMounted, onUnmounted, ref, nextTick } from 'vue';
+import imageTrigger1 from '@/assets/trigger-1.avif';
+import imageTrigger2 from '@/assets/trigger-2.avif';
+import imageTrigger3 from '@/assets/trigger-3.avif';
+import imageTrigger4 from '@/assets/trigger-4.avif';
+import imageTrigger5 from '@/assets/trigger-5.avif';
+import imageTrigger6 from '@/assets/trigger-6.avif';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-const container = ref<HTMLElement | null>(null)
+const container = ref<HTMLElement | null>(null);
 const currentSlideIndex = ref(1);
-let ctx: gsap.Context | null = null
+let ctx: gsap.Context | null = null;
 
 onMounted(async () => {
-  await nextTick()
+  await nextTick();
 
   if (container.value) {
     ctx = gsap.context((self) => {
-      const images = self.selector('.image') as HTMLElement[] | undefined;
+      const images = self.selector ? self.selector('.image') as HTMLElement[] : undefined;
       const amount = images?.length ? images.length : 0;
 
       if (images && amount > 0) {
@@ -29,10 +29,10 @@ onMounted(async () => {
             trigger: image,
             start: 'top 80%',
             onEnter: () => {
-              currentSlideIndex.value = index + 1; 
+              currentSlideIndex.value = index + 1;
             },
             onLeaveBack: () => {
-              currentSlideIndex.value = index + 1; 
+              currentSlideIndex.value = index + 1;
             },
           });
         });
@@ -54,7 +54,6 @@ onMounted(async () => {
     }, container.value);
   }
 });
-
 
 onUnmounted(() => {
   if (ctx) {
