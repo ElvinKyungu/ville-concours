@@ -59,7 +59,7 @@ const animateHearts = () => {
 
 const stickyImageRef = ref<HTMLImageElement | null>(null)
 const previousCardIndex = ref<number | null>(null)
-  const blockRef = ref<HTMLDivElement | null>(null);
+const blockRef = ref<HTMLDivElement | null>(null);
 
 
 const handleCardClick = (event: Event, cardIndex: number) => {

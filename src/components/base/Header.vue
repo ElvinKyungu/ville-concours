@@ -221,13 +221,6 @@ onUnmounted(() => {
         <li class="cursor-pointer hidden md:flex">
           <ul class="flex gap-5 text-lg">
             <li
-              @mouseenter="handleHoverEnter('whyTokyo')" 
-              @mouseleave="handleHoverLeave"
-              class="border-b-4 py-3 border-transparent hover:border-b-white transition "
-            >
-              Que faire à Tokyo
-            </li>
-            <li
               @mouseenter="handleHoverEnter('places')" 
               @mouseleave="handleHoverLeave"
               class="border-b-4 py-3 border-transparent hover:border-b-white transition "
