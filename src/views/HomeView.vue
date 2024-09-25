@@ -26,7 +26,19 @@ const imagesList = [
 <template>
   <Header/>
   <ImageBanner :images="imagesList" />
-  <section class="flex flex-col w-full px-5 md:px-20 py-10 md:py-20 lg:py-28">
+  <section class="px-5 md:px-20 py-10 md:py-20 lg:py-28">
+    <div class="grid grid-cols-12">
+      <div class="col-span-4">
+        <p class="h-[1px] bg-black"></p>
+        <p class="text-sm">Nous sommes</p>
+      </div>
+      <h1 class="col-span-8 text-3xl md:text-5xl lg:text-6xl">
+        La belle ville touristique au monde 
+      </h1>
+    </div>
+    <h1 class="text-3xl md:text-5xl lg:text-6xl">Innovation Labs accelerates the future of home improvement retail－through the lens of emerging technology. </h1>
+  </section>
+  <section class="flex flex-col w-full px-5 md:px-20 py-10 md:py-20 lg:py-28 ">
     <p>Something</p>
     <h1 class="text-heading-1 text-black">Title text</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-4 md:gap-y-10 mt-10">
