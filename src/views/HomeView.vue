@@ -130,8 +130,8 @@ const imagesList = [
   </main>
   <ScrollTriggerSection/>
   <TextScroll/>
+  <PlacesCardClickable/>
   <Footer/>
-  <PlacesCardClickable/> 
 </template>
 <style>
 .bg-gray{

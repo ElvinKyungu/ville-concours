@@ -28,11 +28,13 @@ const heartRefs = ref<HTMLDivElement[]>([])
 
 onMounted(() => {
   // Conversion de NodeList en tableau
-  heartRefs.value = Array.from(document.querySelectorAll('.heart-animation')) as HTMLDivElement[]
+  heartRefs.value = hearts.map((_, index) => document.querySelector(`.heart-animation-${index + 1}`)) as HTMLDivElement[]
 })
 
 const animateHearts = () => {
   heartRefs.value.forEach((heart, index) => {
+    if (!heart) return; // Ajout d'une vérification de sécurité
+
     const tl = gsap.timeline({
       delay: index * 0.1, // Décalage entre les cœurs
     })
@@ -141,8 +143,7 @@ const handleCardClick = (event: Event, cardIndex: number) => {
                       <div
                         v-for="index in hearts"
                         :key="index"
-                        class="heart-animation"
-                        ref="hearts"
+                        :class="`heart-animation heart-animation-${index}`"
                       >
                         <IconHeart class="heart-icon"/>
                       </div>
