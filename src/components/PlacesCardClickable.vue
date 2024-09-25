@@ -104,7 +104,7 @@ const handleCardClick = (event: Event, cardIndex: number) => {
     <div class="col-span-12 md:col-span-6 relative z-30">
       <div class="flex flex-col justify-between w-full h-full">
         <h1 class="text-5xl">We bring bring the the future future home. home. </h1>
-        <div class="grid grid-cols-12 md:flex justify-between gap-2 md:gap-5 items-center">
+        <div class="grid my-10 md:mt-5 grid-cols-12 md:flex justify-between gap-2 md:gap-5 items-center">
           <p class="w-full col-span-8">
             Lorem ipsum dolor sit amet consectetur adipisicing 
           </p>
@@ -121,7 +121,7 @@ const handleCardClick = (event: Event, cardIndex: number) => {
             <IconRight class="text-white"/>
           </div>
         </div>
-        <div class="col-span-6 md:col-span-5 bg-blue-500 p-5 h-32 rounded-md">
+        <div class="col-span-6 md:col-span-5 bg-blue-500 text-white p-5 h-32 rounded-md">
           <div class="flex justify-between w-full">
             <span>Let's go</span>
             <IconRight/>
@@ -148,9 +148,9 @@ const handleCardClick = (event: Event, cardIndex: number) => {
                         <IconHeart class="heart-icon"/>
                       </div>
                     </div>
-                    <button class="preview-button text-white z-40 absolute flex gap-2 left-10 bg-black/20 backdrop-blur-sm top-1 rounded-full border border-white px-5 py-1">
+                    <button class="preview-button text-black z-40 absolute flex gap-2 left-10 bg-white/50 backdrop-blur-sm top-1 rounded-full border border-black px-5 py-1">
                       <span class="text-sm">Preview</span>
-                      <IconArrowGrowUp class="w-4 h-4 text-white" />
+                      <IconArrowGrowUp class="w-4 h-4 text-black" />
                     </button>
                   </div>
                   <img
