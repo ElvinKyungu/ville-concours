@@ -128,10 +128,10 @@ const imagesList = [
     </section>
     <HomeCardSlider/>
   </main>
-    <!-- <PlacesCardClickable/> -->
-    <ScrollTriggerSection/>
+  <ScrollTriggerSection/>
   <TextScroll/>
   <Footer/>
+  <PlacesCardClickable/> 
 </template>
 <style>
 .bg-gray{

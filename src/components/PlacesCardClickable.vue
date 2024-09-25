@@ -29,7 +29,7 @@ const heartRefs = ref<HTMLDivElement[]>([])
 onMounted(() => {
   // Conversion de NodeList en tableau
   heartRefs.value = Array.from(document.querySelectorAll('.heart-animation')) as HTMLDivElement[]
-});
+})
 
 const animateHearts = () => {
   heartRefs.value.forEach((heart, index) => {

@@ -68,9 +68,8 @@ const animateContentIn = (component: 'whyTokyo' | 'places') => {
     '.hover-content', 
     { x: 0, opacity: 0 },
     { x: 0, opacity: 1, duration: 0.2, ease: 'power2.out' } 
-  );
-};
-
+  )
+}
 
 const animateContentOut = (onComplete: () => void) => {
   const direction = hoverContent.value === 'whyTokyo' ? 0 : 0; 
@@ -85,7 +84,7 @@ const animateContentOut = (onComplete: () => void) => {
 };
 
 onUnmounted(() => {
-  clearHoverTimeout();
+  clearHoverTimeout()
 });
 
 function open_menu() {
@@ -253,7 +252,6 @@ onUnmounted(() => {
       @mouseleave="handleHoverLeave"
     >
       <div class="hover-content">
-        <HoverWhyTokyo v-if="hoverContent === 'whyTokyo'" class="hover-whyTokyo"/>
         <HoverPlaces v-if="hoverContent === 'places'" class="hover-places" />
       </div>
     </div>
@@ -323,5 +321,4 @@ onUnmounted(() => {
   height: 20rem;
   z-index: 99999;
 } 
-
 </style>
