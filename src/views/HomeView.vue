@@ -9,6 +9,8 @@ import WalletCardHome from '@/components/WalletCardHome.vue'
 import SectionHighlight from '@/components/SectionHighlight.vue.vue'
 import HomeCardSlider from '@/components/HomeCardSlider.vue'
 import PlacesCardClickable from '@/components/PlacesCardClickable.vue'
+import ScrollTriggerSection from '@/components/ScrollTriggerSection.vue'
+
 const imagesList = [
   { 
     src: image1, 
@@ -127,6 +129,7 @@ const imagesList = [
     <HomeCardSlider/>
   </main>
   <PlacesCardClickable/>
+  <ScrollTriggerSection/>
   <TextScroll/>
   <Footer/>
 </template>
