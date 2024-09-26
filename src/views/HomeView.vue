@@ -13,29 +13,11 @@ import PlacesCardClickable from '@/components/PlacesCardClickable.vue'
 import ScrollTriggerSection from '@/components/ScrollTriggerSection.vue'
 import FAQ from '@/components/FAQ.vue'
 
-const imagesList = [
-  { 
-    src: image1, 
-    title: 'Senso-ji Temple', 
-    description: 'Découvrez le temple Senso-ji, le plus ancien de Tokyo, qui attire des millions de visiteurs chaque année.' 
-  },
-  { 
-    src: image3, 
-    title: 'Shibuya Crossing', 
-    description: 'Vivez l\'expérience du célèbre carrefour de Shibuya, symbole de la ville, où des milliers de personnes traversent à chaque feu.' 
-  },
-
-  { 
-    src: image4, 
-    title: 'Shibuya Crossing', 
-    description: 'Vivez l\'expérience du célèbre carrefour de Shibuya, symbole de la ville, où des milliers de personnes traversent à chaque feu.' 
-  },
-]
+const imagesList = [image1,image3,image4,]
 </script>
 
 <template>
-  <Header/>
-  <ImageBanner :images="imagesList" />
+  <!-- <Header/> -->
   <section class="px-5 md:px-20 py-10 md:py-20 lg:py-28">
     <div class="grid grid-cols-12">
       <div class="col-span-12 md:col-span-4 my-5 md:my-10 mt-2">
@@ -121,7 +103,6 @@ const imagesList = [
     </div>
   </section>
   <SectionHighlight/>
-  <WalletCardHome/>
   <main class="relative py-10">
     <div
       class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
@@ -136,6 +117,24 @@ const imagesList = [
     </section>
     <HomeCardSlider/>
   </main>
+  <WalletCardHome/>
+  <section class="grid grid-cols-12 gap-7 relative py-10 md:py-20 px-5 md:px-20">
+    <div class="col-span-12 lg:col-span-6 relative z-30">
+      <ImageBanner :images="imagesList" />
+    </div>
+    <div
+      class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
+    ></div>
+    <div class="col-span-12 md:col-span-6 relative z-30">
+      <div class="flex flex-col justify-between w-full h-full">
+        <h1 class="text-5xl">
+          We bring bring the the future future home. home. 
+          We bring bring the the future future home. home. 
+          We bring bring the the future future home. home. 
+        </h1> 
+      </div>
+    </div>
+  </section>
   <PlacesCardClickable/>
   <ScrollTriggerSection/>
   <TextScroll/>
