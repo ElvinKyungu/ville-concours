@@ -19,20 +19,6 @@ const imagesList = [image1,image3,image4,]
 
 <template>
   <!-- <Header/> -->
-  <section class="px-5 md:px-20 py-10 md:pt-20 lg:pt-20">
-    <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-12 md:col-span-3 my-5 mt-2">
-        <p class="h-[1px] bg-black"></p>
-        <p class="text-sm">W'are Tokyo</p>
-      </div>
-      <h1 class="col-span-12 md:col-span-9 text-3xl md:text-5xl lg:text-5xl">
-        Welcome to Tokyo, the most vibrant city in the world
-      </h1>
-    </div>
-    <h1 class="text-3xl md:text-5xl lg:text-5xl">
-      Tokyo sets the pace for the future of urban living—through the lens of culture, cutting-edge technology, and endless exploration.
-    </h1>
-  </section>
   <MiniCardHome/>
   <SectionHighlight/>
   <main class="relative py-10">
@@ -49,6 +35,23 @@ const imagesList = [image1,image3,image4,]
     </section>
     <HomeCardSlider/>
   </main>
+  <section class="px-5 relative md:px-20 py-10 md:pt-20 lg:pt-20">
+    <div
+      class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
+    ></div>
+    <div class="grid grid-cols-12 gap-4 relative z-10">
+      <div class="col-span-12 md:col-span-3 my-5 mt-2">
+        <p class="h-[1px] bg-black"></p>
+        <p class="text-sm">W'are Tokyo</p>
+      </div>
+      <h1 class="col-span-12 md:col-span-9 text-3xl md:text-5xl lg:text-5xl">
+        Welcome to Tokyo, the most vibrant city in the world
+      </h1>
+    </div>
+    <h1 class="text-3xl relative z-10  md:text-5xl lg:text-5xl">
+      Tokyo sets the pace for the future of urban living—through the lens of culture, cutting-edge technology, and endless exploration.
+    </h1>
+  </section>
   <WalletCardHome/>
   <section class="grid grid-cols-12 gap-7 relative py-10 md:py-20 px-5 md:px-20">
     <div class="col-span-12 lg:col-span-6 relative z-30">
