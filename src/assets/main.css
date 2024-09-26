@@ -33,6 +33,6 @@
     hover:px-3 duration-300;
   }
   .text-heading-1{
-    @apply text-3xl md:text-4xl lg:text-6xl text-white font-medium
+    @apply text-3xl md:text-4xl lg:text-5xl text-white 
   }
 }
