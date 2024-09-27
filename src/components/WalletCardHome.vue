@@ -16,14 +16,14 @@ const paragraphRef1 = ref<HTMLElement | null>(null)
 const paragraphRef2 = ref<HTMLElement | null>(null)
 
 
-useTitleAnimation(titleRef1, 1)
-useTitleAnimation(titleRef2, 1.5)
-useParagraphAnimation(paragraphRef1, 1.5)
-useParagraphAnimation(paragraphRef2, 2)
+useTitleAnimation(titleRef1, .3)
+useTitleAnimation(titleRef2, .5)
+useParagraphAnimation(paragraphRef1, .5)
+useParagraphAnimation(paragraphRef2, .7)
 useTitleAnimation(textRef1, 0.5)
-useTitleAnimation(textRef2, 1)
-useTitleAnimation(textRef3, 1.7)
-useTitleAnimation(textRef4, 1.9)
+useTitleAnimation(textRef2, .7)
+useTitleAnimation(textRef3, .7)
+useTitleAnimation(textRef4, .9)
 
 gsap.registerPlugin(ScrollTrigger)
 

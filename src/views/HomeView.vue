@@ -27,10 +27,10 @@ const imageRef4 = ref<HTMLElement | null>(null)
 
 useParagraphAnimation(paragraphRef, 0.5)
 useTitleAnimation(titleRef1, 0.5)
-useTitleAnimation(imageRef4, 1)
+useTitleAnimation(imageRef4, .5)
 useTitleAnimation(titleRef2, 0.5)
 useTitleAnimation(titleRef3, 0.5)
-useTitleAnimation(titleRef4, 1.5)
+useTitleAnimation(titleRef4, .5)
 const imagesList = [image1,image3,image4,]
 </script>
 

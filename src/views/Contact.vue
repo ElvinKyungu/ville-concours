@@ -4,19 +4,21 @@ import Footer from '@/components/base/Footer.vue'
 import TextScroll from '@/components/TextScroll.vue'
 import FAQ from '@/components/FAQ.vue'
 import { useTitleAnimation } from '@/composables/useTitleAnimation'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const titleRef1 = ref<HTMLElement | null>(null)
 const titleRef2 = ref<HTMLElement | null>(null)
 const titleRef3= ref<HTMLElement | null>(null)
 const titleRef4 = ref<HTMLElement | null>(null)
 const imageRef4 = ref<HTMLElement | null>(null)
-
+const cardsRef = ref<HTMLElement | null>(null);
 useTitleAnimation(titleRef1, 0.5)
 useTitleAnimation(imageRef4, 1)
 useTitleAnimation(titleRef2, 0.5)
 useTitleAnimation(titleRef3, 0.5)
 useTitleAnimation(titleRef4, 1)
+useTitleAnimation(cardsRef, 1)
+
 </script>
 
 <template>
@@ -31,14 +33,55 @@ useTitleAnimation(titleRef4, 1)
         <p class="h-[1px] bg-black"></p>
         <p class="text-sm">Get in Touch to Explore Tokyo</p>
       </div>
-      <h1 ref="titleRef2" class="col-span-12 md:col-span-9 text-3xl md:text-4xl lg:text-4xl">
+      <h1 ref="titleRef2" class="col-span-12 md:col-span-9 text-2xl md:text-3xl lg:text-4xl">
         Have questions or need tips for your Tokyo adventure? 
       </h1>
     </div>
-    <h1 ref="titleRef3" class="text-3xl relative z-10  md:text-5xl lg:text-4xl">
+    <h1 ref="titleRef3" class="relative z-10 text-2xl  md:text-3xl lg:text-4xl">
       Our team is here to help you discover the ultimate Japanese experience. 
       Feel free to reach out for personalized recommendations or information on local attractions!"
     </h1>
+  </section>
+  <section ref="cardsRef" class="grid pb-20 grid-cols-12 gap-5 overflow-hidden px-5 relative md:px-20">
+    <div
+      class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
+    ></div>
+    <div class="relative z-10 col-span-12 md:col-span-4 lg:col-span-3 p-5 bg-black/5 cursor-pointer hover:bg-black/10 transition rounded-md ">
+      <div class="flex justify-center flex-col items-center space-y-3">
+        <h1 class="text-xl">Phone number</h1>
+        <ul>
+          <li>099947283</li>
+          <li>099947283</li>
+        </ul>
+      </div>
+    </div>
+    <div class="relative z-10 col-span-12 md:col-span-4 lg:col-span-3 p-5 bg-black/5 cursor-pointer hover:bg-black/10 transition rounded-md ">
+      <div class="flex justify-center flex-col items-center space-y-3">
+        <h1 class="text-xl">Mail adress</h1>
+        <ul>
+          <li>info@tokyo-travel.jp</li>
+          <li>contact@visit-tokyo.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="relative z-10 col-span-12 md:col-span-4 lg:col-span-3 p-5 bg-black/5 cursor-pointer hover:bg-black/10 transition rounded-md ">
+      <div class="flex justify-center flex-col items-center space-y-3">
+        <h1 class="text-xl">Social network</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>Linkedin</li>
+        </ul>
+      </div>
+    </div>
+    <div class="relative z-10 col-span-12 md:col-span-4 lg:col-span-3 p-5 bg-black/5 cursor-pointer hover:bg-black/10 transition rounded-md ">
+      <div class="flex justify-center flex-col items-center space-y-3">
+        <h1 class="text-xl">Social network</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>Linkedin</li>
+        </ul>
+      </div>
+    </div>
   </section>
   <section ref="titleRef4" class="grid grid-cols-12 gap-5 overflow-hidden px-5 relative md:px-20">
     <div
@@ -56,7 +99,7 @@ useTitleAnimation(titleRef4, 1)
           <input 
             type="email"
             id="email"
-            class="border-black border-b outline-none block w-full p-2.5 " 
+            class="border-black/40 border-b outline-none block w-full p-2.5 " 
             placeholder="name@example.com" 
             required
           >
@@ -71,7 +114,7 @@ useTitleAnimation(titleRef4, 1)
           <input 
             type="text" 
             id="subject" 
-            class="block p-3 w-full text-sm outline-none border-black border-b " 
+            class="block p-3 w-full text-sm outline-none border-black/40 border-b " 
             placeholder="Tell us how we can help you" 
             required
           >
@@ -86,9 +129,9 @@ useTitleAnimation(titleRef4, 1)
           <textarea  
             placeholder="Your message here..." 
             id="message" 
-            class="block p-2.5 w-full outline-none border-black border-b" 
+            class="block p-2.5 w-full outline-none border-black/40 border-b" 
             name="5" 
-            rows="10"
+            rows="5"
             max-height="5"
           ></textarea>
           

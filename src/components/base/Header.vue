@@ -156,7 +156,7 @@ const menuItems = [
   { name: 'Accueil', route: '/' },
   { name: 'A propos', route: '/about' },
   { name: 'Témoignages', route: '/testimonials' },
-  { name: 'Endroits touristique', route: '/experiences' },
+  { name: 'Endroits touristique', route: '/Places-touristiques' },
   { name: 'Contact', route: '/contact' }
 ]
 

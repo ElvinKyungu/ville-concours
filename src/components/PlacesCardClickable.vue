@@ -25,19 +25,19 @@ const paragraphRef2 = ref<HTMLElement | null>(null)
 const paragraphRef3 = ref<HTMLElement | null>(null)
 const paragraphRef4 = ref<HTMLElement | null>(null)
 
-useTitleAnimation(titleRef1, 1)
-useTitleAnimation(titleRef2, 1.2)
-useParagraphAnimation(paragraphRef1, 1)
+useTitleAnimation(titleRef1, .2)
+useTitleAnimation(titleRef2, .3)
+useParagraphAnimation(paragraphRef1, .2)
 
-useTitleAnimation(cardRef1, 1.3)
-useTitleAnimation(cardRef2, 1.5)
-useTitleAnimation(cardRef3, 1.7)
+useTitleAnimation(cardRef1, .4)
+useTitleAnimation(cardRef2, .5)
+useTitleAnimation(cardRef3, .7)
 
-useParagraphAnimation(paragraphRef2, 1.7)
-useParagraphAnimation(paragraphRef3, 1.0)
-useParagraphAnimation(paragraphRef4, 2.4)
+useParagraphAnimation(paragraphRef2, .7)
+useParagraphAnimation(paragraphRef3, .8)
+useParagraphAnimation(paragraphRef4, .8)
 
-useParagraphAnimation(imagesRef, 2)
+useParagraphAnimation(imagesRef, .9)
 
 const cardInfos = [
   {
