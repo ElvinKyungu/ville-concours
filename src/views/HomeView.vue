@@ -23,12 +23,14 @@ const titleRef2 = ref<HTMLElement | null>(null)
 const titleRef3= ref<HTMLElement | null>(null)
 const titleRef4 = ref<HTMLElement | null>(null)
 const paragraphRef = ref<HTMLElement | null>(null)
+const imageRef4 = ref<HTMLElement | null>(null)
 
 useParagraphAnimation(paragraphRef, 0.5)
 useTitleAnimation(titleRef1, 0.5)
+useTitleAnimation(imageRef4, 1)
 useTitleAnimation(titleRef2, 0.5)
 useTitleAnimation(titleRef3, 0.5)
-useTitleAnimation(titleRef4, 0.5)
+useTitleAnimation(titleRef4, 1.5)
 const imagesList = [image1,image3,image4,]
 </script>
 
@@ -70,7 +72,7 @@ const imagesList = [image1,image3,image4,]
   </section>
   <WalletCardHome/>
   <section class="grid grid-cols-12 gap-7 relative py-10 md:py-20 px-5 md:px-20">
-    <div class="col-span-12 lg:col-span-6 relative z-30">
+    <div ref="imageRef4" class="col-span-12 lg:col-span-6 relative z-30">
       <ImageBanner :images="imagesList" />
     </div>
     <div
