@@ -80,7 +80,7 @@ const titleRef = ref<HTMLElement | null>(null)
 </script>
 
 <template>
-  <section class="flex flex-col w-full px-5 md:px-20 py-10 md:py-20 lg:py-28">
+  <section class="flex flex-col w-full px-5 md:px-20">
     <p>Welcome</p>
     <h1 ref="titleRef" class="text-heading-1 text-black card-title">Discover the Top 6 Must-See Spots in Tokyo</h1> 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-3 md:gap-y-8 mt-10">

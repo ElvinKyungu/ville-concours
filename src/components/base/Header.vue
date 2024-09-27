@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, onUnmounted, onMounted } from "vue"
-// import { useDark } from "@vueuse/core"
 import gsap from "gsap"
 import IconBars from "@/components/icons/IconBars.vue"
 import IconClose from "@/components/icons/IconClose.vue"
@@ -217,7 +216,7 @@ onUnmounted(() => {
         ></span>
         <IconBars class="w-10 h-10 relative z-10 text-white" />
       </button>
-      <ul class="fixed px-5 md:px-20  bg-black/40 text-white backdrop-blur-sm items-center w-full flex justify-between py-3 space-x-5 z-50">
+      <ul class="fixed px-5 md:px-20  bg-white shadow-md backdrop-blur-sm items-center w-full flex justify-between py-3 space-x-5 z-50">
         <li class="cursor-pointer">
           <router-link to="/" class="text-3xl">Tokyo city</router-link>
         </li>
@@ -226,18 +225,18 @@ onUnmounted(() => {
             <li
               @mouseenter="handleHoverEnter('places')" 
               @mouseleave="handleHoverLeave"
-              class="border-b-4 py-3 border-transparent hover:border-b-white transition "
+              class="border-b-4 py-3 border-transparent hover:border-b-black transition "
             >
               Espace touristique
             </li>
             <li @click="togglePopup"  class="border-b-4 py-3 border-transparent">
-              <IconSearch class="text-white"/>
+              <IconSearch class=""/>
             </li>
             <li class="border-b-4 py-3 border-transparent">
-              <IconInstagram class="text-white"/>
+              <IconInstagram class=""/>
             </li>
             <li class="border-b-4 py-3 border-transparent">
-              <IconX class="text-white"/>
+              <IconX class=""/>
             </li>
           </ul>
         </li>
@@ -251,7 +250,7 @@ onUnmounted(() => {
     <div
       v-if="showHover"
       ref="hoverComponentRef"
-      class="hover-component backdrop-blur-sm bg-black/40"
+      class="hover-component backdrop-blur-md  bg-white/50"
       @mouseenter="clearHoverTimeout()"
       @mouseleave="handleHoverLeave"
     >

@@ -13,12 +13,13 @@ import PlacesCardClickable from '@/components/PlacesCardClickable.vue'
 import ScrollTriggerSection from '@/components/ScrollTriggerSection.vue'
 import FAQ from '@/components/FAQ.vue'
 import MiniCardHome from '@/components/MiniCardHome.vue'
-
+import AnimatedCard from '@/components/AnimatedCard.vue'
 const imagesList = [image1,image3,image4,]
 </script>
 
 <template>
-  <!-- <Header/> -->
+  <Header/>
+  <AnimatedCard/>
   <MiniCardHome/>
   <SectionHighlight/>
   <main class="relative py-10">
