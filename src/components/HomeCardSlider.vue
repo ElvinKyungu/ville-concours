@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import IconRight from './icons/IconRight.vue'
 import IconLeft from './icons/IconLeft.vue'
 import img1 from "@/assets/slider-1.jpg"
 import img2 from "@/assets/slider-2.jpg"
 import img3 from "@/assets/slider-3.jpg"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const images = [img1, img2, img3]
 
@@ -16,6 +19,7 @@ const currentIndex = ref(0)
 
 onMounted(() => {
   resetImageOpacity()
+  setupScrollTriggerAnimations()
 })
 
 const slideRight = () => {
@@ -71,7 +75,58 @@ const updateImages = () => {
 const resetImageOpacity = () => {
   gsap.set(".left-image, .center-image, .right-image", { opacity: 1 })
 }
+
+const setupScrollTriggerAnimations = () => {
+  gsap.fromTo(".left-image", 
+    { x: -300, opacity: 0 },
+    { 
+      x: 0, 
+      opacity: 1, 
+      duration: 1, 
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".left-image",
+        start: "top bottom",
+        end: "top center",
+        scrub: 1,
+      }
+    }
+  )
+
+  gsap.fromTo(".center-image", 
+    { y: 300, opacity: 0 },
+    { 
+      y: 0, 
+      opacity: 1, 
+      duration: 1, 
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".center-image",
+        start: "top bottom",
+        end: "top center",
+        scrub: 1,
+      }
+    }
+  )
+
+  gsap.fromTo(".right-image", 
+    { x: 300, opacity: 0 },
+    { 
+      x: 0, 
+      opacity: 1, 
+      duration: 1, 
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".right-image",
+        start: "top bottom",
+        end: "top center",
+        scrub: 1,
+      }
+    }
+  )
+}
 </script>
+
 
 <template>
   <section class="grid grid-cols-12 gap-4 relative mb-5 items-center">
