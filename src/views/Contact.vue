@@ -4,22 +4,19 @@ import Footer from '@/components/base/Footer.vue'
 import TextScroll from '@/components/TextScroll.vue'
 import FAQ from '@/components/FAQ.vue'
 import { useTitleAnimation } from '@/composables/useTitleAnimation'
-import { useParagraphAnimation } from '@/composables/useParagraphAnimation'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 const titleRef1 = ref<HTMLElement | null>(null)
 const titleRef2 = ref<HTMLElement | null>(null)
 const titleRef3= ref<HTMLElement | null>(null)
 const titleRef4 = ref<HTMLElement | null>(null)
-const paragraphRef = ref<HTMLElement | null>(null)
 const imageRef4 = ref<HTMLElement | null>(null)
 
-useParagraphAnimation(paragraphRef, 0.5)
 useTitleAnimation(titleRef1, 0.5)
 useTitleAnimation(imageRef4, 1)
 useTitleAnimation(titleRef2, 0.5)
 useTitleAnimation(titleRef3, 0.5)
-useTitleAnimation(titleRef4, 1.5)
+useTitleAnimation(titleRef4, 1)
 </script>
 
 <template>
@@ -43,7 +40,7 @@ useTitleAnimation(titleRef4, 1.5)
       Feel free to reach out for personalized recommendations or information on local attractions!"
     </h1>
   </section>
-  <section class="grid grid-cols-12 gap-5 overflow-hidden px-5 relative md:px-20">
+  <section ref="titleRef4" class="grid grid-cols-12 gap-5 overflow-hidden px-5 relative md:px-20">
     <div
       class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>
@@ -52,7 +49,7 @@ useTitleAnimation(titleRef4, 1.5)
         <div>
           <label 
             for="email" 
-            class="block mb-2 text-sm font-medium"
+            class="block mb-2"
           >
             Your email
           </label>
@@ -67,7 +64,7 @@ useTitleAnimation(titleRef4, 1.5)
         <div>
           <label 
             for="subject" 
-            class="block mb-2 text-sm font-medium"
+            class="block mb-2"
           >
             Subject
           </label>
@@ -82,7 +79,7 @@ useTitleAnimation(titleRef4, 1.5)
         <div class="sm:col-span-2">
           <label 
             for="message" 
-            class="block mb-2 text-sm font-medium "
+            class="block mb-2 "
           >
             Your message
           </label>

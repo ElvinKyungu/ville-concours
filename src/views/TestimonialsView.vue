@@ -5,7 +5,6 @@ import Header from "@/components/base/Header.vue"
 import userProfile from '@/assets/user.png'
 import Footer from "@/components/base/Footer.vue"
 import { gsap } from 'gsap'
-
 const testimonials = ref([
   {
     userImage: userProfile,
@@ -75,25 +74,37 @@ onMounted(() => {
   <main class="min-h-screen">
     <div>
       <Header />
-      <h1 class="pt-40 text-center text-heading-1 text-black px-5 md:px-20 animated-text">
-        Ce que les voyageurs pensent de Tokyo
-      </h1>
-      <p class="mt-10 px-5 md:px-20 text-center mx-auto  text-xl animated-text">
-        Tokyo, métropole où tradition et modernité s’entrelacent, fascine par ses néons éclatants et ses temples paisibles. Chaque coin de rue offre une expérience unique, que ce soit au croisement animé de Shibuya, en admirant la vue depuis Tokyo Skytree, ou en savourant les délices du marché de Tsukiji. Découvrez les impressions de ceux qui ont exploré cette ville vibrante.
-      </p>
-      <div class="pt-5 md:pt-10 lg:pt-10 px-5 md:px-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <TestimonialCard
-            v-for="(testimonial, index) in testimonials"
-            :key="index"
-            class="testimonial-card"
-            :userImage="testimonial.userImage"
-            :userText="testimonial.userText"
-            :userName="testimonial.userName"
-            :userTitle="testimonial.userTitle"
-          />
+      <div class="relative py-10">
+        <div
+          class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
+        ></div>
+        <section class="grid  relative gap-5 z-40 grid-cols-12 px-5 md:px-20 py-10 md:py-20 lg:py-28">
+          <div class="col-span-12 md:col-span-6">
+            <h2 ref="titleRef1" class="text-5xl">Discover Tokyo Through Their Eyes</h2>
+            <p ref="paragraphRef" class="text-lg md:text-xl mt-10">
+              Travelers from all around the world have explored the wonders of Tokyo and fallen in love with its vibrant charm. Read their authentic stories, filled with awe, cultural discoveries, and unforgettable experiences. Let their journeys inspire you as you plan your own adventure in Japan’s captivating capital.  
+            </p>
+          </div>
+          <div class="col-span-12 md:col-span-6">
+            <img src="@/assets/slider-2.jpg" alt="" class="rounded-lg">
+          </div>
+        </section>
+        <div class="pt-5 px-5 md:px-20">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <TestimonialCard
+              v-for="(testimonial, index) in testimonials"
+              :key="index"
+              class="testimonial-card"
+              :userImage="testimonial.userImage"
+              :userText="testimonial.userText"
+              :userName="testimonial.userName"
+              :userTitle="testimonial.userTitle"
+            />
+          </div>
         </div>
       </div>
+      
+      
     </div>
   </main>
   <Footer />
