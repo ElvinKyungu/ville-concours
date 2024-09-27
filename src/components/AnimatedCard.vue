@@ -17,19 +17,17 @@ onMounted(() => {
   const images = document.querySelectorAll('.animate-img')
   const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.1 })
 
-  // Apply falling effect with elastic bounce
   tl.fromTo(images,
     {
-      y: -200, // Start above the viewport
+      y: -200,
       opacity: 0,
-      rotation: 30, // Optional: Add some rotation for more dynamic falling effect
     },
     {
-      y: 0, // Final position
+      y: 0, 
       opacity: 1,
-      rotation: 0, // Reset rotation
+      rotation: 0, 
       duration: 2,
-      ease: "elastic.out(0.4, 0.4)", // Elastic bounce effect
+      ease: "elastic.out(0.4, 0.4)", 
       stagger: {
         each: 0.2,
       }
@@ -88,7 +86,7 @@ onMounted(() => {
       </button>
     </div>
     <div class="col-span-12 md:col-span-6 overflow-hidden mt-10 ">
-      <div class="flex flex-wrap gap-4 -space-x-24 justify-center md:w-[31rem] mx-auto">
+      <div class="flex flex-wrap gap-4 -space-x-24 justify-center md:w-[32rem] mx-auto">
         <img :src="imag1" alt="" class="animate-img image-animate rotate-12">
         <img :src="imag2" alt="" class="animate-img image-animate -rotate-12">
         <img :src="imag3" alt="" class="animate-img image-animate rotate-6">

@@ -36,7 +36,7 @@
     @apply text-3xl md:text-4xl lg:text-5xl text-white 
   }
   .image-animate{
-    @apply transform w-36 h-36 md:w-56 md:h-56 object-cover rounded-[2rem] 
+    @apply transform w-36 h-36 md:w-64 md:h-56 object-cover rounded-[2rem] 
     shadow-2xl border-[10px] border-gray-100
   }
 }
