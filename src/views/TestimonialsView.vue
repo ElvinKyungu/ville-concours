@@ -8,39 +8,39 @@ import { gsap } from 'gsap'
 const testimonials = ref([
   {
     userImage: userProfile,
-    userText: "Explorer Tsukiji était un rêve pour les amateurs de cuisine. Le sushi et les fruits de mer les plus frais que j’ai jamais mangés, et l’ambiance du marché était très animée !",
+    userText: "Exploring Tsukiji was a food lover's dream. The freshest sushi and seafood I've ever had, and the market atmosphere was bustling!",
     userName: "Alex Dubro",
-    userTitle: "Du Royaume-Uni"
+    userTitle: "From England"
   },
   {
     userImage: userProfile,
-    userText: "Odaiba avait un côté futuriste avec son front de mer, sa statue géante de Gundam, et ses centres commerciaux high-tech. La vue du coucher de soleil sur le pont Rainbow était magique",
+    userText: "Odaiba had a futuristic feel with its waterfront, giant Gundam statue and high-tech shopping malls. The sunset view from the Rainbow Bridge was magical.",
     userName: "Sarah Assina",
-    userTitle: "Du Canada"
+    userTitle: "From Canada"
   },
   {
     userImage: userProfile,
-    userText: "Le parc d'Ueno était une escapade paisible loin du tumulte de la ville. Les cerisiers en fleurs étaient magnifiques, et visiter le zoo a été une façon amusante de passer la journée.",
+    userText: "Ueno Park was a peaceful escape from the hustle and bustle of the city. The cherry blossoms were beautiful, and visiting the zoo was a fun way to spend the day.",
     userName: "Diego delafuente",
-    userTitle: "De l'Espagne"
+    userTitle: "From Spain"
   },
   {
     userImage: userProfile,
-    userText: "La vue depuis Tokyo Skytree était à couper le souffle. Regarder les lumières de la ville la nuit depuis cette hauteur est une expérience inoubliable. Un incontournable !",
+    userText: "The view from Tokyo Skytree was breathtaking. Watching the city lights at night from this height is an unforgettable experience. A must-see!",
     userName: "Emman Levi",
-    userTitle: "D'Australie"
+    userTitle: "From Australia"
   },
   {
     userImage: userProfile,
-    userText: "L’atmosphère au Temple Senso-ji était surréaliste. Les portes rouges vibrantes, l’encens et l’architecture époustouflante m’ont vraiment fait sentir connecté à l’histoire riche du Japon.",
+    userText: "The atmosphere at Senso-ji Temple was surreal. The vibrant red doors, incense and stunning architecture really made me feel connected to Japan's rich history.",
     userName: "Marc JC",
-    userTitle: "Des Etats-Unis"
+    userTitle: "From USA"
   },
   {
     userImage: userProfile,
-    userText: "Shibuya Crossing était incroyable ! Le nombre de personnes, les lumières et l’énergie sont quelque chose qu’il faut vivre en personne. C’est comme entrer dans une scène de film !",
+    userText: "Shibuya Crossing was incredible! The sheer number of people, the lights and the energy are something you have to experience in person. It's like stepping into a movie scene!",
     userName: "Laura Bent",
-    userTitle: "De France"
+    userTitle: "From France"
   }
 ])
 
@@ -80,7 +80,7 @@ onMounted(() => {
         ></div>
         <section class="grid  relative gap-5 z-40 grid-cols-12 px-5 md:px-20 py-10 md:py-20 lg:py-28">
           <div class="col-span-12 md:col-span-6">
-            <h2 ref="titleRef1" class="text-5xl">Discover Tokyo Through Their Eyes</h2>
+            <h2 ref="titleRef1" class="text-3xl md:text-4xl ">Discover Tokyo Through Their Eyes</h2>
             <p ref="paragraphRef" class="text-lg md:text-xl mt-10">
               Travelers from all around the world have explored the wonders of Tokyo and fallen in love with its vibrant charm. Read their authentic stories, filled with awe, cultural discoveries, and unforgettable experiences. Let their journeys inspire you as you plan your own adventure in Japan’s captivating capital.  
             </p>
@@ -89,7 +89,8 @@ onMounted(() => {
             <img src="@/assets/slider-2.jpg" alt="" class="rounded-lg">
           </div>
         </section>
-        <div class="pt-5 px-5 md:px-20">
+        <div class="pt-5 px-5 md:px-20 relative z-10">
+          <h2 class="text-3xl md:text-4xl  mb-10">Testimonials</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <TestimonialCard
               v-for="(testimonial, index) in testimonials"
