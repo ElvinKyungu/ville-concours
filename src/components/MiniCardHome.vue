@@ -80,10 +80,13 @@ const titleRef = ref<HTMLElement | null>(null)
 </script>
 
 <template>
-  <section class="flex flex-col w-full px-5 md:px-20">
-    <p>Welcome</p>
-    <h1 ref="titleRef" class="text-heading-1 text-black card-title">Discover the Top 6 Must-See Spots in Tokyo</h1> 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-3 md:gap-y-8 mt-10">
+  <section class="flex flex-col w-full px-5 md:px-20 relative">
+    <div
+      class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
+    ></div>
+    <p class="relative z-10">Welcome</p>
+    <h1 ref="titleRef" class="text-heading-1 relative z-10 text-black card-title">Discover the Top 6 Must-See Spots in Tokyo</h1> 
+    <div class="grid grid-cols-1 relative z-10 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-3 md:gap-y-8 mt-10">
       <div 
         v-for="(card, index) in cards" 
         :key="index" 

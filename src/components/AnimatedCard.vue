@@ -11,7 +11,6 @@ import imag5 from '@/assets/trigger-2.avif'
 const buttonRef = ref<HTMLElement | null>(null)
 const titleRef = ref<HTMLElement | null>(null)
 const paragraphRef = ref<HTMLElement | null>(null)
-const hoverAnimation = ref<GSAPTimeline | null>(null)
 
 onMounted(() => {
   const images = document.querySelectorAll('.animate-img')
@@ -68,7 +67,10 @@ onMounted(() => {
 
 <template>
   <section class="grid relative z-40 grid-cols-12 px-5 md:px-20 py-36 md:py-20 lg:py-28">
-    <div class="col-span-12 md:col-span-6 lg:py-10">
+    <div
+      class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
+    ></div>
+    <div class="col-span-12 relative z-20 md:col-span-6 lg:py-10">
       <h2 ref="titleRef" class="text-3xl md:text-4xl lg:text-6xl">
         Welcome to Tokyo, the most vibrant city in the world Tokyo sets the pace for the future of urban living
       </h2>
@@ -83,7 +85,7 @@ onMounted(() => {
         <IconArrowGrowUp/>
       </button>
     </div>
-    <div class="col-span-12 md:col-span-6 overflow-hidden mt-10 pt-5 pb-16">
+    <div class="relative z-20 col-span-12 md:col-span-6 overflow-hidden mt-10 pt-5 pb-16">
       <div class="flex flex-wrap gap-4 -space-x-24 justify-center md:w-[32rem] h-full mx-auto">
         <img :src="imag1" alt="" class="animate-img image-animate rotate-12">
         <img :src="imag2" alt="" class="animate-img image-animate -rotate-12">
