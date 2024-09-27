@@ -11,7 +11,9 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@types/leaflet": "^1.9.12",
     "gsap": "^3.12.5",
+    "leaflet": "^1.9.4",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

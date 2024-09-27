@@ -10,9 +10,9 @@ const titleRef1 = ref<HTMLElement | null>(null)
 const imageRef = ref<HTMLElement | null>(null)
 const faqRef = ref<HTMLElement | null>(null)
 
-useParagraphAnimation(titleRef1, 1.5)
-useTitleAnimation(imageRef, 2)
-useTitleAnimation(faqRef, 2.4)
+useParagraphAnimation(titleRef1, .5)
+useTitleAnimation(imageRef, 1)
+useTitleAnimation(faqRef, 1.5)
 
 const faqs = ref([
   {
