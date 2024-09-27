@@ -44,33 +44,36 @@ const cards = [
 
 const cardsRef = ref<HTMLElement[]>([])
 const titleRef = ref<HTMLElement | null>(null)
+  onMounted(() => {
+  const title = titleRef.value;
+  const words = title?.innerText.split(' ') || [];
+  title!.innerHTML = words.map(word => `<span class="word">${word}</span>`).join(' ');
 
-onMounted(() => {
-  const title = titleRef.value
-  const words = title?.innerText.split(' ') || []
-  title!.innerHTML = words.map(word => `<span class="word">${word}</span>`).join(' ')
-  
-  const wordElements = title?.querySelectorAll('.word')
-  
-  gsap.fromTo(wordElements, 
-    { y: '100%', clipPath: 'inset(0 0 100% 0)' }, 
-    { 
-      y: '0%', 
-      clipPath: 'inset(0 0 0% 0)', 
-      duration: 1, 
+  const wordElements = title?.querySelectorAll('.word');
+
+  if (wordElements && wordElements.length > 0) {
+    gsap.fromTo(
+      wordElements,
+      { y: '100%', clipPath: 'inset(0 0 100% 0)' },
+      {
+        y: '0%',
+        clipPath: 'inset(0 0 0% 0)',
+        duration: 1,
+        ease: 'power4.out',
+        stagger: 0.2,
+      }
+    );
+  }
+
+  gsap.fromTo(
+    cardsRef.value,
+    { opacity: 0, y: 50 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
       ease: 'power4.out',
       stagger: 0.2,
-    }
-  )
-
-  gsap.fromTo(cardsRef.value, 
-    { opacity: 0, y: 50 }, 
-    { 
-      opacity: 1, 
-      y: 0, 
-      duration: 1, 
-      ease: 'power4.out', 
-      stagger: 0.2
     }
   )
 })
