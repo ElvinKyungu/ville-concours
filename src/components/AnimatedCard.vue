@@ -66,9 +66,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="grid relative z-40 grid-cols-12 px-5 md:px-20 py-10 md:py-20 lg:py-40">
+  <section class="grid relative z-40 grid-cols-12 px-5 md:px-20 py-36 md:py-20 lg:py-40">
     <div class="col-span-12 md:col-span-6">
-      <h2 ref="titleRef" class="text-6xl">
+      <h2 ref="titleRef" class="text-3xl md:text-4xl lg:text-6xl">
         Welcome to Tokyo, the most vibrant city in the world Tokyo sets the pace for the future of urban living
       </h2>
       <p ref="paragraphRef" class="mt-12">
@@ -82,8 +82,8 @@ onMounted(() => {
         <IconArrowGrowUp/>
       </button>
     </div>
-    <div class="col-span-12 md:col-span-6">
-      <div class="flex flex-wrap gap-4 -space-x-24 justify-center w-[31rem] mx-auto">
+    <div class="col-span-12 md:col-span-6 overflow-hidden mt-10 ">
+      <div class="flex flex-wrap gap-4 -space-x-24 justify-center md:w-[31rem] mx-auto">
         <img :src="imag1" alt="" class="animate-img image-animate rotate-12">
         <img :src="imag2" alt="" class="animate-img image-animate -rotate-12">
         <img :src="imag3" alt="" class="animate-img image-animate rotate-6">
@@ -95,5 +95,4 @@ onMounted(() => {
 </template>
 
 <style>
-/* Add any necessary styles */
 </style>

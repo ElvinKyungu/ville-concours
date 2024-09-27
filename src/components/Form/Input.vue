@@ -55,7 +55,7 @@ const handleInput = (event: Event) => {
 
 const startAnimation = () => {
   updatePlaceholder()
-  animationInterval = setInterval(animatePlaceholder, 3000)
+  animationInterval = setInterval(animatePlaceholder, 2000)
 }
 
 onMounted(() => {
@@ -79,7 +79,7 @@ watch(inputValue, (newValue) => {
   <div class="mx-auto flex max-w-6xl py-5 px-5 rounded-full border border-gray-500">
     <input 
       type="text" 
-      class="keyword-input placeholder:text-gray-500 outline-none text-white text-2xl w-full bg-transparent" 
+      class="keyword-input placeholder:text-gray-500 outline-none text-2xl w-full bg-transparent" 
       @input="handleInput" 
       ref="keywordInput" 
     />
