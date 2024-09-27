@@ -7,6 +7,37 @@ import slider3 from "@/assets/slider-3.jpg"
 import IconArrowGrowUp from '@/components/icons/IconArrowGrowUp.vue'
 import IconHeart from '@/components/icons/IconHeart.vue'
 import IconRight from './icons/IconRight.vue'
+import { useTitleAnimation } from '@/composables/useTitleAnimation'
+import { useParagraphAnimation } from '@/composables/useParagraphAnimation'
+
+const titleRef1 = ref<HTMLElement | null>(null)
+const titleRef2 = ref<HTMLElement | null>(null)
+const titleRef3= ref<HTMLElement | null>(null)
+
+const cardRef1 = ref<HTMLElement | null>(null)
+const cardRef2 = ref<HTMLElement | null>(null)
+const cardRef3 = ref<HTMLElement | null>(null)
+
+const imagesRef = ref<HTMLElement | null>(null)
+
+const paragraphRef1 = ref<HTMLElement | null>(null)
+const paragraphRef2 = ref<HTMLElement | null>(null)
+const paragraphRef3 = ref<HTMLElement | null>(null)
+const paragraphRef4 = ref<HTMLElement | null>(null)
+
+useTitleAnimation(titleRef1, 1)
+useTitleAnimation(titleRef2, 1.2)
+useParagraphAnimation(paragraphRef1, 1)
+
+useTitleAnimation(cardRef1, 1.3)
+useTitleAnimation(cardRef2, 1.5)
+useTitleAnimation(cardRef3, 1.7)
+
+useParagraphAnimation(paragraphRef2, 1.7)
+useParagraphAnimation(paragraphRef3, 1.0)
+useParagraphAnimation(paragraphRef4, 2.4)
+
+useParagraphAnimation(imagesRef, 2)
 
 const cardInfos = [
   {
@@ -103,37 +134,37 @@ const handleCardClick = (event: Event, cardIndex: number) => {
     ></div>
     <div class="col-span-12 md:col-span-6 relative z-30">
       <div class="flex flex-col justify-between w-full h-full">
-        <h1 class="text-5xl">We bring bring the the future future home. home. </h1>
+        <h1 ref="titleRef1" class="text-5xl">We bring bring the the future future home. home. </h1>
         <div class="grid my-10 md:mt-5 grid-cols-12 md:flex justify-between gap-2 md:gap-5 items-center">
-          <p class="w-full col-span-8">
+          <p ref="paragraphRef1" class="w-full col-span-8">
             Lorem ipsum dolor sit amet consectetur adipisicing 
           </p>
-          <div class="h-[1px] col-span-4 bg-black w-full"></div>
+          <div ref="titleRef2" class="h-[1px] col-span-4 bg-black w-full"></div>
         </div>
       </div>
     </div>
     <div class="col-span-12 lg:col-span-6 relative z-30">
       <div class="grid grid-cols-12 gap-5">
         <div class="col-span-2 hidden md:block"></div>
-        <div class="col-span-6 md:col-span-5 bg-black text-white p-5 h-32 rounded-md">
-          <div class="flex justify-between w-full">
+        <div ref="cardRef1" class="col-span-6 md:col-span-5 bg-black text-white p-5 h-32 rounded-md">
+          <div ref="paragraphRef2" class="flex justify-between w-full">
             <span>C'est ton premier voyage</span>
             <IconRight class="text-white"/>
           </div>
         </div>
-        <div class="col-span-6 md:col-span-5 bg-blue-500 text-white p-5 h-32 rounded-md">
-          <div class="flex justify-between w-full">
+        <div ref="cardRef2" class="col-span-6 md:col-span-5 bg-blue-500 text-white p-5 h-32 rounded-md">
+          <div ref="paragraphRef3" class="flex justify-between w-full">
             <span>Let's go</span>
             <IconRight/>
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-12 bg-gray-100 mt-5 p-5 rounded-lg md:p-7">
-        <div class="text-lg uppercase col-span-2">Project</div>
+      <div ref="cardRef3" class="grid grid-cols-12 bg-gray-100 mt-5 p-5 rounded-lg md:p-7">
+        <div ref="paragraphRef4" class="text-lg uppercase col-span-2">Project</div>
         <div class="col-span-12 md:col-span-10">
           <section class="flex justify-center flex-col items-center w-full relative z-0">
             <div class="grid grid-cols-12 gap-5 relative w-full h-full">
-              <div class="sticky col-span-12 md:col-span-6 overflow-hidden h-72 w-full">
+              <div ref="imagesRef" class="sticky col-span-12 md:col-span-6 overflow-hidden h-72 w-full">
                 <div ref="blockRef" class="h-full w-full relative">
                   <div class="absolute right-5 top-5 flex justify-between w-full">
                     <div class="z-50 flex right-3 absolute top-0">

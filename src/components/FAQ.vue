@@ -3,6 +3,17 @@ import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import IconPlus from './icons/IconPlus.vue'
 
+import { useTitleAnimation } from '@/composables/useTitleAnimation'
+import { useParagraphAnimation } from '@/composables/useParagraphAnimation'
+
+const titleRef1 = ref<HTMLElement | null>(null)
+const imageRef = ref<HTMLElement | null>(null)
+const faqRef = ref<HTMLElement | null>(null)
+
+useParagraphAnimation(titleRef1, 1.5)
+useTitleAnimation(imageRef, 2)
+useTitleAnimation(faqRef, 2.4)
+
 const faqs = ref([
   {
     question: "What is the best time to visit Tokyo?",
@@ -53,18 +64,18 @@ onMounted(() => {
 <template>
   <section>
     <div class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 py-9 px-4">
-      <h2 class="lg:text-6xl md:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9">
+      <h2 ref="titleRef1" class="lg:text-6xl md:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9">
         Frequently Asked Questions
       </h2>
       <div class="flex md:flex-row flex-col md:space-x-8 md:mt-16 mt-8">
-        <div class="md:w-5/12 lg:w-4/12 w-full">
+        <div ref="imageRef" class="md:w-5/12 lg:w-4/12 w-full">
           <img 
             src="https://images.unsplash.com/photo-1548783307-f63adc3f200b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHRva3lvfGVufDB8fDB8fHwwg" 
             alt="Tokyo City" 
             class="w-full h-[18rem] object-cover rounded-lg" 
           />
         </div>
-        <div class="md:w-7/12 lg:w-8/12 w-full md:mt-0 sm:mt-14 mt-10">
+        <div ref="faqRef" class="md:w-7/12 lg:w-8/12 w-full md:mt-0 sm:mt-14 mt-10">
           <div v-for="(faq, index) in faqs" :key="index">
             <div class="flex justify-between items-center cursor-pointer" @click="toggleFaq(index)">
               <h3 class="text-xl leading-5">{{ faq.question }}</h3>

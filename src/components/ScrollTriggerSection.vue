@@ -57,7 +57,7 @@ onMounted(async () => {
 
 onUnmounted(() => {
   if (ctx) {
-    ctx.revert() // Nettoyer les effets GSAP lors du démontage
+    ctx.revert()
   }
 })
 
