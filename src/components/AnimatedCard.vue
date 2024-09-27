@@ -15,17 +15,16 @@ const hoverAnimation = ref<GSAPTimeline | null>(null)
 
 onMounted(() => {
   const images = document.querySelectorAll('.animate-img')
-  const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.1 })
+  const tl = gsap.timeline({ repeat: 0, repeatDelay: 0.1 })
 
   tl.fromTo(images,
     {
-      y: -200,
+      y: -200, 
       opacity: 0,
     },
     {
       y: 0, 
       opacity: 1,
-      rotation: 0, 
       duration: 2,
       ease: "elastic.out(0.4, 0.4)", 
       stagger: {
@@ -34,7 +33,6 @@ onMounted(() => {
     }
   );
 
-  // Title and paragraph animations remain the same
   gsap.fromTo(titleRef.value, 
     {
       y: 50,
@@ -69,8 +67,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="grid relative z-40 grid-cols-12 px-5 md:px-20 py-36 md:py-20 lg:py-40">
-    <div class="col-span-12 md:col-span-6">
+  <section class="grid relative z-40 grid-cols-12 px-5 md:px-20 py-36 md:py-20 lg:py-28">
+    <div class="col-span-12 md:col-span-6 lg:py-10">
       <h2 ref="titleRef" class="text-3xl md:text-4xl lg:text-6xl">
         Welcome to Tokyo, the most vibrant city in the world Tokyo sets the pace for the future of urban living
       </h2>
@@ -85,8 +83,8 @@ onMounted(() => {
         <IconArrowGrowUp/>
       </button>
     </div>
-    <div class="col-span-12 md:col-span-6 overflow-hidden mt-10 ">
-      <div class="flex flex-wrap gap-4 -space-x-24 justify-center md:w-[32rem] mx-auto">
+    <div class="col-span-12 md:col-span-6 overflow-hidden mt-10 pt-5 pb-16">
+      <div class="flex flex-wrap gap-4 -space-x-24 justify-center md:w-[32rem] h-full mx-auto">
         <img :src="imag1" alt="" class="animate-img image-animate rotate-12">
         <img :src="imag2" alt="" class="animate-img image-animate -rotate-12">
         <img :src="imag3" alt="" class="animate-img image-animate rotate-6">
