@@ -14,6 +14,15 @@ import ScrollTriggerSection from '@/components/ScrollTriggerSection.vue'
 import FAQ from '@/components/FAQ.vue'
 import MiniCardHome from '@/components/MiniCardHome.vue'
 import AnimatedCard from '@/components/AnimatedCard.vue'
+import { useTitleAnimation } from '@/composables/useTitleAnimation'
+import { useParagraphAnimation } from '@/composables/useParagraphAnimation'
+import { ref } from 'vue'
+
+const titleRef = ref<HTMLElement | null>(null)
+const paragraphRef = ref<HTMLElement | null>(null)
+
+useParagraphAnimation(paragraphRef, 0.5)
+useTitleAnimation(titleRef, 0.5)
 const imagesList = [image1,image3,image4,]
 </script>
 
@@ -28,10 +37,10 @@ const imagesList = [image1,image3,image4,]
     ></div>
     <section class="grid  relative z-40 grid-cols-12 px-5 md:px-20 py-10 md:py-20 lg:py-28">
       <div class="col-span-12 md:col-span-6">
-        <h2 class="text-5xl">Same news of Tokyo</h2>
+        <h2 ref="titleRef" class="text-5xl">Same news of Tokyo</h2>
       </div>
       <div class="col-span-12 md:col-span-6">
-        <p class="text-lg md:text-xl">Explore some of the ways we're bringing the future of home <br> improvement to life, today. </p>
+        <p ref="paragraphRef" class="text-lg md:text-xl">Explore some of the ways we're bringing the future of home <br> improvement to life, today. </p>
       </div>
     </section>
     <HomeCardSlider/>
