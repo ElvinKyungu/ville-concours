@@ -17,22 +17,26 @@ onMounted(() => {
   const images = document.querySelectorAll('.animate-img')
   const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.1 })
 
+  // Apply falling effect with elastic bounce
   tl.fromTo(images,
     {
-      scale: 0,
-      opacity: 0 
+      y: -200, // Start above the viewport
+      opacity: 0,
+      rotation: 30, // Optional: Add some rotation for more dynamic falling effect
     },
     {
-      scale: 1,
+      y: 0, // Final position
       opacity: 1,
+      rotation: 0, // Reset rotation
       duration: 2,
-      ease: "elastic.out(0.4,0.4)",
+      ease: "elastic.out(0.4, 0.4)", // Elastic bounce effect
       stagger: {
         each: 0.2,
       }
     }
   );
 
+  // Title and paragraph animations remain the same
   gsap.fromTo(titleRef.value, 
     {
       y: 50,
@@ -63,6 +67,7 @@ onMounted(() => {
     }
   )
 })
+
 </script>
 
 <template>
