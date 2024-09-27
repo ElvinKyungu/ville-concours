@@ -1,30 +1,70 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import IconArrowGrowUp from '@/components/icons/IconArrowGrowUp.vue'
+import { useTitleAnimation } from '@/composables/useTitleAnimation'
+import { useParagraphAnimation } from '@/composables/useParagraphAnimation'
 
+const titleRef1 = ref<HTMLElement | null>(null)
+const titleRef2 = ref<HTMLElement | null>(null)
+const textRef1 = ref<HTMLElement | null>(null)
+const textRef2 = ref<HTMLElement | null>(null)
+const textRef3 = ref<HTMLElement | null>(null)
+const textRef4 = ref<HTMLElement | null>(null)
+const paragraphRef1 = ref<HTMLElement | null>(null)
+const paragraphRef2 = ref<HTMLElement | null>(null)
+
+
+useTitleAnimation(titleRef1, 1)
+useTitleAnimation(titleRef2, 1.5)
+useParagraphAnimation(paragraphRef1, 1.5)
+useParagraphAnimation(paragraphRef2, 2)
+useTitleAnimation(textRef1, 0.5)
+useTitleAnimation(textRef2, 1)
+useTitleAnimation(textRef3, 1.7)
+useTitleAnimation(textRef4, 1.9)
+
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+  const sections = document.querySelectorAll('.animated-section')
+
+  sections.forEach((section, index) => {
+    gsap.fromTo(
+      section,
+      { x: index % 2 === 0 ? -450 : 450, }, 
+      {
+        x: 0,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'top center',
+          scrub: true, 
+        },
+      }
+    )
+  })
+})
 </script>
+
 <template>
-  <section class="px-5 md:px-20 lg:gap-10 gap-5 grid py-5 md:py-10 grid-cols-12 mt-10 w-full min-h-[50rem]">
-    <div class="bg-black md:h-full h-[30rem] relative rounded-lg col-span-12 md:col-span-6 p-5 md:p-10">
-      <div
-        class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.700)_1px,transparent_1px)] [background-size:16px_16px]"
-      ></div>
+  <section class="px-5 md:px-20 lg:gap-10 gap-5 grid py-5 md:py-10 grid-cols-12 mt-10 w-full min-h-[50rem] overflow-hidden">
+    <div class="animated-section bg-black md:h-full h-[30rem] relative rounded-lg col-span-12 md:col-span-6 p-5 md:p-10">
+      <div class="absolute z-0 inset-0 h-full w-full bg-[radial-gradient(theme(colors.gray.700)_1px,transparent_1px)] [background-size:16px_16px]"></div>
       <div class="relative z-20 text-white h-full">
         <div class="text-xs uppercase flex justify-between">
-          <p>Why Tokyo</p>
-          <p>All places</p>
+          <p ref="textRef1">Why Tokyo</p>
+          <p ref="textRef2">All places</p>
         </div>
         <div class="w-full md:max-w-[30rem] my-auto mt-28 mx-auto">
-          <h1 class="text-2xl md:text-3xl lg:text-5xl ">Besoin de rejoindre la plus belle ville du monde Tokyo</h1>
-          <p class="mt-2 md:mt-10">
+          <h1 ref="titleRef1" class="text-2xl md:text-3xl lg:text-5xl">Besoin de rejoindre la plus belle ville du monde Tokyo</h1>
+          <p ref="paragraphRef1" class="mt-2 md:mt-10">
             Join a Fortune 50 home improvement retailer that is building the technology that will transform the ways we live, shop, and work.
           </p>
         </div>
         <div 
-          class="
-            md:bottom-5 cursor-pointer rounded-lg bottom-0
-            justify-end items-end w-[95%] md:w-1/2 mx-auto
-            bg-white text-black absolute p-5 md:p-5 right-[2.5%]
-          "
+          class="md:bottom-5 cursor-pointer rounded-lg bottom-0 justify-end items-end w-[95%] md:w-1/2 mx-auto bg-white text-black absolute p-5 md:p-5 right-[2.5%]"
         >
           <div class="flex justify-between">
             <span class="text-sm md:text-sm">Let's talk about your travel</span>
@@ -33,27 +73,21 @@ import IconArrowGrowUp from '@/components/icons/IconArrowGrowUp.vue'
         </div>
       </div>
     </div>
-    <div class="bg-gray-100 md:h-full h-[30rem] relative rounded-lg col-span-12 md:col-span-6 p-5 md:p-10">
-      <div
-        class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
-      ></div>
-      <div class="relative z-20  h-full">
+    <div class="animated-section bg-gray-100 md:h-full h-[30rem] relative rounded-lg col-span-12 md:col-span-6 p-5 md:p-10">
+      <div class="absolute z-0 inset-0 h-full w-full bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <div class="relative z-20 h-full">
         <div class="text-xs uppercase flex justify-between">
-          <p>Why Tokyo</p>
-          <p>All places</p>
+          <p ref="textRef3">Why Tokyo</p>
+          <p ref="textRef4">All places</p>
         </div>
         <div class="w-full md:max-w-[30rem] my-auto mt-28 mx-auto">
-          <h1 class="text-2xl md:text-3xl lg:text-5xl -mt-10 md:mt-0 ">Besoin de rejoindre la plus belle ville du monde Tokyo</h1>
-          <p class="mt-5 md:mt-10">
+          <h1 ref="titleRef2" class="text-2xl md:text-3xl lg:text-5xl -mt-10 md:mt-0">Besoin de rejoindre la plus belle ville du monde Tokyo</h1>
+          <p ref="paragraphRef2" class="mt-5 md:mt-10">
             Join a Fortune 50 home improvement retailer that is building the technology that will transform the ways we live, shop, and work.
           </p>
         </div>
         <div 
-          class="
-            md:bottom-5 cursor-pointer rounded-lg bottom-0
-            justify-end items-end w-[95%] md:w-1/2 mx-auto
-            bg-white text-black absolute p-5 md:p-5 right-[2.5%]
-          "
+          class="md:bottom-5 cursor-pointer rounded-lg bottom-0 justify-end items-end w-[95%] md:w-1/2 mx-auto bg-white text-black absolute p-5 md:p-5 right-[2.5%]"
         >
           <div class="flex justify-between">
             <span class="text-sm md:text-sm">Let's talk about your travel</span>

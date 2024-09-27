@@ -18,11 +18,17 @@ import { useTitleAnimation } from '@/composables/useTitleAnimation'
 import { useParagraphAnimation } from '@/composables/useParagraphAnimation'
 import { ref } from 'vue'
 
-const titleRef = ref<HTMLElement | null>(null)
+const titleRef1 = ref<HTMLElement | null>(null)
+const titleRef2 = ref<HTMLElement | null>(null)
+const titleRef3= ref<HTMLElement | null>(null)
+const titleRef4 = ref<HTMLElement | null>(null)
 const paragraphRef = ref<HTMLElement | null>(null)
 
 useParagraphAnimation(paragraphRef, 0.5)
-useTitleAnimation(titleRef, 0.5)
+useTitleAnimation(titleRef1, 0.5)
+useTitleAnimation(titleRef2, 0.5)
+useTitleAnimation(titleRef3, 0.5)
+useTitleAnimation(titleRef4, 0.5)
 const imagesList = [image1,image3,image4,]
 </script>
 
@@ -37,7 +43,7 @@ const imagesList = [image1,image3,image4,]
     ></div>
     <section class="grid  relative z-40 grid-cols-12 px-5 md:px-20 py-10 md:py-20 lg:py-28">
       <div class="col-span-12 md:col-span-6">
-        <h2 ref="titleRef" class="text-5xl">Same news of Tokyo</h2>
+        <h2 ref="titleRef1" class="text-5xl">Same news of Tokyo</h2>
       </div>
       <div class="col-span-12 md:col-span-6">
         <p ref="paragraphRef" class="text-lg md:text-xl">Explore some of the ways we're bringing the future of home <br> improvement to life, today. </p>
@@ -54,11 +60,11 @@ const imagesList = [image1,image3,image4,]
         <p class="h-[1px] bg-black"></p>
         <p class="text-sm">W'are Tokyo</p>
       </div>
-      <h1 class="col-span-12 md:col-span-9 text-3xl md:text-5xl lg:text-5xl">
+      <h1 ref="titleRef2" class="col-span-12 md:col-span-9 text-3xl md:text-5xl lg:text-5xl">
         Welcome to Tokyo, the most vibrant city in the world
       </h1>
     </div>
-    <h1 class="text-3xl relative z-10  md:text-5xl lg:text-5xl">
+    <h1 ref="titleRef3" class="text-3xl relative z-10  md:text-5xl lg:text-5xl">
       Tokyo sets the pace for the future of urban living—through the lens of culture, cutting-edge technology, and endless exploration.
     </h1>
   </section>
@@ -72,7 +78,7 @@ const imagesList = [image1,image3,image4,]
     ></div>
     <div class="col-span-12 md:col-span-6 relative z-30">
       <div class="flex flex-col justify-between w-full h-full">
-        <h1 class="text-5xl">
+        <h1 ref="titleRef4" class="text-5xl">
           We bring bring the the future future home. home. 
           We bring bring the the future future home. home. 
           We bring bring the the future future home. home. 
