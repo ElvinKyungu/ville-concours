@@ -15,28 +15,29 @@ export const HistoricalOrigins: ExperienceDetail = {
   articles: [
     {
       img: artile1,
-      title: "Innovation",
-      description: "Worked on cutting-edge frontend projects that required innovative solutions."
+      title: "Meiji Restoration",
+      description: "The Meiji Restoration of 1868 was a pivotal moment in Japanese history that led to the rapid modernization and industrialization of the country. It marked the end of feudal rule and the beginning of the imperial government."
     },
     {
       img: artile2,
-      title: "UI/UX Design",
-      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
+      title: "Great Kanto Earthquake",
+      description: "In 1923, the Great Kanto Earthquake struck Tokyo, causing massive destruction. It was a catalyst for urban redevelopment and modernization efforts in the subsequent decades."
     }
   ],
   personnages: [
     {
       img: artile3,
-      title: "Innovation",
-      description: "Worked on cutting-edge frontend projects that required innovative solutions."
+      title: "Emperor Meiji",
+      description: "Emperor Meiji played a crucial role in transforming Japan from a feudal society into a modern state. His leadership was instrumental during the Meiji Restoration, which shifted power from the shogunate to the emperor."
     },
     {
       img: artile1,
-      title: "UI/UX Design",
-      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
+      title: "Tokugawa Yoshinobu",
+      description: "The last shogun of the Tokugawa shogunate, Tokugawa Yoshinobu, played a significant role in the events leading to the Meiji Restoration. His resignation marked the end of centuries of feudal rule."
     }
   ]
 }
+
 export const capitalTransition: ExperienceDetail = {
   image: capital,
   title: "Tokyo Becomes the Capital",
@@ -74,57 +75,55 @@ export const modernGrowth: ExperienceDetail = {
   articles: [
     {
       img: artile1,
-      title: "Innovation",
-      description: "Worked on cutting-edge frontend projects that required innovative solutions."
-
+      title: "Economic Miracle",
+      description: "The post-war economic boom, often called the 'Japanese Economic Miracle,' transformed Tokyo into a thriving metropolis. This period saw rapid industrial growth, improved infrastructure, and increased global trade."
     },
     {
       img: artile2,
-      title: "UI/UX Design",
-      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
+      title: "Urban Expansion",
+      description: "During the economic growth period, Tokyo underwent significant urban expansion, with the construction of modern skyscrapers, bullet trains, and advanced urban planning to accommodate its growing population."
     }
   ],
   personnages: [
     {
       img: artile3,
-      title: "Innovation",
-      description: "Worked on cutting-edge frontend projects that required innovative solutions."
+      title: "Prime Minister Eisaku Sato",
+      description: "Under the leadership of Prime Minister Eisaku Sato, Tokyo experienced remarkable economic growth and hosted the 1964 Olympics, showcasing Japan's recovery and modernization."
     },
     {
       img: artile1,
-      title: "UI/UX Design",
-      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
+      title: "Japanese Business Leaders",
+      description: "Business leaders like Soichiro Honda and Akio Morita (founder of Sony) played crucial roles in Tokyo’s transformation into a global hub for technology and innovation during the economic boom."
     }
   ]
 }
 
 export const significantEvents: ExperienceDetail = {
   image: culture,
-  title: "Historical Events",
+  title: "Significant Events",
   description: "During the Edo period (1603-1868), Tokyo, then called Edo, transformed from a small fishing village into Japan’s political center. At the end of the Tokugawa shogunate in 1868, the city was renamed Tokyo, meaning \"Eastern Capital.\"",
   articles: [
     {
       img: artile1,
-      title: "Innovation",
-      description: "Worked on cutting-edge frontend projects that required innovative solutions."
-
+      title: "Edo Period Transformation",
+      description: "During the Edo period, Edo transformed into Japan's political center under the Tokugawa shogunate, growing in population and cultural influence."
     },
     {
       img: artile2,
-      title: "UI/UX Design",
-      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
+      title: "Tokugawa Shogunate",
+      description: "The Tokugawa shogunate ruled Japan for over 250 years, providing stability and a strict social order, which allowed Edo to flourish as a cultural and economic hub."
     }
   ],
   personnages: [
     {
       img: artile3,
-      title: "Innovation",
-      description: "Worked on cutting-edge frontend projects that required innovative solutions."
+      title: "Tokugawa Ieyasu",
+      description: "Tokugawa Ieyasu was the founder of the Tokugawa shogunate, establishing Edo as the administrative capital and laying the foundations for its growth into modern-day Tokyo."
     },
     {
       img: artile1,
-      title: "UI/UX Design",
-      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
+      title: "Merchant Class in Edo",
+      description: "The rising merchant class played a significant role in the economic prosperity of Edo, contributing to its cultural and financial growth during the shogunate era."
     }
   ]
 }
