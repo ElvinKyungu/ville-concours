@@ -71,7 +71,7 @@ onMounted(() => {
       class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>
     <div class="col-span-12 relative z-20 md:col-span-6 lg:py-10">
-      <h2 ref="titleRef" class="text-3xl md:text-4xl lg:text-6xl">
+      <h2 ref="titleRef" class="text-3xl md:text-4xl lg:text-5xl">
         Welcome to Tokyo, the most vibrant city in the world Tokyo sets the pace for the future of urban living
       </h2>
       <p ref="paragraphRef" class="mt-12">

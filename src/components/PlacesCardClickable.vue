@@ -33,11 +33,11 @@ useTitleAnimation(cardRef1, .4)
 useTitleAnimation(cardRef2, .5)
 useTitleAnimation(cardRef3, .7)
 
-useParagraphAnimation(paragraphRef2, .7)
-useParagraphAnimation(paragraphRef3, .8)
-useParagraphAnimation(paragraphRef4, .8)
+useParagraphAnimation(paragraphRef2, .6)
+useParagraphAnimation(paragraphRef3, .7)
+useParagraphAnimation(paragraphRef4, .7)
 
-useParagraphAnimation(imagesRef, .9)
+useParagraphAnimation(imagesRef, .5)
 
 const cardInfos = [
   {
