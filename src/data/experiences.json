@@ -1,117 +1,20 @@
 [
   {
-    "date": "August 2024 - Présent",
-    "title": "Frontend web developer at Efficient Outsource SRL 🇷🇺",
-    "technologies": [
-      "Vuejs",
-      "Typescript"
-    ],
-    "details": {
-      "company": "Efficient Outsource SRL",
-      "duration": "5 months of code",
-      "workingConditions": ["⏱️ Full time", "📍 Full Remote"],
-      "lessons": [
-        {
-          "title": "Time management",
-          "description": "I learned to manage my time and tasks very well, which helped me avoid technical debts.",
-          "icon": "IconTime",
-          "skillLevel": "Midle"
-        },
-        {
-          "title": "Analytical skills",
-          "description": "Each time I had to find solutions to new challenges, which pushed me to give my all, analyze the problem and live up to the company's expectations.",
-          "icon": "IconAnalitical",
-          "skillLevel": "Midle"
-        },
-        {
-          "title": "Communication",
-          "description": "I communicated very well with the team.",
-          "icon": "IconFlag",
-          "skillLevel": "High"
-        }
-      ]
-    },
+    "date": "1960s",
+    "title": "Modern Growth",
+    "description": ["The economic boom from the 1960s to the 1990s turned Tokyo into a global metropolis and a major financial center. Today, Tokyo is one of the world’s most influential cities."],
     "isLast": false
   },
   {
-    "date": "March 2024 - May 2024",
-    "title": "Frontend web developer at Atlantic Zone 🇪🇸",
-    "technologies": [
-      "Vuejs",
-      "Typescript"
-    ],
-    "details": {
-      "company": "Atlantic Zone",
-      "duration": "3 months of code",
-      "workingConditions": ["⏱️ Full time", "📍 Full Remote"],
-      "lessons": [
-        {
-          "title": "Problem-solving",
-          "description": "I improved my problem-solving skills by tackling complex frontend challenges.",
-          "icon": "IconTime",
-          "skillLevel": "Midle"
-        },
-        {
-          "title": "Team collaboration",
-          "description": "Collaboration with a remote team across different time zones was a key learning experience.",
-          "icon": "IconAnalitical",
-          "skillLevel": "High"
-        }
-      ]
-    },
+    "date": "1939-1945",
+    "title": "Significant Events",
+    "description": ["The Meiji Restoration in 1868 marked the start of modernization. The Great Kanto Earthquake in 1923 devastated the city, followed by destruction during World War II (1939-1945). Reconstruction was completed in the 1950s."],
     "isLast": false
   },
   {
-    "date": "July 2023 - January 2024",
-    "title": "Frontend web developer at Soixante Circuits 🇫🇷",
-    "technologies": [
-      "Vuejs",
-      "Typescript"
-    ],
-    "details": {
-      "company": "Soixante Circuits",
-      "duration": "6 months of code",
-      "workingConditions": ["⏱️ Part-time", "📍 On-site"],
-      "lessons": [
-        {
-          "title": "Innovation",
-          "description": "Worked on cutting-edge frontend projects that required innovative solutions.",
-          "icon": "IconFlag",
-          "skillLevel": "High"
-        },
-        {
-          "title": "UI/UX Design",
-          "description": "Enhanced my skills in creating user-centric designs with a focus on accessibility.",
-          "icon": "IconTime",
-          "skillLevel": "Midle"
-        }
-      ]
-    },
-    "isLast": false
-  },
-  {
-    "date": "August 2024 - Présent",
-    "title": "Frontend web developer at Bayommo 🇨🇲",
-    "technologies": ["Vuejs", "Typescript"],
-    "details": {
-      "company": "Bayammo",
-      "duration": "Ongoing",
-      "workingConditions": ["⏱️ Full time", "📍 Hybrid"],
-      "lessons": [
-        {
-          "title": "API Integration",
-          "description": "Gained in-depth experience with integrating complex APIs into Vue.js applications.",
-          "icon": "IconAnalitical",
-          "skillLevel": "High"
-        },
-        {
-          "title": "Performance Optimization",
-          "description": "Focused on optimizing the performance of large-scale applications.",
-          "icon": "IconTime",
-          "skillLevel": "Midle"
-        }
-      ]
-    },
+    "date": "1603-1868",
+    "title": "Historical Origins",
+    "description": ["During the Edo period (1603-1868), Tokyo, then called Edo, transformed from a small fishing village into Japan’s political center. At the end of the Tokugawa shogunate in 1868, the city was renamed Tokyo, meaning \"Eastern Capital.\""],
     "isLast": false
   }
 ]

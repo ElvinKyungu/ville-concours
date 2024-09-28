@@ -1,209 +1,93 @@
 import type { ExperienceDetail } from '@/types/experiences'
+import artile1 from '@/assets/article-1.jpg'
+import artile2 from '@/assets/article-2.jpg'
+import artile3 from '@/assets/article-3.avif'
 
-export const efficientOutsourceExperience: ExperienceDetail = {
-  companyName: "Efficient Outsource SRL",
-  duration: "5 months of code",
-  workType: {
-    location: 'Full Remote',
-    time: 'Full Time',
-  },
-  softSkills: [
+export const HistoricalOrigins: ExperienceDetail = {
+  title: "Historical Events",
+  description: "The Meiji Restoration in 1868 marked the start of modernization. The Great Kanto Earthquake in 1923 devastated the city, followed by destruction during World War II (1939-1945). Reconstruction was completed in the 1950s.",
+  articles: [
     {
-      title: "Analytical skills",
-      description: "Each time I had to find solutions to new challenges, which pushed me to give my all, analyze the problem and live up to the company's expectations.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: false,  // Middle skill level
+      img: artile1,
+      title: "Innovation",
+      description: "Worked on cutting-edge frontend projects that required innovative solutions."
     },
     {
-      title: "Time management",
-      description: "I learned to manage my time and tasks very well, which helped me avoid technical debts.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: true,  // High skill level
-    },
-    {
-      title: "Communication",
-      description: "I communicated very well with the team.",
-      image: "https://infobiz.md/storage/companies/img/1024600042553.png",
-      isHigh: true,  
+      img: artile2,
+      title: "UI/UX Design",
+      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
     }
   ],
-  hardSkills: [
-   
-  ],
-  creativeSkills: [
-    
-  ],
-}
-export const atlanticZoneExperience: ExperienceDetail = {
-  companyName: "Atlantic Zone",
-  duration: "4 months of code",
-  workType: {
-    location: 'Full Remote',
-    time: 'Full Time',
-  },
-  softSkills: [
+  personnages: [
     {
-      title: "Analytical skills",
-      description: "Each time I had to find solutions to new challenges, which pushed me to give my all, analyze the problem and live up to the company's expectations.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: false,  // Middle skill level
+      img: artile3,
+      title: "Innovation",
+      description: "Worked on cutting-edge frontend projects that required innovative solutions."
     },
     {
-      title: "Time management",
-      description: "I learned to manage my time and tasks very well, which helped me avoid technical debts.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: true,  // High skill level
-    },
-    {
-      title: "Communication",
-      description: "I communicated very well with the team.",
-      image: "https://infobiz.md/storage/companies/img/1024600042553.png",
-      isHigh: true,  
+      img: artile1,
+      title: "UI/UX Design",
+      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
     }
-  ],
-  hardSkills: [
-   
-  ],
-  creativeSkills: [
-    
-  ],
-}
-export const soixanteCircuitsExperience: ExperienceDetail = {
-  companyName: "Soixante Circuits",
-  duration: "10 months of code",
-  workType: {
-    location: 'Full Remote',
-    time: 'Full Time',
-  },
-  softSkills: [
-    {
-      title: "Analytical skills",
-      description: "Each time I had to find solutions to new challenges, which pushed me to give my all, analyze the problem and live up to the company's expectations.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: false,  // Middle skill level
-    },
-    {
-      title: "Time management",
-      description: "I learned to manage my time and tasks very well, which helped me avoid technical debts.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: true,  // High skill level
-    },
-    {
-      title: "Communication",
-      description: "I communicated very well with the team.",
-      image: "https://infobiz.md/storage/companies/img/1024600042553.png",
-      isHigh: true,  
-    }
-  ],
-  hardSkills: [
-   
-  ],
-  creativeSkills: [
-    
-  ],
+  ]
 }
 
-export const bayammoExperience: ExperienceDetail = {
-  companyName: "Bayammo",
-  duration: "4 months of code",
-  workType: {
-    location: 'Full Remote',
-    time: 'Full Time',
-  },
-  softSkills: [
+export const modernGrowth: ExperienceDetail = {
+  title: "Modern Growth",
+  description: "The economic boom from the 1960s to the 1990s turned Tokyo into a global metropolis and a major financial center. Today, Tokyo is one of the world’s most influential cities.",
+  articles: [
     {
-      title: "Analytical skills",
-      description: "Each time I had to find solutions to new challenges, which pushed me to give my all, analyze the problem and live up to the company's expectations.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: false,  // Middle skill level
+      img: artile1,
+      title: "Innovation",
+      description: "Worked on cutting-edge frontend projects that required innovative solutions."
+
     },
     {
-      title: "Time management",
-      description: "I learned to manage my time and tasks very well, which helped me avoid technical debts.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: true,  // High skill level
-    },
-    {
-      title: "Communication",
-      description: "I communicated very well with the team.",
-      image: "https://infobiz.md/storage/companies/img/1024600042553.png",
-      isHigh: true,  
+      img: artile2,
+      title: "UI/UX Design",
+      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
     }
   ],
-  hardSkills: [
-   
-  ],
-  creativeSkills: [
-    
-  ],
+  personnages: [
+    {
+      img: artile3,
+      title: "Innovation",
+      description: "Worked on cutting-edge frontend projects that required innovative solutions."
+    },
+    {
+      img: artile1,
+      title: "UI/UX Design",
+      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
+    }
+  ]
 }
 
-export const lushitrapExperience: ExperienceDetail = {
-  companyName: "Lushitrap",
-  duration: "10 months of code",
-  workType: {
-    location: 'Full Remote',
-    time: 'Full Time',
-  },
-  softSkills: [
+export const significantEvents: ExperienceDetail = {
+  title: "Historical Origins",
+  description: "During the Edo period (1603-1868), Tokyo, then called Edo, transformed from a small fishing village into Japan’s political center. At the end of the Tokugawa shogunate in 1868, the city was renamed Tokyo, meaning \"Eastern Capital.\"",
+  articles: [
     {
-      title: "Analytical skills",
-      description: "Each time I had to find solutions to new challenges, which pushed me to give my all, analyze the problem and live up to the company's expectations.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: false,  // Middle skill level
-    },
-    {
-      title: "Time management",
-      description: "I learned to manage my time and tasks very well, which helped me avoid technical debts.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: true,  // High skill level
-    },
-    {
-      title: "Communication",
-      description: "I communicated very well with the team.",
-      image: "https://infobiz.md/storage/companies/img/1024600042553.png",
-      isHigh: true,  
-    }
-  ],
-  hardSkills: [
-   
-  ],
-  creativeSkills: [
-    
-  ],
-}
+      img: artile1,
+      title: "Innovation",
+      description: "Worked on cutting-edge frontend projects that required innovative solutions."
 
-export const codelabExperience: ExperienceDetail = {
-  companyName: "Codelab",
-  duration: "12 months of code",
-  workType: {
-    location: 'On Site',
-    time: 'Part-time Work',
-  },
-  softSkills: [
-    {
-      title: "Analytical skills",
-      description: "Each time I had to find solutions to new challenges, which pushed me to give my all, analyze the problem and live up to the company's expectations.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: false,  // Middle skill level
     },
     {
-      title: "Time management",
-      description: "I learned to manage my time and tasks very well, which helped me avoid technical debts.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcMcti8SAadg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1691835487556?e=1729728000&v=beta&t=9TlfE178JTSbViigb1IFca_ILLxVc5S3Q-QNzP4J5nI",
-      isHigh: true,  // High skill level
-    },
-    {
-      title: "Communication",
-      description: "I communicated very well with the team.",
-      image: "https://infobiz.md/storage/companies/img/1024600042553.png",
-      isHigh: true,  
+      img: artile2,
+      title: "UI/UX Design",
+      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
     }
   ],
-  hardSkills: [
-   
-  ],
-  creativeSkills: [
-    
-  ],
+  personnages: [
+    {
+      img: artile3,
+      title: "Innovation",
+      description: "Worked on cutting-edge frontend projects that required innovative solutions."
+    },
+    {
+      img: artile1,
+      title: "UI/UX Design",
+      description: "Enhanced my skills in creating user-centric designs with a focus on accessibility."
+    }
+  ]
 }

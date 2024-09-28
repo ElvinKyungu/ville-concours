@@ -7,36 +7,27 @@ import experiences from '@/data/experiences.json'
 import ExperiencesDetails from '@/components/experiences/ExperienceDetail.vue'
 import gsap from 'gsap'
 import { 
-  efficientOutsourceExperience,
-  atlanticZoneExperience,
-  soixanteCircuitsExperience,
-  bayammoExperience,
-  codelabExperience,
-  lushitrapExperience
+  significantEvents,
+  modernGrowth,
+  HistoricalOrigins,
 } from '@/data/experiencesDetails'
 import type { ExperienceDetail } from '@/types/experiences'
 import IconCheck from '@/components/icons/IconCheck.vue'
 
 // State to store the selected experience details
-const selectedExperience = ref(efficientOutsourceExperience)
-const activeExperienceTitle = ref(experiences[0].title)  // Default
+const selectedExperience = ref(significantEvents)
+const activeExperienceTitle = ref(experiences[0].title) 
 
-function getExperienceDetails(title: string) {
+function getExperienceDetails(title: string): ExperienceDetail {
   switch (title) {
-    case 'Efficient Outsource':
-      return efficientOutsourceExperience
-    case 'Atlantic Zone':
-      return atlanticZoneExperience
-    case 'Soixante Circuits':
-      return soixanteCircuitsExperience
-    case 'Bayammo':
-      return bayammoExperience
-    case 'CodeLab':
-      return codelabExperience
-    case 'LushiTrap':
-      return lushitrapExperience
+    case 'Historical Origins':
+      return HistoricalOrigins
+    case 'Significant Events':
+      return significantEvents
+    case 'Modern Growth':
+      return modernGrowth
     default:
-      return efficientOutsourceExperience
+      return significantEvents
   }
 }
 
@@ -69,7 +60,7 @@ function selectExperience(experienceDetail:ExperienceDetail) {
     onComplete() {
       // Change the content after fade out
       selectedExperience.value = experienceDetail
-      activeExperienceTitle.value = experienceDetail.companyName// Set the active experience
+      activeExperienceTitle.value = experienceDetail.title
 
       gsap.to('.experience-details', {
         opacity: 1,
@@ -102,7 +93,7 @@ onMounted(() => {
       <h2 ref="" class="text-3xl md:text-5xl relative z-10 my-10">About Tokyo</h2>
       <div class="grid relative gap-10 z-40 grid-cols-12">
         <div class="col-span-12 md:col-span-6">
-          <img src="@/assets/slider-2.jpg" alt="Tokyo Skyline" class="rounded-lg">
+          <img src="@/assets/slider-2.jpg" alt="Tokyo Skyline" class="w-full rounded-lg">
         </div>
         <div class="col-span-12 md:col-span-6">
           <h2 ref="titleRef1" class="text-3xl md:text-4xl">All you need to know about Tokyo</h2>
@@ -116,24 +107,23 @@ onMounted(() => {
       <main class="px-5 w-full relative">
         <h1 class="my-10 text-4xl">History</h1>
         <div class="relative pb-7 rounded-xl">
-          <div class="grid grid-cols-2 space-x-20">
-            <div>
+          <div class="grid grid-cols-12 gap-5">
+            <div class=" col-span-12 md:col-span-6">
               <Experience
                 v-for="(experience, index) in experiences"
                 :key="index"
                 :date="experience.date"
                 :title="experience.title"
-                :technologies="experience.technologies"
+                :description="experience.description"
                 :isLast="experience.isLast"
-                @click="selectExperience(getExperienceDetails(experience.details.company))"
-                :isActive="activeExperienceTitle === experience.details.company"
+                @click="selectExperience(getExperienceDetails(experience.title))"
               >
                 <template #icon>
                   <IconCheck />
                 </template>
               </Experience>
             </div>
-            <div class="bg-gray-100 rounded-lg py-5 px-10 relative hidden md:block">
+            <div class="col-span-12 md:col-span-6 rounded-lg py-5  relative">
               <ExperiencesDetails 
                 :experiences="selectedExperience" 
                 class="experience-details"
@@ -218,29 +208,27 @@ onMounted(() => {
         </div>
       </div>
     </div>
+    <section class="flex flex-col w-full relative pt-20">
 
-  <section class="flex flex-col w-full relative pt-20">
-
-    <p class="relative z-10">Welcome</p>
-    <h1 ref="titleRef" class="text-heading-1 relative z-10 text-black card-title">
-      Tokyo Through the Seasons: A Year of Color and Culture
-    </h1> 
-    <div class="grid grid-cols-1 relative z-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-3 md:gap-y-8 mt-10">
-      <div 
-        v-for="(card, index) in cards" 
-        :key="index" 
-        class="p-7 bg-gray hover:bg-black/10 transition rounded-lg group duration-700 cursor-pointer"
-      >
-        <div ref="cardsRef" class="flex gap-5">
-         
-          <div>
-            <h4 class="text-lg md:text-xl ">{{ card.title }}</h4>
-            <p class="text-sm md:text-base card-description">{{ card.description }}</p>
+      <p class="relative z-10">Welcome</p>
+      <h1 ref="titleRef" class="text-heading-1 relative z-10 text-black card-title">
+        Tokyo Through the Seasons: A Year of Color and Culture
+      </h1> 
+      <div class="grid grid-cols-1 relative z-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-3 md:gap-y-8 mt-10">
+        <div 
+          v-for="(card, index) in cards" 
+          :key="index" 
+          class="p-7 bg-gray hover:bg-black/10 transition rounded-lg group duration-700 cursor-pointer"
+        >
+          <div ref="cardsRef" class="flex gap-5">
+            <div>
+              <h4 class="text-lg md:text-xl ">{{ card.title }}</h4>
+              <p class="text-sm md:text-base card-description">{{ card.description }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   </main>
   <Footer />
 </template>

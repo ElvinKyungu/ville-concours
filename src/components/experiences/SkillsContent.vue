@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { SkillDetail } from '@/types/experiences'
+import type { ExperienceDetail } from '@/types/experiences'
 import IconArrowGrowUp from '../icons/IconArrowGrowUp.vue'
 defineProps<({
-  skills: SkillDetail[]
+  skills: ExperienceDetail[]
 })>()
 </script>
 <template>
@@ -15,15 +15,6 @@ defineProps<({
       <p class="flex gap-2 items-center">
         <IconArrowGrowUp class="text-green-400"/>{{ skill.title }}
       </p>
-      <div class="flex items-center gap-2">
-        <IconFlag :class="{'text-yellow-600': !skill.isHigh, 'text-red-600': skill.isHigh}"/>
-        <span>{{ skill.isHigh ? 'High' : 'Middle' }}</span>
-      </div>
-      <div>
-        <img :src="skill.image" 
-        alt="" 
-        class="w-8 h-8 object-cover rounded-full">
-      </div>
     </div>
   </div>
 </template>

@@ -13,7 +13,7 @@ defineProps({
     required: true,
   },
 
-  technologies: {
+  description: {
     type: Array as PropType<string[]>,
     default: () => [],
   },
@@ -25,58 +25,15 @@ defineProps({
     type: Boolean,
     default: false,
   },
-});
-
-const animateIn = (defaultText: any, hoverText: any) => {
-  gsap
-    .timeline()
-    .to(defaultText, {
-      y: "-100%",
-      opacity: 0,
-      duration: 0.2,
-      ease: "power2.inOut",
-    })
-    .to(
-      hoverText,
-      {
-        y: "0%",
-        opacity: 1,
-        duration: 0.2,
-        ease: "power2.inOut",
-      },
-      0,
-    );
-};
-
-const animateOut = (defaultText: any, hoverText: any) => {
-  gsap
-    .timeline()
-    .to(defaultText, {
-      y: "0%",
-      opacity: 1,
-      duration: 0.2,
-      ease: "power2.inOut",
-    })
-    .to(
-      hoverText,
-      {
-        y: "100%",
-        opacity: 0,
-        duration: 0.2,
-        ease: "power2.inOut",
-      },
-      0,
-    );
-};
+})
 </script>
-
 <template>
   <div
     :class="{'bg-black/10': isActive}"
     class="flex flex-wrap -m-2 cursor-pointer hover:bg-black/10 transition rounded-lg
     "
   >
-    <div class="w-auto p-2">
+    <div class="w-auto">
       <div class="flex flex-col items-center justify-between h-full">
         <div class="block pb-4">
           <div
@@ -95,26 +52,20 @@ const animateOut = (defaultText: any, hoverText: any) => {
         <span class="font-extralight text-base">{{ date }}</span> <br />
         {{ title }}
       </h3>
-      <ul v-if="technologies.length" class="flex mb-7 items-center flex-wrap gap-2 mt-3">
+      <ul v-if="description.length" class="flex mb-7 items-center flex-wrap gap-2 mt-3">
         <li
-          v-for="tech in technologies"
-          :key="tech"
+          v-for="desc in description"
+          :key="desc"
           class="relative overflow-hidden tag flex items-center text-sm font-light"
-          @mouseenter="
-            animateIn($refs[`defaultText_${tech}`], $refs[`hoverText_${tech}`])
-          "
-          @mouseleave="
-            animateOut($refs[`defaultText_${tech}`], $refs[`hoverText_${tech}`])
-          "
         >
-          <span :ref="`defaultText_${tech}`" class="block w-full">
-            {{ tech }}
+          <span :ref="`defaultText_${desc}`" class="block w-full">
+            {{ desc }}
           </span>
           <span
-            :ref="`hoverText_${tech}`"
+            :ref="`hoverText_${desc}`"
             class="block w-full h-full absolute top-2 opacity-0"
           >
-            {{ tech }}
+            {{ desc }}
           </span>
         </li>
       </ul>
@@ -124,6 +75,6 @@ const animateOut = (defaultText: any, hoverText: any) => {
 
 <style>
 .tag {
-  @apply py-2 px-5 bg-black/10 rounded-full cursor-pointer;
+  @apply py-2 px-5  cursor-pointer;
 }
 </style>
