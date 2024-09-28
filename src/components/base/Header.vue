@@ -178,9 +178,9 @@ const showHumbergerMobile = ()=>{
           <router-link to="/" class="text-3xl">Tokyo city</router-link>
         </li>
         <li>
-          <ul class="flex space-x-5">
+          <ul class="flex space-x-10">
             <li class="cursor-pointer hidden md:flex">
-              <ul class="flex gap-5 text-lg">
+              <ul class="flex space-x-7 text-lg">
                 <li
                   @mouseenter="handleHoverEnter('places')" 
                   @mouseleave="handleHoverLeave"
@@ -200,7 +200,7 @@ const showHumbergerMobile = ()=>{
               </ul>
             </li>
             <li @click="open_menu" class="border-b-4 py-3 border-transparent">
-              <IconBars class="text-black w-7 h-7 relative z-10"/>
+              <IconBars class="text-black w-8 h-8 relative z-10"/>
             </li>
           </ul>
         </li>
@@ -260,12 +260,12 @@ const showHumbergerMobile = ()=>{
 
 .container--menu {
   --clip: 0;
-  clip-path: circle(var(--clip) at calc(100% - 1.5rem / 2) 10%);
+  clip-path: circle(var(--clip) at calc(100% - 3rem) 1rem);
   position: absolute;
-  top: 0; 
-  right: 0;
-  width: 100vw; 
-  height: 100vh;
+  top: 5rem;
+  right: 3rem;
+  width: calc(100vw - 3rem);
+  height: calc(100vh - 1rem); 
 }
 
 .sidebar__menu-trigger {
