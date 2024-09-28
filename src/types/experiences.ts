@@ -6,6 +6,7 @@ export interface ArticleDetail {
 
 export interface ExperienceDetail {
   title: string
+  image: string
   description: string
   articles: ArticleDetail[]
   personnages: ArticleDetail[]

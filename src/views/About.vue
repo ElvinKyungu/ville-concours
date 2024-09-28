@@ -85,29 +85,29 @@ onMounted(() => {
 
 <template>
   <Header class="header w-full h-full" />
-  <main class="min-h-screen w-full relative px-5 md:px-20 py-10 md:py-20 lg:py-28">
+  <main class="w-full relative px-5 md:px-20 py-10 md:py-20 lg:py-28">
     <div
       class="absolute z-0 inset-0 h-full w-full bg-[radial-gradient(theme(colors.gray.200)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>
-    <div class="relative ">
-      <h2 ref="" class="text-3xl md:text-5xl relative z-10 my-10">About Tokyo</h2>
-      <div class="grid relative gap-10 z-40 grid-cols-12">
+    <div class="relative w-full flex flex-col">
+      <h2 ref="" class="text-2xl md:text-5xl relative z-10 my-10">About Tokyo</h2>
+      <div class="grid relative lg:space-x-20 z-40 grid-cols-12">
         <div class="col-span-12 md:col-span-6">
           <img src="@/assets/slider-2.jpg" alt="Tokyo Skyline" class="w-full rounded-lg">
         </div>
         <div class="col-span-12 md:col-span-6">
-          <h2 ref="titleRef1" class="text-3xl md:text-4xl">All you need to know about Tokyo</h2>
-          <p ref="paragraphRef" class="text-lg md:text-lg mt-10">
+          <h2 ref="titleRef1" class="text-3xl md:text-4xl text-wrap">All you need to know about Tokyo</h2>
+          <p ref="paragraphRef" class="text-lg md:text-lg mt-10 text-wrap">
             Tokyo, a metropolis where tradition and modernity meet in harmony, attracts travelers from all over the world with its unparalleled energy. From the glittering neon lights of Shibuya to the tranquil gardens of the Imperial Palace, every corner of this Japanese capital is full of surprises. Stroll through the narrow streets of old Tokyo, sample the culinary delights of the lively izakayas, and let yourself be seduced by the warm welcome of the locals. Discover Tokyo through the fascinating tales of the explorers who were dazzled by its magic, and let their stories guide you on this memorable adventure. Prepare yourself for the unique experience of a city that never sleeps, while offering moments of tranquility and contemplation.
           </p>
         </div>
       </div>
-    </div>
-    <section class="py-4 flex justify-center w-full relative z-0">
+    </div> 
+    <section class="py-4 flex justify-center w-full relative z-0 pt-20">
       <main class="px-5 w-full relative">
-        <h1 class="my-10 text-4xl">History</h1>
+        <h1 class="my-10 text-5xl">History</h1>
         <div class="relative pb-7 rounded-xl">
-          <div class="grid grid-cols-12 gap-5">
+          <div class="grid grid-cols-12 md:space-x-10 lg:space-x-20">
             <div class=" col-span-12 md:col-span-6">
               <Experience
                 v-for="(experience, index) in experiences"
@@ -123,7 +123,7 @@ onMounted(() => {
                 </template>
               </Experience>
             </div>
-            <div class="col-span-12 md:col-span-6 rounded-lg py-5  relative">
+            <div class="col-span-12 md:col-span-6 rounded-lg py-5 -mt-10 relative">
               <ExperiencesDetails 
                 :experiences="selectedExperience" 
                 class="experience-details"
@@ -135,7 +135,7 @@ onMounted(() => {
     </section>
     <div class="relative">
       <h2 class="text-3xl md:text-5xl relative z-10 my-10 ">Culture in Tokyo</h2>
-      <div class="grid relative gap-10 z-40 grid-cols-12">
+      <div class="grid relative md:gap-10 z-40 grid-cols-12">
         <div class="col-span-12 md:col-span-3 relative cursor-pointer">
           <div class="container-img-culture">
             <img src="@/assets/culture-modernity.avif" alt="Tradition and Modernity in Tokyo" class="img-culture">
@@ -182,8 +182,8 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <div class="relative z-10 pt-32">
-      <div class="grid relative gap-10 z-40 grid-cols-12">
+    <div class="relative z-10 pt-32 w-full">
+      <div class="grid relative md:gap-10 z-40 grid-cols-12">
         <div class="col-span-12 md:col-span-6">
           <h2 ref="" class="text-3xl md:text-5xl relative z-10">Tokyo economy and innovation</h2>
           <p ref="paragraphRef" class="text-lg md:text-lg mt-10">
@@ -195,8 +195,8 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <div class="relative z-10 pt-32">
-      <div class="grid relative gap-10 z-40 grid-cols-12">
+    <div class="relative z-10 pt-32 w-full">
+      <div class="grid relative md:gap-10 z-40 grid-cols-12">
         <div class="col-span-12 md:col-span-6">
           <img src="@/assets/people-tokyo.avif" alt="Tokyo Skyline" class="rounded-lg max-h-[30rem] w-full object-cover">
         </div>
@@ -209,7 +209,6 @@ onMounted(() => {
       </div>
     </div>
     <section class="flex flex-col w-full relative pt-20">
-
       <p class="relative z-10">Welcome</p>
       <h1 ref="titleRef" class="text-heading-1 relative z-10 text-black card-title">
         Tokyo Through the Seasons: A Year of Color and Culture
@@ -236,7 +235,7 @@ onMounted(() => {
 
 <style>
 .img-culture{
-  @apply rounded-lg absolute h-full  w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110
+  @apply rounded-lg w-full h-full overflow-hidden object-cover transition-transform duration-300 ease-in-out transform hover:scale-110
 }
 .container-img-culture{
   @apply relative h-64 w-full overflow-hidden rounded-lg

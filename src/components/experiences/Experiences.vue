@@ -33,7 +33,7 @@ defineProps({
     class="flex flex-wrap -m-2 cursor-pointer hover:bg-black/10 transition rounded-lg
     "
   >
-    <div class="w-auto">
+    <div class="pb-10">
       <div class="flex flex-col items-center justify-between h-full">
         <div class="block pb-4">
           <div
@@ -44,7 +44,7 @@ defineProps({
             </slot>
           </div>
         </div>
-        <div v-if="!isLast" class="w-px h-full border border-dashed border-gray-500"></div>
+        <div v-if="!isLast" class="h-full border border-dashed border-gray-500"></div>
       </div>
     </div>
     <div class="flex-1 p-2">

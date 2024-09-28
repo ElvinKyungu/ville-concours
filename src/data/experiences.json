@@ -1,6 +1,6 @@
 [
   {
-    "date": "1960s",
+    "date": "1960",
     "title": "Modern Growth",
     "description": ["The economic boom from the 1960s to the 1990s turned Tokyo into a global metropolis and a major financial center. Today, Tokyo is one of the world’s most influential cities."],
     "isLast": false
@@ -16,5 +16,10 @@
     "title": "Historical Origins",
     "description": ["During the Edo period (1603-1868), Tokyo, then called Edo, transformed from a small fishing village into Japan’s political center. At the end of the Tokugawa shogunate in 1868, the city was renamed Tokyo, meaning \"Eastern Capital.\""],
     "isLast": false
+  },
+  {
+    "date": "1868",
+    "title": "Tokyo Becomes the Capital",
+    "description": ["In 1868, during the Meiji Restoration, Emperor Meiji moved the capital from Kyoto to Edo, renaming it Tokyo, which means 'Eastern Capital'. This move symbolized the beginning of Japan's modernization and the centralization of political power in Tokyo."]
   }
 ]
