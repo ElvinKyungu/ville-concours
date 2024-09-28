@@ -56,7 +56,7 @@ onMounted(() => {
 <template>
   <div ref="rightPanel" class="">
     <div class="flex justify-between stagger-element my-5 lg:-mt-10">
-      <img :src="experiences.image" alt="" class="rounded-lg">
+      <img :src="experiences.image" alt="" class="rounded-lg h-96 w-full object-cover cursor-pointer">
     </div>
     <div class="relative">
       <div class="grid grid-cols-12 stagger-element">

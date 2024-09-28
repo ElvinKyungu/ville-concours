@@ -10,10 +10,40 @@ import {
   significantEvents,
   modernGrowth,
   HistoricalOrigins,
+  capitalTransition
 } from '@/data/experiencesDetails'
 import type { ExperienceDetail } from '@/types/experiences'
 import IconCheck from '@/components/icons/IconCheck.vue'
+import { useTitleAnimation } from '@/composables/useTitleAnimation'
+import { useParagraphAnimation } from '@/composables/useParagraphAnimation'
 
+const titleRef1 = ref<HTMLElement | null>(null)
+const titleRef2 = ref<HTMLElement | null>(null)
+const titleRef3= ref<HTMLElement | null>(null)
+const titleRef4 = ref<HTMLElement | null>(null)
+const imageRef4 = ref<HTMLElement | null>(null)
+const paragraphRef = ref<HTMLElement | null>(null)
+const cardsRef = ref<HTMLElement | null>(null)
+const cardHistory = ref<HTMLElement | null>(null)
+const cultureRefTitle = ref<HTMLElement | null>(null)
+const cultureCardsRef = ref<HTMLElement | null>(null)
+const economicTitleRef = ref<HTMLElement | null>(null)
+const economicParagraphRef = ref<HTMLElement | null>(null)
+const economicCardImgRef = ref<HTMLElement | null>(null)
+
+useTitleAnimation(titleRef1, 0.5)
+useTitleAnimation(imageRef4, 1)
+useTitleAnimation(titleRef2, 0.5)
+useTitleAnimation(titleRef3, 0.5)
+useTitleAnimation(titleRef4, 1)
+useTitleAnimation(cardsRef, .5)
+useTitleAnimation(cardHistory, .5)
+useParagraphAnimation(paragraphRef, .5)
+useTitleAnimation(cultureRefTitle, .3)
+useParagraphAnimation(cultureCardsRef, .4)
+useParagraphAnimation(economicTitleRef, .3)
+useParagraphAnimation(economicParagraphRef, .4)
+useParagraphAnimation(economicCardImgRef, .2)
 // State to store the selected experience details
 const selectedExperience = ref(significantEvents)
 const activeExperienceTitle = ref(experiences[0].title) 
@@ -26,6 +56,8 @@ function getExperienceDetails(title: string): ExperienceDetail {
       return significantEvents
     case 'Modern Growth':
       return modernGrowth
+    case 'Tokyo Becomes the Capital':
+      return capitalTransition
     default:
       return significantEvents
   }
@@ -90,20 +122,20 @@ onMounted(() => {
       class="absolute z-0 inset-0 h-full w-full bg-[radial-gradient(theme(colors.gray.200)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>
     <div class="relative w-full flex flex-col">
-      <h2 ref="" class="text-2xl md:text-5xl relative z-10 my-10">About Tokyo</h2>
+      <h2 ref="titleRef1" class="text-2xl md:text-5xl relative z-10 my-10">About Tokyo</h2>
       <div class="grid relative lg:space-x-20 z-40 grid-cols-12">
-        <div class="col-span-12 md:col-span-6">
+        <div ref="cardsRef" class="col-span-12 md:col-span-6">
           <img src="@/assets/slider-2.jpg" alt="Tokyo Skyline" class="w-full rounded-lg">
         </div>
         <div class="col-span-12 md:col-span-6">
-          <h2 ref="titleRef1" class="text-3xl md:text-4xl text-wrap">All you need to know about Tokyo</h2>
+          <h2 ref="titleRef2" class="text-3xl md:text-4xl text-wrap">All you need to know about Tokyo</h2>
           <p ref="paragraphRef" class="text-lg md:text-lg mt-10 text-wrap">
             Tokyo, a metropolis where tradition and modernity meet in harmony, attracts travelers from all over the world with its unparalleled energy. From the glittering neon lights of Shibuya to the tranquil gardens of the Imperial Palace, every corner of this Japanese capital is full of surprises. Stroll through the narrow streets of old Tokyo, sample the culinary delights of the lively izakayas, and let yourself be seduced by the warm welcome of the locals. Discover Tokyo through the fascinating tales of the explorers who were dazzled by its magic, and let their stories guide you on this memorable adventure. Prepare yourself for the unique experience of a city that never sleeps, while offering moments of tranquility and contemplation.
           </p>
         </div>
       </div>
     </div> 
-    <section class="py-4 flex justify-center w-full relative z-0 pt-20">
+    <section ref="cardHistory" class="py-4 flex justify-center w-full relative z-0 mt-20">
       <main class="px-5 w-full relative">
         <h1 class="my-10 text-5xl">History</h1>
         <div class="relative pb-7 rounded-xl">
@@ -134,8 +166,8 @@ onMounted(() => {
       </main>
     </section>
     <div class="relative">
-      <h2 class="text-3xl md:text-5xl relative z-10 my-10 ">Culture in Tokyo</h2>
-      <div class="grid relative md:gap-10 z-40 grid-cols-12">
+      <h2 ref="cultureRefTitle" class="text-3xl md:text-5xl relative z-10 my-10 ">Culture in Tokyo</h2>
+      <div ref="cultureCardsRef" class="grid relative md:gap-10 z-40 grid-cols-12">
         <div class="col-span-12 md:col-span-3 relative cursor-pointer">
           <div class="container-img-culture">
             <img src="@/assets/culture-modernity.avif" alt="Tradition and Modernity in Tokyo" class="img-culture">
@@ -185,12 +217,12 @@ onMounted(() => {
     <div class="relative z-10 pt-32 w-full">
       <div class="grid relative md:gap-10 z-40 grid-cols-12">
         <div class="col-span-12 md:col-span-6">
-          <h2 ref="" class="text-3xl md:text-5xl relative z-10">Tokyo economy and innovation</h2>
-          <p ref="paragraphRef" class="text-lg md:text-lg mt-10">
+          <h2 ref="economicTitleRef" class="text-3xl md:text-5xl relative z-10">Tokyo economy and innovation</h2>
+          <p ref="economicParagraphRef" class="text-lg md:text-lg mt-10">
             Tokyo, the capital of Japan, is a major global economic hub. It stands out for its dynamic financial, technology, and commercial sectors. With an innovative startup ecosystem and an efficient transport network, Tokyo attracts multinational companies and millions of tourists, solidifying its status as an essential metropolis.
           </p>
         </div>
-        <div class="col-span-12 md:col-span-6">
+        <div ref="economicCardImgRef" class="col-span-12 md:col-span-6">
           <img src="@/assets/economy-tokyo.avif" alt="Tokyo Skyline" class="rounded-lg max-h-[30rem] w-full object-cover">
         </div>
       </div>
