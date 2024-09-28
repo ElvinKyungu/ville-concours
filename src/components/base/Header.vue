@@ -10,9 +10,9 @@ import  IconSearch from "../icons/IconSearch.vue"
 import PopupFull from '@/components/popups/PopupFull.vue'
 import Input from "../Form/Input.vue"
 import HoverPlaces from "../HoverPlaces.vue"
-import HumbergerMenu from "./HumbergerMenu.vue"
 
 const showPopup = ref(false)
+const isMenuOpen = ref(false)
 const showHover = ref(false)
 const hoverContent = ref<'whyTokyo' | 'places' | null>(null)
 const hoverComponentRef =  ref<HTMLElement | null>(null);
@@ -61,8 +61,6 @@ const animateContainerIn = () => {
 
 
 const animateContentIn = (component: 'whyTokyo' | 'places') => {
-  const direction = component === 'whyTokyo' ? 100 : -100;
-
   gsap.fromTo(
     '.hover-content', 
     { x: 0, opacity: 0 },
@@ -87,6 +85,7 @@ onUnmounted(() => {
 });
 
 function open_menu() {
+  isMenuOpen.value = true;
   const tl = gsap.timeline();
   tl.to(".container--menu", {
     "--clip": "110vw",
@@ -95,52 +94,41 @@ function open_menu() {
   })
     .fromTo(
       ".menu__left > *",
-      {
-        x: -150,
-        opacity: 0,
-      },
+      { x: -150, opacity: 0 },
       {
         x: 0,
         opacity: 1,
         duration: 1.5,
         ease: "power2.out",
-        stagger: {
-          from: "center",
-          each: 0.05,
-        },
+        stagger: { from: "center", each: 0.05 },
       },
-      "0",
+      "0"
     )
     .fromTo(
       ".menu__right",
-      {
-        x: -100,
-        opacity: 0,
-      },
+      { x: -100, opacity: 0 },
       {
         opacity: 1,
         x: 0,
         duration: 1.5,
         ease: "power2.out",
       },
-      "<0.5",
+      "<0.5"
     );
-  return tl
+  return tl;
 }
+
 function close_menu() {
-  const tl = gsap.timeline()
+  const tl = gsap.timeline();
   tl.fromTo(
     [".menu__left > *", ".menu__right"],
-    {
-      x: 0,
-      opacity: 1,
-    },
+    { x: 0, opacity: 1 },
     {
       x: -150,
       opacity: 0,
       duration: 1,
       ease: "power2.out",
-    },
+    }
   ).to(
     ".container--menu",
     {
@@ -148,9 +136,10 @@ function close_menu() {
       duration: 1,
       ease: "power2.out",
     },
-    "=-1",
+    "=-1"
   );
-  return tl
+  isMenuOpen.value = false;
+  return tl;
 }
 const menuItems = [
   { name: 'Accueil', route: '/' },
@@ -169,35 +158,13 @@ const leave = (event: MouseEvent) => {
   const icon = (event.currentTarget as HTMLElement).querySelector('.icon')
   gsap.to(icon, { opacity: 0, x: -20, duration: 0.2, ease: 'power2.in' })
 }
-const showButton = ref(false)
 
-const checkScroll = () => {
-  const scrollPosition = window.scrollY || window.pageYOffset
-  const windowHeight = window.innerHeight
-  const documentHeight = document.documentElement.scrollHeight
-
-  if (scrollPosition > documentHeight * 0.4 - windowHeight) {
-    if (!showButton.value) {
-      showButton.value = true
-      gsap.fromTo('.sidebar__menu-trigger', { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5 })
-    }
-  } else {
-    showButton.value = false
-  }
-}
 
 const isMobile = ref(false)
 const showHumbergerMobile = ()=>{
   isMobile.value = !isMobile.value
 }
 
-onMounted(() => {
-  window.addEventListener('scroll', checkScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', checkScroll)
-})
 </script>
 
 <template>
@@ -206,44 +173,36 @@ onUnmounted(() => {
       class="
       "
     >
-      <button
-        v-if="showButton"
-        class="sidebar__menu-trigger hidden w-20 h-20 fixed border text-gray-800 group bg-black/10 backdrop-blur-md md:flex flex-col gap-4 ul rounded-full top-1/2 -translate-y-1/2 left-10 lg:left-20 items-center justify-center animate-pulse"
-        @click="open_menu"
-      >
-        <span
-          class="absolute w-full h-full rounded-full bg-black opacity-70 transition-opacity duration-1000 ease-in-out animate-pulse"
-        ></span>
-        <IconBars class="w-10 h-10 relative z-10 text-white" />
-      </button>
       <ul class="fixed px-5 md:px-20  bg-white shadow-md backdrop-blur-sm items-center w-full flex justify-between py-3 space-x-5 z-50">
         <li class="cursor-pointer">
           <router-link to="/" class="text-3xl">Tokyo city</router-link>
         </li>
-        <li class="cursor-pointer hidden md:flex">
-          <ul class="flex gap-5 text-lg">
-            <li
-              @mouseenter="handleHoverEnter('places')" 
-              @mouseleave="handleHoverLeave"
-              class="border-b-4 py-3 border-transparent hover:border-b-black transition "
-            >
-              Espace touristique
+        <li>
+          <ul class="flex space-x-5">
+            <li class="cursor-pointer hidden md:flex">
+              <ul class="flex gap-5 text-lg">
+                <li
+                  @mouseenter="handleHoverEnter('places')" 
+                  @mouseleave="handleHoverLeave"
+                  class="border-b-4 py-3 border-transparent hover:border-b-black transition "
+                >
+                  Espace touristique
+                </li>
+                <li @click="togglePopup"  class="border-b-4 py-3 border-transparent">
+                  <IconSearch class="w-7 h-7 relative z-10"/>
+                </li>
+                <li class="border-b-4 py-3 border-transparent">
+                  <IconInstagram class="w-7 h-7 relative z-10"/>
+                </li>
+                <li class="border-b-4 py-3 border-transparent">
+                  <IconX class="w-7 h-7 relative z-10"/>
+                </li>
+              </ul>
             </li>
-            <li @click="togglePopup"  class="border-b-4 py-3 border-transparent">
-              <IconSearch class=""/>
-            </li>
-            <li class="border-b-4 py-3 border-transparent">
-              <IconInstagram class=""/>
-            </li>
-            <li class="border-b-4 py-3 border-transparent">
-              <IconX class=""/>
+            <li @click="open_menu" class="border-b-4 py-3 border-transparent">
+              <IconBars class="text-black w-7 h-7 relative z-10"/>
             </li>
           </ul>
-        </li>
-        <li @click="showHumbergerMobile" class="cursor-pointer md:hidden flex">
-          <IconBars
-            class="w-10 h-10 relative z-10"
-          />
         </li>
       </ul>
     </nav>
@@ -258,20 +217,10 @@ onUnmounted(() => {
         <HoverPlaces v-if="hoverContent === 'places'" class="hover-places" />
       </div>
     </div>
-    <div>
+    <div >
       <div
-        class="container container--menu bg-black/40 text-white h-full backdrop-blur-sm flex justify-between px-20 py-10"
+        class="container container--menu bg-white/40 h-full backdrop-blur-sm flex justify-between px-5 md:px-10 lg:px-20 py-10"
       >
-        <div class="menu__layout">
-          <ul class="menu__left text-xl space-y-5">
-            <li v-for="item in menuItems" :key="item.name" @mouseenter="enter" @mouseleave="leave" class="menu-item">
-              <router-link :to="item.route" class="flex gap-4 text-white items-center">
-                {{ item.name }}
-                <span ref="icons" class="icon"><IconArrowGrowUp class="text-white" /></span>
-              </router-link>
-            </li>
-          </ul>
-        </div>
         <div class="sidebar">
           <button class="sidebar__menu-trigger menu__right" @click="close_menu">
             <IconClose
@@ -279,11 +228,20 @@ onUnmounted(() => {
             />
           </button>
         </div>
+        <div class="menu__layout">
+          <ul class="menu__left text-xl space-y-5">
+            <li v-for="item in menuItems" :key="item.name" @mouseenter="enter" @mouseleave="leave" class="menu-item">
+              <router-link :to="item.route" class="flex gap-4 items-center">
+                <span ref="icons" class="icon">
+                  <IconArrowGrowUp class="text-black " />
+                </span>
+                {{ item.name }}
+              </router-link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <nav v-if="isMobile" class="z-50">
-      <HumbergerMenu/>
-    </nav>
   </header>
   <PopupFull :isOpen="showPopup" @close="togglePopup">
     <Input/>
@@ -302,8 +260,12 @@ onUnmounted(() => {
 
 .container--menu {
   --clip: 0;
-  clip-path: circle(var(--clip) at calc(7% + 1.5rem / 2) 50%);
+  clip-path: circle(var(--clip) at calc(100% - 1.5rem / 2) 10%);
   position: absolute;
+  top: 0; 
+  right: 0;
+  width: 100vw; 
+  height: 100vh;
 }
 
 .sidebar__menu-trigger {
