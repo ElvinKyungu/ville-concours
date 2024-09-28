@@ -125,7 +125,7 @@ onMounted(() => {
       <h2 ref="titleRef1" class="text-2xl md:text-5xl relative z-10 my-10">About Tokyo</h2>
       <div class="grid relative lg:space-x-20 z-40 grid-cols-12">
         <div ref="cardsRef" class="col-span-12 md:col-span-6">
-          <img src="@/assets/slider-2.jpg" alt="Tokyo Skyline" class="w-full rounded-lg">
+          <img src="@/assets/Flag_of_Tokyo.png" alt="Tokyo Skyline" class="w-full rounded-lg">
         </div>
         <div class="col-span-12 md:col-span-6">
           <h2 ref="titleRef2" class="text-3xl md:text-4xl text-wrap">All you need to know about Tokyo</h2>
