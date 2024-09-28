@@ -4,7 +4,7 @@ import Footer from '@/components/base/Footer.vue'
 import TextScroll from '@/components/TextScroll.vue'
 import FAQ from '@/components/FAQ.vue'
 import { useTitleAnimation } from '@/composables/useTitleAnimation'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 const titleRef1 = ref<HTMLElement | null>(null)
 const titleRef2 = ref<HTMLElement | null>(null)
