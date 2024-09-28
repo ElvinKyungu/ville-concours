@@ -234,7 +234,7 @@ onMounted(() => {
         </div>
         <div class="col-span-12 md:col-span-6">
           <h2 ref="" class="text-3xl md:text-5xl relative z-10">The Diversity of Tokyo: A Vibrant Mosaic of Cultures and Ages</h2>
-          <p ref="paragraphRef" class="text-lg md:text-lg mt-10">
+          <p ref="" class="text-lg md:text-lg mt-10">
             Tokyo is a vibrant metropolis characterized by its rich diversity. The population includes a mix of ages, from young professionals to seniors, and residents from various cultural backgrounds. This multicultural environment fosters a unique atmosphere, blending traditions and influences from around the world, making Tokyo a truly cosmopolitan city.
           </p>
         </div>
@@ -242,7 +242,7 @@ onMounted(() => {
     </div>
     <section class="flex flex-col w-full relative pt-20">
       <p class="relative z-10">Welcome</p>
-      <h1 ref="titleRef" class="text-heading-1 relative z-10 text-black card-title">
+      <h1 ref="" class="text-heading-1 relative z-10 text-black card-title">
         Tokyo Through the Seasons: A Year of Color and Culture
       </h1> 
       <div class="grid grid-cols-1 relative z-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-3 md:gap-y-8 mt-10">
@@ -251,7 +251,7 @@ onMounted(() => {
           :key="index" 
           class="p-7 bg-gray hover:bg-black/10 transition rounded-lg group duration-700 cursor-pointer"
         >
-          <div ref="cardsRef" class="flex gap-5">
+          <div ref="" class="flex gap-5">
             <div>
               <h4 class="text-lg md:text-xl ">{{ card.title }}</h4>
               <p class="text-sm md:text-base card-description">{{ card.description }}</p>
