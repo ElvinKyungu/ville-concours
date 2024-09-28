@@ -62,7 +62,7 @@ const imagesList = [image1,image3,image4,]
         <p class="h-[1px] bg-black"></p>
         <p class="text-sm">W'are Tokyo</p>
       </div>
-      <h1 ref="titleRef2" class="col-span-12 md:col-span-9 text-3xl md:text-5xl lg:text-5xl">
+      <h1 ref="titleRef2" class="col-span-12 md:col-span-9 text-3xl md:text-4xl lg:text-5xl">
         Welcome to Tokyo, the most vibrant city in the world
       </h1>
     </div>
@@ -80,7 +80,7 @@ const imagesList = [image1,image3,image4,]
     ></div>
     <div class="col-span-12 md:col-span-6 relative z-30">
       <div class="flex flex-col justify-between w-full h-full">
-        <h1 ref="titleRef4" class="text-5xl">
+        <h1 ref="titleRef4" class="text-3xl md:text-3xl lg:text-5xl ">
           We bring bring the the future future home. home. 
           We bring bring the the future future home. home. 
           We bring bring the the future future home. home. 

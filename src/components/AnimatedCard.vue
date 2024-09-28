@@ -66,7 +66,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="grid relative z-40 grid-cols-12 px-5 md:px-20 py-36 md:py-20 lg:py-28">
+  <section class="grid relative z-40 grid-cols-12 px-5 md:px-20 py-36 md:py-20 lg:py-36">
     <div
       class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>

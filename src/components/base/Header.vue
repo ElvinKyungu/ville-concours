@@ -219,7 +219,7 @@ const showHumbergerMobile = ()=>{
     </div>
     <div >
       <div
-        class="container container--menu bg-white/40 h-full backdrop-blur-sm flex justify-between px-5 md:px-10 lg:px-20 py-10"
+        class="container container--menu bg-white/40 h-full backdrop-blur-md flex justify-between px-5 md:px-10 lg:px-20 py-10"
       >
         <div class="sidebar">
           <button class="sidebar__menu-trigger menu__right" @click="close_menu">
@@ -262,8 +262,8 @@ const showHumbergerMobile = ()=>{
   --clip: 0;
   clip-path: circle(var(--clip) at calc(100% - 3rem) 1rem);
   position: absolute;
-  top: 5rem;
-  right: 3rem;
+  top: 1rem;
+  right: 0px;
   width: calc(100vw - 3rem);
   height: calc(100vh - 1rem); 
 }
