@@ -141,7 +141,7 @@ const shopping = [
       class="absolute z-0 inset-0 h-full w-full bg-[radial-gradient(theme(colors.gray.200)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>
     <div class="relative">
-      <h2 ref="cultureRefTitle" class="text-3xl md:text-4xl relative z-10 my-10">
+      <h2 ref="cultureRefTitle" class="pt-10 text-3xl md:text-4xl relative z-10 my-10">
         Major Tourist Attractions
       </h2>
       <div class="grid relative md:gap-10 z-40 grid-cols-12">

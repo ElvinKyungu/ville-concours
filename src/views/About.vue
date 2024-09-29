@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import Experience from "@/components/experiences/Experiences.vue"
+import Experience from "@/components/experiences/History.vue"
 import Header from "@/components/base/Header.vue"
 import Footer from '@/components/base/Footer.vue'
 import experiences from '@/data/experiences.json'
-import ExperiencesDetails from '@/components/experiences/ExperienceDetail.vue'
+import ExperiencesDetails from '@/components/experiences/HistoryDetail.vue'
 import gsap from 'gsap'
 import { 
   significantEvents,

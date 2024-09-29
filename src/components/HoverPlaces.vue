@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import { gsap } from 'gsap';
+import { ref, onMounted } from 'vue'
+import { gsap } from 'gsap'
+import imgshrine from '@/assets/shrines.avif'
+import imgParanomic from '@/assets/panoramic.avif'
+import imgHotel1 from '@/assets/luxur-hotel.avif'
+import imgHotel3 from '@/assets/hotel3.avif'
+import imgCuisine1 from '@/assets/cuisine1.avif'
+import imgShopping5 from '@/assets/nightligh2.avif'
 
-// Définir des refs distincts pour chaque ul
-const listContainer1 = ref<HTMLElement | null>(null);
-const listContainer2 = ref<HTMLElement | null>(null);
-const listContainer3 = ref<HTMLElement | null>(null);
+const listContainer1 = ref<HTMLElement | null>(null)
+const listContainer2 = ref<HTMLElement | null>(null)
+const listContainer3 = ref<HTMLElement | null>(null)
 
 onMounted(() => {
   if (listContainer1.value) {
@@ -45,24 +50,24 @@ onMounted(() => {
       <li class="flex gap-3 cursor-pointer">
         <div class="app-result">
           <img
-            src="https://plus.unsplash.com/premium_photo-1665203522501-ef4a87b8522b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            :src="imgParanomic" 
             class="w-16 rounded-xl object-cover h-16 shrink-0"
           />
           <div class="w-full flex flex-col items-start">
-            <p class="text-lg">Titre de la place</p>
-            <p class="opacity-90">Description de la place</p>
+            <p class="text-lg">Panoramic Viewpoint</p>
+            <p class="opacity-90">Best place</p>
           </div>
         </div>
       </li>
       <li class="flex gap-3 cursor-pointer">
         <div class="app-result">
           <img
-            src="https://plus.unsplash.com/premium_photo-1723983556753-1eef0b499e15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            :src="imgshrine"
             class="w-16 rounded-xl object-cover h-16 shrink-0"
           />
           <div class="w-full flex flex-col items-start">
-            <p class="text-lg">Titre de la place</p>
-            <p class="opacity-90">Description de la place</p>
+            <p class="text-lg">Temples and Shrines</p>
+            <p class="opacity-90">Best place to pray</p>
           </div>
         </div>
       </li>
@@ -71,24 +76,24 @@ onMounted(() => {
       <li class="flex gap-3 cursor-pointer">
         <div class="app-result">
           <img
-            src="https://images.unsplash.com/photo-1587320856202-189c3b4ebf89?q=80&w=2066&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            :src="imgHotel3" 
             class="w-16 rounded-xl object-cover h-16 shrink-0"
           />
           <div class="w-full flex flex-col items-start">
-            <p class="text-lg">Titre de la place</p>
-            <p class="opacity-90">Description de la place</p>
+            <p class="text-lg">Capsule Hotels</p>
+            <p class="opacity-90">Unique Accommodations</p>
           </div>
         </div>
       </li>
       <li class="flex gap-3 cursor-pointer">
         <div class="app-result">
           <img
-            src="https://images.unsplash.com/photo-1701344189187-bc473b00ba4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            :src="imgHotel1" 
             class="w-16 rounded-xl object-cover h-16 shrink-0"
           />
           <div class="w-full flex flex-col items-start">
-            <p class="text-lg">Titre de la place</p>
-            <p class="opacity-90">Description de la place</p>
+            <p class="text-lg">Park Hyatt Tokyo</p>
+            <p class="opacity-90">When you want to sleep</p>
           </div>
         </div>
       </li>
@@ -97,24 +102,24 @@ onMounted(() => {
       <li class="flex gap-3 cursor-pointer">
         <div class="app-result ">
           <img
-            src="https://images.unsplash.com/photo-1576863545712-758b8b245994?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            :src="imgShopping5" 
             class="w-16 rounded-xl object-cover h-16 shrink-0"
           />
           <div class="w-full flex flex-col items-start">
             <p class="text-lg">Titre de la place</p>
-            <p class="opacity-90">Description de la place</p>
+            <p class="opacity-90">Tokyo is also the night life</p>
           </div>
         </div>
       </li>
       <li class="flex gap-3 cursor-pointer">
         <div class="app-result ">
           <img
-            src="https://images.unsplash.com/photo-1547448526-5e9d57fa28f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            :src="imgCuisine1" 
             class="w-16 rounded-xl object-cover h-16 shrink-0"
           />
           <div class="w-full flex flex-col items-start">
-            <p class="text-lg">Titre de la place</p>
-            <p class="opacity-90">Description de la place</p>
+            <p class="text-lg">Tokyo Cuisine Palace</p>
+            <p class="opacity-90">Best food</p>
           </div>
         </div>
       </li>

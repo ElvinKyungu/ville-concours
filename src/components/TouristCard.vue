@@ -10,10 +10,9 @@ const props = defineProps<{
   price: number | string
 }>()
 
-// Computed property pour formater le prix
 const formattedPrice = computed(() => {
   return typeof props.price === 'number' ? `$${props.price}` : props.price;
-});
+})
 </script>
 
 <template>
