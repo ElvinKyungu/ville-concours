@@ -1,33 +1,66 @@
-# Vuejs-Tailwindcss-start
+# README
 
-This template should help get you started developing with Vue 3 in Vite.
+![Tokyo Preview](src/assets/preview.png)
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Présentation du Site : Tokyo
 
-## Type Support for `.vue` Imports in TS
+Bienvenue sur notre site dédié à la découverte de Tokyo, la capitale dynamique du Japon. Ce site a été conçu pour offrir une expérience immersive et informative sur cette ville fascinante.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### URL
+[Visitez le site ici](https://concours-designerduweb.netlify.app/)
 
-## Customize configuration
+### Structure du Site
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Le site est composé de cinq pages principales :
 
-## Project Setup
+1. **Home** : Une introduction captivante à Tokyo, avec des images et des informations essentielles pour vous plonger dans l'ambiance de la ville.
+  
+2. **About** : Découvrez l'histoire et la culture de Tokyo. Cette page présente des éléments clés qui rendent cette ville unique et attrayante.
+  
+3. **Space Areas** : Explorez les différents quartiers de Tokyo. Chaque espace offre une atmosphère distincte et des attractions uniques.
+  
+4. **Testimonials** : Lisez les avis et les expériences de visiteurs qui ont exploré Tokyo. Cette page met en avant des témoignages authentiques pour vous inspirer.
+  
+5. **Contact** : Une page dédiée pour toute question ou demande d'information. N'hésitez pas à nous contacter pour plus de détails.
 
-```sh
-npm install
-```
+### Technologies Utilisées
 
-### Compile and Hot-Reload for Development
+Ce site a été développé en utilisant les technologies suivantes :
 
-```sh
-npm run dev
-```
+- **TypeScript (TS)** : Pour une gestion de type solide et une meilleure maintenance du code.
+- **Vue.js** : Pour créer une interface utilisateur réactive et dynamique.
+- **Tailwind CSS** : Pour un design moderne et personnalisé, facilitant la mise en page et le style.
+- **GSAP** : Pour des animations fluides et engageantes, apportant une touche interactive à l'expérience utilisateur.
 
-### Type-Check, Compile and Minify for Production
+### Installation
 
-```sh
-npm run build
-```
+Pour cloner et exécuter ce projet localement :
+
+1. **Clonez le dépôt** :
+   ```bash
+   git clone  https://github.com/ElvinKyungu/ville-concours 
+   ```
+
+2. **Accédez au répertoire du projet** :
+   ```bash
+   cd votre-repo
+   ```
+
+3. **Installez les dépendances** :
+   ```bash
+   npm install
+   ```
+
+4. **Démarrez le serveur de développement** :
+   ```bash
+   npm run dev
+   ```
+
+### Contribution
+
+Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce site, n'hésitez pas à ouvrir une issue ou à soumettre une pull request.
+
+### Remerciements
+
+Merci d'avoir visité notre site. Nous espérons que vous trouverez des informations utiles et que vous serez inspiré pour découvrir Tokyo !
