@@ -4,9 +4,9 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import IconRight from './icons/IconRight.vue'
 import IconLeft from './icons/IconLeft.vue'
-import img1 from "@/assets/slider-1.jpg"
-import img2 from "@/assets/slider-2.jpg"
-import img3 from "@/assets/slider-3.jpg"
+import img1 from "@/assets/shrines.avif"
+import img2 from "@/assets/hotel3.avif"
+import img3 from "@/assets/shopping3.avif"
 
 gsap.registerPlugin(ScrollTrigger)
 

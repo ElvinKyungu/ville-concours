@@ -4,7 +4,6 @@ import About from "@/views/About.vue"
 import Testimonials from "@/views/TestimonialsView.vue"
 import Places from "@/views/PlacesTouristique.vue"
 import Contact from "@/views/Contact.vue"
-import NotFound from '@/views/NotFound.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,11 +27,6 @@ const router = createRouter({
       path: "/Places-touristiques",
       name: "Places-touristiques",
       component: Places,
-    },
-    { 
-      path: '/:pathMatch(.*)*', 
-      name: 'NotFound', 
-      component: NotFound
     },
     {
       path: "/contact",
