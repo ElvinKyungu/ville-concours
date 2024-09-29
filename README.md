@@ -44,7 +44,7 @@ Pour cloner et exécuter ce projet localement :
 
 2. **Accédez au répertoire du projet** :
    ```bash
-   cd votre-repo
+   cd ville-concours 
    ```
 
 3. **Installez les dépendances** :
