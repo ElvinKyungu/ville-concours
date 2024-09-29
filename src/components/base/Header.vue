@@ -199,7 +199,7 @@ const showHumbergerMobile = ()=>{
                 </li>
               </ul>
             </li>
-            <li @click="open_menu" class="border-b-4 py-3 border-transparent">
+            <li @click="open_menu" class="border-b-4 cursor-pointer py-3 border-transparent">
               <IconBars class="text-black w-8 h-8 relative z-10"/>
             </li>
           </ul>

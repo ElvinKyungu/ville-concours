@@ -2,41 +2,136 @@
 import { ref } from 'vue'
 import Header from "@/components/base/Header.vue"
 import Footer from '@/components/base/Footer.vue'
-import IconHeart from '@/components/icons/IconHeart.vue'
-import IconStars from '@/components/icons/IconStars.vue'
-import imgCuisine1 from '@/assets/tokyo-cuisine.avif'
-import imgCuisine2 from '@/assets/cuisine1.avif'
-import imgCuisine3 from '@/assets/cuisine1.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
-// import imgCuisine from '@/assets/tokyo-cuisine.avif'
+import TouristCard from '@/components/TouristCard.vue'
 
+// majorTourist
+import imgshrine from '@/assets/shrines.avif'
+import imgParanomic from '@/assets/panoramic.avif'
+import imgPark from '@/assets/parks.avif'
+import imgGreen from '@/assets/space-green.avif'
+// Hotels
+import imgHotel1 from '@/assets/luxur-hotel.avif'
+import imgHotel2 from '@/assets/luxur-hotel2.avif'
+import imgHotel3 from '@/assets/hotel3.avif'
+import imgHotel4 from '@/assets/experience-culture.avif'
+// Cuisine
+import imgCuisine1 from '@/assets/cuisine1.avif'
+import imgCuisine2 from '@/assets/cuisine2.avif'
+import imgCuisine3 from '@/assets/street-food.avif'
+import imgCuisine4 from '@/assets/coffe.avif'
+// Shopping
+import imgShopping1 from '@/assets/shopping1.avif'
+import imgShopping2 from '@/assets/shopping2.avif'
+import imgShopping3 from '@/assets/shopping3.avif'
+import imgShopping5 from '@/assets/nightligh2.avif'
 
+const majorTourist = [
+  {
+    img: imgParanomic,
+    title: "Panoramic Viewpoint",
+    price: 49,
+    notation: '4.7'
+  },
+  {
+    img: imgshrine,
+    title: "Temples and Shrines",
+    price: 99,
+    notation: '4.7'
+  },
+  {
+    img: imgPark,
+    title: "Parks spaces",
+    price: 20,
+    notation: '4.5'
+  },
+  {
+    img: imgGreen,
+    title: "Green space",
+    price: 0,
+    notation: 'Free'
+  }
+]
+
+const hotelsAccommodations = [
+  {
+    img: imgHotel1,
+    title: "Park Hyatt Tokyo",
+    price: 150,
+    notation: '4.8'
+  },
+  {
+    img: imgHotel2,
+    title: "Mandarin Oriental Tokyo",
+    price: 200,
+    notation: '4.9'
+  },
+  {
+    img: imgHotel3,
+    title: "Capsule Hotels and Unique Accommodations",
+    price: 50,
+    notation: '4.6'
+  },
+  {
+    img: imgHotel4,
+    title: "Ryokans and Traditional Experiences",
+    price: 80,
+    notation: '4.7'
+  }
+]
+
+const restaurants = [
+  {
+    img: imgCuisine1,
+    title: "Tokyo Cuisine Palace",
+    price: 30,
+    notation: '4.7'
+  },
+  {
+    img: imgCuisine2,
+    title: "Traditional Cuisine",
+    price: 45,
+    notation: '4.8'
+  },
+  {
+    img: imgCuisine3,
+    title: "Street Food Experience",
+    price: 15,
+    notation: '4.5'
+  },
+  {
+    img: imgCuisine4,
+    title: "Coffee and Relaxation",
+    price: 10,
+    notation: '4.6'
+  }
+]
+
+const shopping = [
+  {
+    img: imgShopping1,
+    title: "Luxury Shopping District",
+    price: 'Varies',
+    notation: '4.9'
+  },
+  {
+    img: imgShopping2,
+    title: "Electronics Market",
+    price: 'Varies',
+    notation: '4.7'
+  },
+  {
+    img: imgShopping3,
+    title: "Traditional Souvenirs",
+    price: 'Varies',
+    notation: '4.6'
+  },
+  {
+    img: imgShopping5,
+    title: "Night Market",
+    price: 'Varies',
+    notation: '4.8'
+  }
+]
 </script>
 
 <template>
@@ -46,47 +141,84 @@ import imgCuisine3 from '@/assets/cuisine1.avif'
       class="absolute z-0 inset-0 h-full w-full bg-[radial-gradient(theme(colors.gray.200)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>
     <div class="relative">
-      <h2 ref="cultureRefTitle" class="text-3xl md:text-5xl relative z-10 my-10 ">Major Tourist Attractions</h2>
-      <div  class="grid relative md:gap-10 z-40 grid-cols-12">
-        <div class="col-span-3">
-          <figure class="p-2 relative">
-            <img 
-              :src="imgCuisine3" 
-              class="mb-2 rounded-lg h-64 object-cover cursor-pointer" 
-              alt=""
-            >
-            <figcaption class="top-5 right-5 absolute">
-              <IconHeart/>
-            </figcaption>
-            <figcaption class="outside">
-              <div class="flex justify-between font-semibold">
-                <h3 class="">Vathonas, Grèce</h3>
-                <div class="flex">
-                  <IconStars class="text-yellow-500"/>
-                  <span>4,99</span>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
+      <h2 ref="cultureRefTitle" class="text-3xl md:text-4xl relative z-10 my-10">
+        Major Tourist Attractions
+      </h2>
+      <div class="grid relative md:gap-10 z-40 grid-cols-12">
+        <div 
+          v-for="(attraction, index) in majorTourist" 
+          :key="index" 
+          class="col-span-12 md:col-span-4 lg:col-span-3"
+        >
+          <TouristCard 
+            :image="attraction.img"
+            :title="attraction.title"
+            :rating="attraction.notation"
+            :price="attraction.price"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="relative">
+      <h2 ref="cultureRefTitle" class="text-3xl md:text-4xl relative z-10 my-10">
+        Hotels and Accommodations
+      </h2>
+      <div class="grid relative md:gap-10 z-40 grid-cols-12">
+        <div 
+          v-for="(attraction, index) in hotelsAccommodations" 
+          :key="index" 
+          class="col-span-12 md:col-span-4 lg:col-span-3"
+        >
+          <TouristCard 
+            :image="attraction.img"
+            :title="attraction.title"
+            :rating="attraction.notation"
+            :price="attraction.price"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="relative">
+      <h2 ref="cultureRefTitle" class="text-3xl md:text-4xl relative z-10 my-10">
+        Restaurants and Culinary Experiences
+      </h2>
+      <div class="grid relative md:gap-10 z-40 grid-cols-12">
+        <div 
+          v-for="(attraction, index) in restaurants" 
+          :key="index" 
+          class="col-span-12 md:col-span-4 lg:col-span-3"
+        >
+          <TouristCard 
+            :image="attraction.img"
+            :title="attraction.title"
+            :rating="attraction.notation"
+            :price="attraction.price"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="relative">
+      <h2 ref="cultureRefTitle" class="text-3xl md:text-4xl relative z-10 my-10">
+        Shopping and Entertainment
+      </h2>
+      <div class="grid relative md:gap-10 z-40 grid-cols-12">
+        <div 
+          v-for="(attraction, index) in shopping" 
+          :key="index" 
+          class="col-span-12 md:col-span-4 lg:col-span-3"
+        >
+          <TouristCard 
+            :image="attraction.img"
+            :title="attraction.title"
+            :rating="attraction.notation"
+            :price="attraction.price"
+          />
         </div>
       </div>
     </div>
   </main>
   <Footer />
 </template>
-
-
 <style scoped>
-.img-culture{
-  @apply rounded-lg w-full h-full overflow-hidden object-cover transition-transform duration-300 ease-in-out transform hover:scale-110
-}
-.container-img-culture{
-  @apply relative h-64 w-full overflow-hidden rounded-lg
-}
 
-svg{
-  cursor: pointer;
-  stroke: white;
-  stroke-width: 2;
-}
 </style>
