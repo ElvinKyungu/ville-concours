@@ -24,6 +24,27 @@ import imgShopping1 from '@/assets/shopping1.avif'
 import imgShopping2 from '@/assets/shopping2.avif'
 import imgShopping3 from '@/assets/shopping3.avif'
 import imgShopping5 from '@/assets/nightligh2.avif'
+import { useTitleAnimation } from '@/composables/useTitleAnimation'
+import { useParagraphAnimation } from '@/composables/useParagraphAnimation'
+
+const titleRef1 = ref<HTMLElement | null>(null)
+const titleRef2 = ref<HTMLElement | null>(null)
+const titleRef3= ref<HTMLElement | null>(null)
+const titleRef4 = ref<HTMLElement | null>(null)
+const cards1Ref1 = ref<HTMLElement | null>(null)
+const cards1Ref2 = ref<HTMLElement | null>(null)
+const cards1Ref3 = ref<HTMLElement | null>(null)
+const cards1Ref4 = ref<HTMLElement | null>(null)
+
+
+useTitleAnimation(titleRef1, 0.2)
+useTitleAnimation(titleRef2, 0.2)
+useTitleAnimation(titleRef3, 0.2)
+useTitleAnimation(titleRef4, .3)
+useParagraphAnimation(cards1Ref1, .5)
+useParagraphAnimation(cards1Ref2, .5)
+useParagraphAnimation(cards1Ref3, .5)
+useParagraphAnimation(cards1Ref4, .5)
 
 const majorTourist = [
   {
@@ -141,10 +162,10 @@ const shopping = [
       class="absolute z-0 inset-0 h-full w-full bg-[radial-gradient(theme(colors.gray.200)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>
     <div class="relative">
-      <h2 ref="cultureRefTitle" class="pt-10 text-3xl md:text-4xl relative z-10 my-10">
+      <h2 ref="titleRef1" class="pt-10 text-3xl md:text-4xl relative z-10 my-10">
         Major Tourist Attractions
       </h2>
-      <div class="grid relative md:gap-10 z-40 grid-cols-12">
+      <div ref="cards1Ref1" class="grid relative md:gap-10 z-40 grid-cols-12">
         <div 
           v-for="(attraction, index) in majorTourist" 
           :key="index" 
@@ -160,10 +181,10 @@ const shopping = [
       </div>
     </div>
     <div class="relative">
-      <h2 ref="cultureRefTitle" class="text-3xl md:text-4xl relative z-10 my-10">
+      <h2 ref="titleRef2" class="text-3xl md:text-4xl relative z-10 my-10">
         Hotels and Accommodations
       </h2>
-      <div class="grid relative md:gap-10 z-40 grid-cols-12">
+      <div ref="cards1Ref2" class="grid relative md:gap-10 z-40 grid-cols-12">
         <div 
           v-for="(attraction, index) in hotelsAccommodations" 
           :key="index" 
@@ -179,10 +200,10 @@ const shopping = [
       </div>
     </div>
     <div class="relative">
-      <h2 ref="cultureRefTitle" class="text-3xl md:text-4xl relative z-10 my-10">
+      <h2 ref="titleRef3" class="text-3xl md:text-4xl relative z-10 my-10">
         Restaurants and Culinary Experiences
       </h2>
-      <div class="grid relative md:gap-10 z-40 grid-cols-12">
+      <div ref="cards1Ref3" class="grid relative md:gap-10 z-40 grid-cols-12">
         <div 
           v-for="(attraction, index) in restaurants" 
           :key="index" 
@@ -198,10 +219,10 @@ const shopping = [
       </div>
     </div>
     <div class="relative">
-      <h2 ref="cultureRefTitle" class="text-3xl md:text-4xl relative z-10 my-10">
+      <h2 ref="titleRef4" class="text-3xl md:text-4xl relative z-10 my-10">
         Shopping and Entertainment
       </h2>
-      <div class="grid relative md:gap-10 z-40 grid-cols-12">
+      <div ref="cards1Ref4" class="grid relative md:gap-10 z-40 grid-cols-12">
         <div 
           v-for="(attraction, index) in shopping" 
           :key="index" 
