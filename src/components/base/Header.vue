@@ -142,10 +142,10 @@ function close_menu() {
   return tl;
 }
 const menuItems = [
-  { name: 'Accueil', route: '/' },
-  { name: 'A propos', route: '/about' },
-  { name: 'Témoignages', route: '/testimonials' },
-  { name: 'Endroits touristique', route: '/Places-touristiques' },
+  { name: 'Home', route: '/' },
+  { name: 'About', route: '/about' },
+  { name: 'Testimonials', route: '/testimonials' },
+  { name: 'Tourist areas', route: '/Places-touristiques' },
   { name: 'Contact', route: '/contact' }
 ]
 
@@ -157,12 +157,6 @@ const enter = (event: MouseEvent) => {
 const leave = (event: MouseEvent) => {
   const icon = (event.currentTarget as HTMLElement).querySelector('.icon')
   gsap.to(icon, { opacity: 0, x: -20, duration: 0.2, ease: 'power2.in' })
-}
-
-
-const isMobile = ref(false)
-const showHumbergerMobile = ()=>{
-  isMobile.value = !isMobile.value
 }
 
 </script>
