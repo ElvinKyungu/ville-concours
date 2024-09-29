@@ -61,6 +61,4 @@ Pour cloner et exécuter ce projet localement :
 
 Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce site, n'hésitez pas à ouvrir une issue ou à soumettre une pull request.
 
-### Remerciements
 
-Merci d'avoir visité notre site. Nous espérons que vous trouverez des informations utiles et que vous serez inspiré pour découvrir Tokyo !
