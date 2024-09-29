@@ -22,11 +22,10 @@ onMounted(() => {
         ease: 'power4.out',
         scrollTrigger: {
           trigger: section,
-          start: "top 100%", 
+          start: "top bottom", 
           scrub: 1, 
           toggleActions: "play none none reverse",
         },
-        
       }
     )
 
@@ -39,7 +38,7 @@ onMounted(() => {
         ease: 'power4.out',
         scrollTrigger: {
           trigger: section,
-          start: "top 100%",  
+          start: "top bottom",  
           scrub: 1, 
           toggleActions: "play none none reverse",
         }
@@ -50,7 +49,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section ref="sectionRef" class="px-5 md:px-20 lg:gap-10 gap-5 grid bg-black py-5 md:py-10 grid-cols-12 min-h-96 mt-40 w-full overflow-hidden">
+  <section ref="sectionRef" class="px-5 md:px-20 lg:gap-20 gap-5 grid bg-black py-5 md:py-10 grid-cols-12 min-h-96 mt-40 w-full overflow-hidden">
     <div class="col-span-12 md:col-span-7 mb-5">
       <div class="text-white flex justify-between text-xs">
         <p>Discover Tokyo</p>

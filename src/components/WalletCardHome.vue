@@ -49,7 +49,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="px-5 md:px-20 lg:gap-10 gap-5 grid py-5 md:py-10 grid-cols-12 mt-10 w-full min-h-[50rem] overflow-hidden">
+  <section class="px-5 md:px-20 lg:gap-20 gap-5 grid py-5 md:py-10 grid-cols-12 mt-10 w-full min-h-[50rem] overflow-hidden">
     <div class="animated-section bg-black md:h-full h-[30rem] relative rounded-lg col-span-12 md:col-span-6 p-5 md:p-10">
       <div class="absolute z-0 inset-0 h-full w-full bg-[radial-gradient(theme(colors.gray.700)_1px,transparent_1px)] [background-size:16px_16px]"></div>
       <div class="relative z-20 text-white h-full">

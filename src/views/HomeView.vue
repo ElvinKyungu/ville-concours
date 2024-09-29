@@ -91,7 +91,6 @@ const imagesList = [image1,image3,image4,]
       </div>
     </div>
   </section>
-
   <PlacesCardClickable/>
   <ScrollTriggerSection/>
   <TextScroll/>
