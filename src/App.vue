@@ -1,25 +1,33 @@
 <script setup lang="ts">
 import { onBeforeRouteUpdate, RouterView, useRouter } from 'vue-router';
 import { ref, watch } from 'vue';
+import gsap from 'gsap';
 import { useLoader } from './composables/useLoader';
 
 const router = useRouter();
 const { isLoading, showLoader, hideLoader } = useLoader();
 
 watch(router.currentRoute, (to, from) => {
-  showLoader()
+  showLoader();
   setTimeout(() => {
-    hideLoader()
+    gsap.to('.loader', {
+      opacity: 0,
+      duration: .9,
+      onComplete: () => {
+        hideLoader();
+        gsap.set('.loader', { opacity: 1 }); 
+      },
+    });
   }, 1000);
-})
+});
 </script>
 
 <template>
   <div class="font-poppins">
     <div v-if="isLoading" class="fixed w-full flex justify-center items-center h-screen bg-white z-50">
-      <div  class="loader bg-red-600 w-20 h-20 rounded-full"></div>
+      <div class="loader bg-red-600 w-20 h-20 rounded-full"></div>
     </div>
-    <RouterView v-else/>
+    <RouterView v-else />
   </div>
 </template>
 

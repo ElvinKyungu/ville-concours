@@ -2,7 +2,8 @@ import type { ExperienceDetail } from '@/types/experiences'
 import artile1 from '@/assets/article-1.jpg'
 import artile2 from '@/assets/article-2.jpg'
 import artile3 from '@/assets/article-3.avif'
-
+import personnage1 from '@/assets/personnage-1.avif'
+import personnage2 from '@/assets/personnage2.jpeg'
 import capital from '@/assets/capital-otkyo.avif'
 import growth from '@/assets/growth-tokyo.avif'
 import origine from '@/assets/origine-tokyo.avif'
@@ -31,7 +32,7 @@ export const HistoricalOrigins: ExperienceDetail = {
       description: "Emperor Meiji played a crucial role in transforming Japan from a feudal society into a modern state. His leadership was instrumental during the Meiji Restoration, which shifted power from the shogunate to the emperor."
     },
     {
-      img: artile1,
+      img: personnage1,
       title: "Tokugawa Yoshinobu",
       description: "The last shogun of the Tokugawa shogunate, Tokugawa Yoshinobu, played a significant role in the events leading to the Meiji Restoration. His resignation marked the end of centuries of feudal rule."
     }
@@ -56,12 +57,12 @@ export const capitalTransition: ExperienceDetail = {
   ],
   personnages: [
     {
-      img: artile3,
+      img: personnage1,
       title: "Emperor Meiji",
       description: "The role of Emperor Meiji in relocating the capital and initiating Tokyo's modernization."
     },
     {
-      img: artile1,
+      img: personnage2,
       title: "Samurai Transition",
       description: "How the shift of the capital impacted the samurai and their societal role."
     }
@@ -86,7 +87,7 @@ export const modernGrowth: ExperienceDetail = {
   ],
   personnages: [
     {
-      img: artile3,
+      img: personnage1,
       title: "Prime Minister Eisaku Sato",
       description: "Under the leadership of Prime Minister Eisaku Sato, Tokyo experienced remarkable economic growth and hosted the 1964 Olympics, showcasing Japan's recovery and modernization."
     },
@@ -116,7 +117,7 @@ export const significantEvents: ExperienceDetail = {
   ],
   personnages: [
     {
-      img: artile3,
+      img: personnage2,
       title: "Tokugawa Ieyasu",
       description: "Tokugawa Ieyasu was the founder of the Tokugawa shogunate, establishing Edo as the administrative capital and laying the foundations for its growth into modern-day Tokyo."
     },
