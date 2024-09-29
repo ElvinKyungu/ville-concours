@@ -45,10 +45,12 @@ const imagesList = [image1,image3,image4,]
     ></div>
     <section class="grid  relative z-40 grid-cols-12 px-5 md:px-20 py-10 md:py-20 lg:py-28">
       <div class="col-span-12 md:col-span-6">
-        <h2 ref="titleRef1" class="text-5xl">Same news of Tokyo</h2>
+        <h2 ref="titleRef1" class="text-5xl">The city of tokyo is also</h2>
       </div>
       <div class="col-span-12 md:col-span-6">
-        <p ref="paragraphRef" class="text-lg md:text-xl">Explore some of the ways we're bringing the future of home <br> improvement to life, today. </p>
+        <p ref="paragraphRef" class="text-lg md:text-xl">
+          Tokyo is a city where politeness and respect prevail. Tradition and modernity coexist harmoniously, creating a dynamic and inspiring environment.
+        </p>
       </div>
     </section>
     <HomeCardSlider/>
@@ -71,23 +73,25 @@ const imagesList = [image1,image3,image4,]
     </h1>
   </section>
   <WalletCardHome/>
-  <section class="grid grid-cols-12 gap-7 relative py-10 md:py-20 px-5 md:px-20">
+  <section class="grid grid-cols-12 md:gap-20 relative py-10 md:py-20 px-5 md:px-20">
     <div ref="imageRef4" class="col-span-12 lg:col-span-6 relative z-30">
       <ImageBanner :images="imagesList" />
     </div>
     <div
-      class="absolute z-0 inset-0 h-full w-full   bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
+      class="absolute z-0 inset-0 h-full w-full bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:16px_16px]"
     ></div>
     <div class="col-span-12 md:col-span-6 relative z-30">
-      <div class="flex flex-col justify-between w-full h-full">
-        <h1 ref="titleRef4" class="text-3xl md:text-3xl lg:text-5xl ">
-          We bring bring the the future future home. home. 
-          We bring bring the the future future home. home. 
-          We bring bring the the future future home. home. 
-        </h1> 
+      <div class="flex flex-col w-full h-full">
+        <h1 ref="titleRef4" class="text-3xl md:text-3xl lg:text-5xl">
+          Experience the Essence of Tokyo
+        </h1>
+        <p class="mt-4 text-lg md:text-xl">
+          Dive into Tokyo's rich culture, savor its culinary delights, and explore luxurious hotels that redefine hospitality. Discover a city where tradition meets innovation at every corner.
+        </p>
       </div>
     </div>
   </section>
+
   <PlacesCardClickable/>
   <ScrollTriggerSection/>
   <TextScroll/>

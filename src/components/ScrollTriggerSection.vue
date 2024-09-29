@@ -100,7 +100,7 @@ const slides = [
             <h1 class="text-3xl md:text-6xl lg:text-[6rem] font-medium">{{ slide.title }}</h1>
             <h1 class="text-3xl md:text-6xl lg:text-[6rem] font-medium text-strok">{{ slide.subtitle }}</h1>
           </div>
-          <p class="text-lg md:text-xl lg:text-2xl top-5">Vivez des moment uniques</p>
+          <p class="text-lg md:text-xl lg:text-2xl top-5">In Tokyo Dream and live</p>
         </div>
       </div>
     </div>

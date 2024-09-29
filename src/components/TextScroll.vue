@@ -6,11 +6,11 @@ const rows = ref<HTMLElement[]>([])
 
 const tagRows = [
   [
-    { text: 'Strategy', styleClass: '' },
-    { text: 'Strategy', styleClass: '-stroke' },
-    { text: 'Strategy', styleClass: '' },
-    { text: 'Strategy', styleClass: '-stroke' },
-    { text: 'Strategy', styleClass: '' }
+    { text: 'Tokyo', styleClass: '' },
+    { text: 'City', styleClass: '-stroke' },
+    { text: 'Tokyo', styleClass: '' },
+    { text: 'City', styleClass: '-stroke' },
+    { text: 'Tokyo', styleClass: '' }
   ],
 ]
 

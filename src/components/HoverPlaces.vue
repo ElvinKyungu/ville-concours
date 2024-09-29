@@ -106,7 +106,7 @@ onMounted(() => {
             class="w-16 rounded-xl object-cover h-16 shrink-0"
           />
           <div class="w-full flex flex-col items-start">
-            <p class="text-lg">Titre de la place</p>
+            <p class="text-lg">Tokyo of night</p>
             <p class="opacity-90">Tokyo is also the night life</p>
           </div>
         </div>

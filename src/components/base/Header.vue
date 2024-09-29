@@ -186,7 +186,7 @@ const showHumbergerMobile = ()=>{
                   @mouseleave="handleHoverLeave"
                   class="border-b-4 py-3 border-transparent hover:border-b-black transition "
                 >
-                  Espace touristique
+                  Tourist areas
                 </li>
                 <li @click="togglePopup"  class="border-b-4 py-3 border-transparent">
                   <IconSearch class="w-7 h-7 relative z-10"/>

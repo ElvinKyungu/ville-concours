@@ -58,16 +58,16 @@ onMounted(() => {
           <p ref="textRef2">All places</p>
         </div>
         <div class="w-full md:max-w-[30rem] my-auto mt-28 mx-auto">
-          <h1 ref="titleRef1" class="text-2xl md:text-3xl lg:text-5xl">Besoin de rejoindre la plus belle ville du monde Tokyo</h1>
+          <h1 ref="titleRef1" class="text-2xl md:text-3xl lg:text-5xl">Discover the Magic of Tokyo</h1>
           <p ref="paragraphRef1" class="mt-2 md:mt-10">
-            Join a Fortune 50 home improvement retailer that is building the technology that will transform the ways we live, shop, and work.
+            Tokyo is a vibrant metropolis that blends tradition and modernity. Explore its iconic neighborhoods, serene gardens, and world-renowned cuisine.
           </p>
         </div>
         <div 
           class="md:bottom-5 cursor-pointer rounded-lg bottom-0 justify-end items-end w-[95%] md:w-1/2 mx-auto bg-white text-black absolute p-5 md:p-5 right-[2.5%]"
         >
           <div class="flex justify-between">
-            <span class="text-sm md:text-sm">Let's talk about your travel</span>
+            <span class="text-sm md:text-sm">Plan Your Trip</span>
             <IconArrowGrowUp class=" "/>
           </div>
         </div>
@@ -81,20 +81,22 @@ onMounted(() => {
           <p ref="textRef4">All places</p>
         </div>
         <div class="w-full md:max-w-[30rem] my-auto mt-28 mx-auto">
-          <h1 ref="titleRef2" class="text-2xl md:text-3xl lg:text-5xl -mt-10 md:mt-0">Besoin de rejoindre la plus belle ville du monde Tokyo</h1>
+          <h1 ref="titleRef2" class="text-2xl md:text-3xl lg:text-5xl -mt-10 md:mt-0">A City of Endless Possibilities</h1>
           <p ref="paragraphRef2" class="mt-5 md:mt-10">
-            Join a Fortune 50 home improvement retailer that is building the technology that will transform the ways we live, shop, and work.
+            Immerse yourself in Tokyo's unique culture, where hospitality and safety come together to offer an unforgettable experience. Explore its festivals, temples, and contemporary art.
           </p>
         </div>
         <div 
           class="md:bottom-5 cursor-pointer rounded-lg bottom-0 justify-end items-end w-[95%] md:w-1/2 mx-auto bg-white text-black absolute p-5 md:p-5 right-[2.5%]"
         >
           <div class="flex justify-between">
-            <span class="text-sm md:text-sm">Let's talk about your travel</span>
+            <span class="text-sm md:text-sm">Plan Your Trip</span>
             <IconArrowGrowUp class=" "/>
           </div>
         </div>
       </div>
     </div>
-  </section>
+</section>
+
+
 </template>

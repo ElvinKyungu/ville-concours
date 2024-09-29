@@ -10,16 +10,13 @@
       </router-link>
       <ul class="flex flex-wrap items-center mb-6 text-sm font-medium sm:mb-0 ">
         <li>
-          <router-link  to="/" class="hover:underline me-4 md:me-6">About</router-link>
+          <router-link  to="/about" class="hover:underline me-4 md:me-6">About</router-link>
         </li>
         <li>
-          <router-link  to="/" class="hover:underline me-4 md:me-6">Privacy Policy</router-link>
+          <router-link  to="/Places-touristiques" class="hover:underline me-4 md:me-6">Tourist areas</router-link>
         </li>
         <li>
-          <router-link  to="/" class="hover:underline me-4 md:me-6">Licensing</router-link>
-        </li>
-        <li>
-          <router-link  to="/" class="hover:underline">Contact</router-link>
+          <router-link  to="/contact" class="hover:underline">Contact</router-link>
         </li>
       </ul>
     </div>
